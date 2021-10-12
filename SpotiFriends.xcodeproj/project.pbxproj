@@ -1,0 +1,612 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 52;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		339BB71527162A71003CA493 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339BB71427162A71003CA493 /* AppDelegate.swift */; };
+		339BB71727162A71003CA493 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339BB71627162A71003CA493 /* SceneDelegate.swift */; };
+		339BB71927162A71003CA493 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339BB71827162A71003CA493 /* ContentView.swift */; };
+		339BB71B27162A73003CA493 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 339BB71A27162A73003CA493 /* Assets.xcassets */; };
+		339BB71E27162A73003CA493 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 339BB71D27162A73003CA493 /* Preview Assets.xcassets */; };
+		339BB72127162A73003CA493 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 339BB71F27162A73003CA493 /* LaunchScreen.storyboard */; };
+		339BB72C27162A74003CA493 /* SpotiFriendsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339BB72B27162A74003CA493 /* SpotiFriendsTests.swift */; };
+		339BB73727162A74003CA493 /* SpotiFriendsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339BB73627162A74003CA493 /* SpotiFriendsUITests.swift */; };
+		339BB74D27162B8C003CA493 /* SpotifyiOS.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 339BB74C27162B8C003CA493 /* SpotifyiOS.xcframework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		339BB72827162A74003CA493 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 339BB70927162A71003CA493 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 339BB71027162A71003CA493;
+			remoteInfo = SpotiFriends;
+		};
+		339BB73327162A74003CA493 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 339BB70927162A71003CA493 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 339BB71027162A71003CA493;
+			remoteInfo = SpotiFriends;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		339BB71127162A71003CA493 /* SpotiFriends.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpotiFriends.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		339BB71427162A71003CA493 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		339BB71627162A71003CA493 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		339BB71827162A71003CA493 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		339BB71A27162A73003CA493 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		339BB71D27162A73003CA493 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		339BB72027162A73003CA493 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		339BB72227162A73003CA493 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		339BB72727162A74003CA493 /* SpotiFriendsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpotiFriendsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		339BB72B27162A74003CA493 /* SpotiFriendsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotiFriendsTests.swift; sourceTree = "<group>"; };
+		339BB72D27162A74003CA493 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		339BB73227162A74003CA493 /* SpotiFriendsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpotiFriendsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		339BB73627162A74003CA493 /* SpotiFriendsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotiFriendsUITests.swift; sourceTree = "<group>"; };
+		339BB73827162A74003CA493 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		339BB74C27162B8C003CA493 /* SpotifyiOS.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SpotifyiOS.xcframework; path = "../ios-sdk/SpotifyiOS.xcframework"; sourceTree = "<group>"; };
+		339BB75427162D72003CA493 /* SpotiFriends-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SpotiFriends-Bridging-Header.h"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		339BB70E27162A71003CA493 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				339BB74D27162B8C003CA493 /* SpotifyiOS.xcframework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		339BB72427162A74003CA493 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		339BB72F27162A74003CA493 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		339BB70827162A71003CA493 = {
+			isa = PBXGroup;
+			children = (
+				339BB75427162D72003CA493 /* SpotiFriends-Bridging-Header.h */,
+				339BB74C27162B8C003CA493 /* SpotifyiOS.xcframework */,
+				339BB71327162A71003CA493 /* SpotiFriends */,
+				339BB72A27162A74003CA493 /* SpotiFriendsTests */,
+				339BB73527162A74003CA493 /* SpotiFriendsUITests */,
+				339BB71227162A71003CA493 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		339BB71227162A71003CA493 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				339BB71127162A71003CA493 /* SpotiFriends.app */,
+				339BB72727162A74003CA493 /* SpotiFriendsTests.xctest */,
+				339BB73227162A74003CA493 /* SpotiFriendsUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		339BB71327162A71003CA493 /* SpotiFriends */ = {
+			isa = PBXGroup;
+			children = (
+				339BB71427162A71003CA493 /* AppDelegate.swift */,
+				339BB71627162A71003CA493 /* SceneDelegate.swift */,
+				339BB71827162A71003CA493 /* ContentView.swift */,
+				339BB71A27162A73003CA493 /* Assets.xcassets */,
+				339BB71F27162A73003CA493 /* LaunchScreen.storyboard */,
+				339BB72227162A73003CA493 /* Info.plist */,
+				339BB71C27162A73003CA493 /* Preview Content */,
+			);
+			path = SpotiFriends;
+			sourceTree = "<group>";
+		};
+		339BB71C27162A73003CA493 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				339BB71D27162A73003CA493 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		339BB72A27162A74003CA493 /* SpotiFriendsTests */ = {
+			isa = PBXGroup;
+			children = (
+				339BB72B27162A74003CA493 /* SpotiFriendsTests.swift */,
+				339BB72D27162A74003CA493 /* Info.plist */,
+			);
+			path = SpotiFriendsTests;
+			sourceTree = "<group>";
+		};
+		339BB73527162A74003CA493 /* SpotiFriendsUITests */ = {
+			isa = PBXGroup;
+			children = (
+				339BB73627162A74003CA493 /* SpotiFriendsUITests.swift */,
+				339BB73827162A74003CA493 /* Info.plist */,
+			);
+			path = SpotiFriendsUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		339BB71027162A71003CA493 /* SpotiFriends */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 339BB73B27162A74003CA493 /* Build configuration list for PBXNativeTarget "SpotiFriends" */;
+			buildPhases = (
+				339BB70D27162A71003CA493 /* Sources */,
+				339BB70E27162A71003CA493 /* Frameworks */,
+				339BB70F27162A71003CA493 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SpotiFriends;
+			productName = SpotiFriends;
+			productReference = 339BB71127162A71003CA493 /* SpotiFriends.app */;
+			productType = "com.apple.product-type.application";
+		};
+		339BB72627162A74003CA493 /* SpotiFriendsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 339BB73E27162A74003CA493 /* Build configuration list for PBXNativeTarget "SpotiFriendsTests" */;
+			buildPhases = (
+				339BB72327162A74003CA493 /* Sources */,
+				339BB72427162A74003CA493 /* Frameworks */,
+				339BB72527162A74003CA493 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				339BB72927162A74003CA493 /* PBXTargetDependency */,
+			);
+			name = SpotiFriendsTests;
+			productName = SpotiFriendsTests;
+			productReference = 339BB72727162A74003CA493 /* SpotiFriendsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		339BB73127162A74003CA493 /* SpotiFriendsUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 339BB74127162A74003CA493 /* Build configuration list for PBXNativeTarget "SpotiFriendsUITests" */;
+			buildPhases = (
+				339BB72E27162A74003CA493 /* Sources */,
+				339BB72F27162A74003CA493 /* Frameworks */,
+				339BB73027162A74003CA493 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				339BB73427162A74003CA493 /* PBXTargetDependency */,
+			);
+			name = SpotiFriendsUITests;
+			productName = SpotiFriendsUITests;
+			productReference = 339BB73227162A74003CA493 /* SpotiFriendsUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		339BB70927162A71003CA493 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1240;
+				LastUpgradeCheck = 1240;
+				TargetAttributes = {
+					339BB71027162A71003CA493 = {
+						CreatedOnToolsVersion = 12.4;
+					};
+					339BB72627162A74003CA493 = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = 339BB71027162A71003CA493;
+					};
+					339BB73127162A74003CA493 = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = 339BB71027162A71003CA493;
+					};
+				};
+			};
+			buildConfigurationList = 339BB70C27162A71003CA493 /* Build configuration list for PBXProject "SpotiFriends" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 339BB70827162A71003CA493;
+			productRefGroup = 339BB71227162A71003CA493 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				339BB71027162A71003CA493 /* SpotiFriends */,
+				339BB72627162A74003CA493 /* SpotiFriendsTests */,
+				339BB73127162A74003CA493 /* SpotiFriendsUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		339BB70F27162A71003CA493 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				339BB72127162A73003CA493 /* LaunchScreen.storyboard in Resources */,
+				339BB71E27162A73003CA493 /* Preview Assets.xcassets in Resources */,
+				339BB71B27162A73003CA493 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		339BB72527162A74003CA493 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		339BB73027162A74003CA493 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		339BB70D27162A71003CA493 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				339BB71527162A71003CA493 /* AppDelegate.swift in Sources */,
+				339BB71727162A71003CA493 /* SceneDelegate.swift in Sources */,
+				339BB71927162A71003CA493 /* ContentView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		339BB72327162A74003CA493 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				339BB72C27162A74003CA493 /* SpotiFriendsTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		339BB72E27162A74003CA493 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				339BB73727162A74003CA493 /* SpotiFriendsUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		339BB72927162A74003CA493 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 339BB71027162A71003CA493 /* SpotiFriends */;
+			targetProxy = 339BB72827162A74003CA493 /* PBXContainerItemProxy */;
+		};
+		339BB73427162A74003CA493 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 339BB71027162A71003CA493 /* SpotiFriends */;
+			targetProxy = 339BB73327162A74003CA493 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		339BB71F27162A73003CA493 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				339BB72027162A73003CA493 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		339BB73927162A74003CA493 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-ObjC";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OBJC_BRIDGING_HEADER = "SpotiFriends-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		339BB73A27162A74003CA493 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				OTHER_LDFLAGS = "-ObjC";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OBJC_BRIDGING_HEADER = "SpotiFriends-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		339BB73C27162A74003CA493 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"SpotiFriends/Preview Content\"";
+				DEVELOPMENT_TEAM = 4KH57C9HM5;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = SpotiFriends/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.CMU.SpotiFriends;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		339BB73D27162A74003CA493 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"SpotiFriends/Preview Content\"";
+				DEVELOPMENT_TEAM = 4KH57C9HM5;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = SpotiFriends/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.CMU.SpotiFriends;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		339BB73F27162A74003CA493 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4KH57C9HM5;
+				INFOPLIST_FILE = SpotiFriendsTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = CMU.SpotiFriendsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SpotiFriends.app/SpotiFriends";
+			};
+			name = Debug;
+		};
+		339BB74027162A74003CA493 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4KH57C9HM5;
+				INFOPLIST_FILE = SpotiFriendsTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = CMU.SpotiFriendsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SpotiFriends.app/SpotiFriends";
+			};
+			name = Release;
+		};
+		339BB74227162A74003CA493 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4KH57C9HM5;
+				INFOPLIST_FILE = SpotiFriendsUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = CMU.SpotiFriendsUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SpotiFriends;
+			};
+			name = Debug;
+		};
+		339BB74327162A74003CA493 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4KH57C9HM5;
+				INFOPLIST_FILE = SpotiFriendsUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = CMU.SpotiFriendsUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SpotiFriends;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		339BB70C27162A71003CA493 /* Build configuration list for PBXProject "SpotiFriends" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				339BB73927162A74003CA493 /* Debug */,
+				339BB73A27162A74003CA493 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		339BB73B27162A74003CA493 /* Build configuration list for PBXNativeTarget "SpotiFriends" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				339BB73C27162A74003CA493 /* Debug */,
+				339BB73D27162A74003CA493 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		339BB73E27162A74003CA493 /* Build configuration list for PBXNativeTarget "SpotiFriendsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				339BB73F27162A74003CA493 /* Debug */,
+				339BB74027162A74003CA493 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		339BB74127162A74003CA493 /* Build configuration list for PBXNativeTarget "SpotiFriendsUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				339BB74227162A74003CA493 /* Debug */,
+				339BB74327162A74003CA493 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 339BB70927162A71003CA493 /* Project object */;
+}

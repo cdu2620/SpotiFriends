@@ -16,11 +16,10 @@ var requestArtists = URLRequest(url: requestUrlArtists)
 var requestTracks = URLRequest(url: requestUrlTracks)
 var requestUserInfo = URLRequest(url: requestUrlUserInfo)
 
-// Specify HTTP Method to use
 
 // Set HTTP Request Header
 //request.setValue("application/json", forHTTPHeaderField: "Accept")
-let header = ["Content-Type": "application/json", "Authorization": "Bearer BQAFbRQXWKrB0EfzKqOu7d-2FWx9SiVvZJV8l4ruJapv4gLAw1wFjg15fLZvGU8n0YMtq_Iu4QGgxs3nFgLpfMtVR2t_ogM_NjJJYggbOmoLfsTU1n7WOU3NmrzUXYrXjYSUja-MN6-_IjEeSqt3w8OC7cKfGn8ChRWMq5QC2MSrYE54BtnrS7RK"]
+let header = ["Content-Type": "application/json", "Authorization": "Bearer BQDI8NR38zcl0hH8So3qDSBy7hPIVn_O_oupyN9PBK5wVK8rhtVXI9RyJdvfbYO2fe9A6VGQG4a36tWDeKKqCX1cVAa-W4sGfFGfpfWH4g9WxOjXkCVbBLTPFtrR1s28X5DKj5HnYxbKXriGpNE"]
 requestArtists.httpMethod = "GET"
 requestArtists.allHTTPHeaderFields = header
 
@@ -30,7 +29,6 @@ requestTracks.allHTTPHeaderFields = header
 requestUserInfo.httpMethod = "GET"
 requestUserInfo.allHTTPHeaderFields = header
 
-var jsonStr = Data()
 var dict = NSDictionary()
 
 // Send HTTP Request to fetch top artists for user
@@ -46,25 +44,34 @@ let task = URLSession.shared.dataTask(with: requestArtists) { (data, response, e
     if let response = response as? HTTPURLResponse {
         print("Response HTTP Status code: \(response.statusCode)")
     }
-      
-    // Convert HTTP Response Data to a simple String
-    if let data = data, let dataString = String(data: data, encoding: .utf8) {
-      jsonStr = dataString.data(using: .utf8)!
-    }
-  
+    
+    
     do {
-              if let convertedJsonIntoDict = try JSONSerialization.jsonObject(with: data!, options: []) as? NSDictionary {
-                  dict = convertedJsonIntoDict
-               }
+        if let convertedJsonIntoDict = try JSONSerialization.jsonObject(with: data!, options: []) as? NSDictionary {
+            dict = convertedJsonIntoDict
+        }
     } catch let error as NSError {
-               print(error.localizedDescription)
+        print(error.localizedDescription)
     }
-  
-  if let items = dict["items"] as? [NSDictionary] {
-    for item in items {
-      print(item["name"]!)
+    
+    if let items = dict["items"] as? [NSDictionary] {
+        for item in items {
+            //top 20 artists
+            print(item["name"]!)
+            
+            if let covers = item["images"] as? [NSDictionary] {
+                for c in covers {
+                    if c["height"] as! Int == 640 {
+                        // print the url of their Spotify profile pic
+                        print(c["url"]!)
+                    }
+                    
+                }
+                
+            }
+            
+        }
     }
-  }
     
 }
 
@@ -86,27 +93,40 @@ let task2 = URLSession.shared.dataTask(with: requestTracks) { (data, response, e
     if let response = response as? HTTPURLResponse {
         print("Response HTTP Status code: \(response.statusCode)")
     }
-      
-    // Convert HTTP Response Data to a simple String
-    if let data = data, let dataString = String(data: data, encoding: .utf8) {
-      jsonStr = dataString.data(using: .utf8)!
-        
-        
-    }
-  
+    
+    
     do {
-              if let convertedJsonIntoDict = try JSONSerialization.jsonObject(with: data!, options: []) as? NSDictionary {
-                  dictTracks = convertedJsonIntoDict
-               }
+        if let convertedJsonIntoDict = try JSONSerialization.jsonObject(with: data!, options: []) as? NSDictionary {
+            dictTracks = convertedJsonIntoDict
+        }
     } catch let error as NSError {
-               print(error.localizedDescription)
+        print(error.localizedDescription)
     }
-  
-  if let items = dictTracks["items"] as? [NSDictionary] {
-    for item in items {
-      print(item["name"]!)
+    
+    if let items = dictTracks["items"] as? [NSDictionary] {
+        for item in items {
+            // print the song name
+            print(item["name"]!)
+            if let all_covers = item["album"] as? NSDictionary {
+                if let covers = all_covers["images"] as? [NSDictionary] {
+                    for c in covers {
+                        if c["height"] as! Int == 64 {
+                            // print the url of the cover image
+                            print(c["url"]!)
+                        }
+                        
+                    }
+                }
+            }
+            
+            if let artists = item["artists"] as? [NSDictionary] {
+                for a in artists {
+                    // print the artist name
+                    print(a["name"]!)
+                }
+            }
+        }
     }
-  }
     
 }
 
@@ -125,42 +145,31 @@ let task3 = URLSession.shared.dataTask(with: requestUserInfo) { (data, response,
     if let response = response as? HTTPURLResponse {
         print("Response HTTP Status code: \(response.statusCode)")
     }
-      
+    
     // Convert HTTP Response Data to a simple String
-    if let data = data, let dataString = String(data: data, encoding: .utf8) {
-      jsonStr = dataString.data(using: .utf8)!
-    }
-  
+    
+    
     do {
-              if let convertedJsonIntoDict = try JSONSerialization.jsonObject(with: data!, options: []) as? NSDictionary {
-                  userInfo = convertedJsonIntoDict
-                let userName = userInfo.value(forKey: "display_name") as? String
-                var userImageUrl=""
-//                let userImageAllInfo = userInfo.value(forKey:"images") as? [NSDictionary]
-//                let userImageInfo =  userImageAllInfo[0]
-                if let userImageAllInfo = userInfo["images"] as? [NSDictionary] {
-                  for item in userImageAllInfo {
+        if let convertedJsonIntoDict = try JSONSerialization.jsonObject(with: data!, options: []) as? NSDictionary {
+            userInfo = convertedJsonIntoDict
+            let userName = userInfo.value(forKey: "display_name") as? String
+            var userImageUrl=""
+            if let userImageAllInfo = userInfo["images"] as? [NSDictionary] {
+                for item in userImageAllInfo {
                     if let url = item.value(forKey:"url") as? String{
                         userImageUrl = url
-                        print(url)
                     }
-                  }
                 }
-                
-                print(userName!)
-                print(userImageUrl)
-                print(userInfo)
-                
-               }
+            }
+            //print the person's name and profile pic url
+            print(userName!)
+            print(userImageUrl)
+            
+        }
     } catch let error as NSError {
-               print(error.localizedDescription)
+        print(error.localizedDescription)
     }
-  
-//  if let items = dictTracks["items"] as? [NSDictionary] {
-//    for item in items {
-//      print(item["name"]!)
-//    }
-//  }
+    
     
 }
 

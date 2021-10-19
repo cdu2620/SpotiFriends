@@ -11,19 +11,40 @@
                 "pronouns": "she/her",
                 "bio": "dinglelalalala"
             },
+            "matches": {
+                "two_way_match": [
+                    {
+                        "other_user_id": 2,
+                        "score": 70
+                    }
+                ],
+                "one_way_match": [
+                    {
+                        "other_user_id": 4,
+                        "score": 30
+                    },
+                    {
+                        "other_user_id": 3,
+                        "score": 20
+                    }
+                ]
+            },
             "spotify_history": {
                 "top_3_songs": [
                     {
+                        "song_id": "3mtDgtcl4bxDN73kIM216g",
                         "song_name": "Celebrity",
                         "artist":  "IU",
                         "album_cover": "https://i.scdn.co/image/ab67616d000048512fda07910d40ee81e620fe3f"
                     },
-                    {
+                    {   
+                        "song_id": "3mtDgtcl4bxDN73kIM216a",
                         "song_name": "Afterglow",
                         "artist": "Ed Sheeran",
                         "album_cover": "https://i.scdn.co/image/ab67616d0000485188e170d5ced543d191593fc8"
                     },
                     {
+                        "song_id": "3mtDgtcl4bxDN73kIM216b",
                         "song_name": "thank u, next",
                         "artist": "Ariana Grande",
                         "album_cover": "https://i.scdn.co/image/ab67616d0000485156ac7b86e090f307e218e9c8"
@@ -31,115 +52,138 @@
                 ],
                 "top_3_artists":[
                 {
+                    "artist_id": "06HL4z0CvFAxyc27GXpf02",
                     "name": "Taylor Swift",
                     "artist_image": "https://i.scdn.co/image/ab6761610000f17826dbdbdacda5c30dc95e0c2c"
                 },
                 {
+                    "artist_id":"2elBjNSdBE2Y3f0j1mjrql",
                     "name": "Jay Chou",
                     "artist_image": "https://i.scdn.co/image/ab6761610000f178a9989f6b9885c7aedc29c557"
                 },
                 {
+                    "artist_id":"0BezPR1Hn38i8qShQKunSD",
                     "name": "Zhou Shen",
                     "artist_image": "https://i.scdn.co/image/ab67616d00004851bf24352caf35d83d05519573"
                 } 
                 ],
                 "top_20_songs": [
                     { 
+                        "song_id": "3mtDgtcl4bxDN73kIM216c",
                         "song_name": "Strawberries & Cigarettes",
                         "artist": "Troye Sivan",
                         "album_cover": "https://i.scdn.co/image/ab67616d00004851c9eb4c87e1d7f5353908b712"
                     },
                     { 
+                        "song_id": "2dEJHnsuxIij7YeBbt0sVm",
+                        "song_name": "Blueberry Eyes (feat. SUGA of BTS)",
+                        "artist": "SUGA",
+                        "album_cover": "https://i.scdn.co/image/ab67616d000048519660ae57836f713884d86cbb"
+                    },
+                    { 
+                        "song_id": "3mtDgtcl4bxDN73kIM216c",
                         "song_name": "Strawberries & Cigarettes",
                         "artist": "Troye Sivan",
                         "album_cover": "https://i.scdn.co/image/ab67616d00004851c9eb4c87e1d7f5353908b712"
                     },
                     { 
+                        "song_id": "3mtDgtcl4bxDN73kIM216c",
                         "song_name": "Strawberries & Cigarettes",
                         "artist": "Troye Sivan",
                         "album_cover": "https://i.scdn.co/image/ab67616d00004851c9eb4c87e1d7f5353908b712"
                     },
                     { 
+                        "song_id": "3mtDgtcl4bxDN73kIM216c",
                         "song_name": "Strawberries & Cigarettes",
                         "artist": "Troye Sivan",
                         "album_cover": "https://i.scdn.co/image/ab67616d00004851c9eb4c87e1d7f5353908b712"
                     },
                     { 
+                        "song_id": "3mtDgtcl4bxDN73kIM216c",
                         "song_name": "Strawberries & Cigarettes",
                         "artist": "Troye Sivan",
                         "album_cover": "https://i.scdn.co/image/ab67616d00004851c9eb4c87e1d7f5353908b712"
                     },
                     { 
+                        "song_id": "3mtDgtcl4bxDN73kIM216c",
                         "song_name": "Strawberries & Cigarettes",
                         "artist": "Troye Sivan",
                         "album_cover": "https://i.scdn.co/image/ab67616d00004851c9eb4c87e1d7f5353908b712"
                     },
                     { 
+                        "song_id": "3mtDgtcl4bxDN73kIM216c",
                         "song_name": "Strawberries & Cigarettes",
                         "artist": "Troye Sivan",
                         "album_cover": "https://i.scdn.co/image/ab67616d00004851c9eb4c87e1d7f5353908b712"
                     },
                     { 
+                        "song_id": "3mtDgtcl4bxDN73kIM216c",
                         "song_name": "Strawberries & Cigarettes",
                         "artist": "Troye Sivan",
                         "album_cover": "https://i.scdn.co/image/ab67616d00004851c9eb4c87e1d7f5353908b712"
                     },
                     { 
+                        "song_id": "3mtDgtcl4bxDN73kIM216c",
                         "song_name": "Strawberries & Cigarettes",
                         "artist": "Troye Sivan",
                         "album_cover": "https://i.scdn.co/image/ab67616d00004851c9eb4c87e1d7f5353908b712"
                     },
                     { 
+                        "song_id": "3mtDgtcl4bxDN73kIM216c",
                         "song_name": "Strawberries & Cigarettes",
                         "artist": "Troye Sivan",
                         "album_cover": "https://i.scdn.co/image/ab67616d00004851c9eb4c87e1d7f5353908b712"
                     },
                     { 
+                        "song_id": "3mtDgtcl4bxDN73kIM216c",
                         "song_name": "Strawberries & Cigarettes",
                         "artist": "Troye Sivan",
                         "album_cover": "https://i.scdn.co/image/ab67616d00004851c9eb4c87e1d7f5353908b712"
                     },
                     { 
+                        "song_id": "3mtDgtcl4bxDN73kIM216c",
                         "song_name": "Strawberries & Cigarettes",
                         "artist": "Troye Sivan",
                         "album_cover": "https://i.scdn.co/image/ab67616d00004851c9eb4c87e1d7f5353908b712"
                     },
                     { 
+                        "song_id": "3mtDgtcl4bxDN73kIM216c",
                         "song_name": "Strawberries & Cigarettes",
                         "artist": "Troye Sivan",
                         "album_cover": "https://i.scdn.co/image/ab67616d00004851c9eb4c87e1d7f5353908b712"
                     },
                     { 
+                        "song_id": "3mtDgtcl4bxDN73kIM216c",
                         "song_name": "Strawberries & Cigarettes",
                         "artist": "Troye Sivan",
                         "album_cover": "https://i.scdn.co/image/ab67616d00004851c9eb4c87e1d7f5353908b712"
                     },
                     { 
+                        "song_id": "3mtDgtcl4bxDN73kIM216c",
                         "song_name": "Strawberries & Cigarettes",
                         "artist": "Troye Sivan",
                         "album_cover": "https://i.scdn.co/image/ab67616d00004851c9eb4c87e1d7f5353908b712"
                     },
                     { 
+                        "song_id": "3mtDgtcl4bxDN73kIM216c",
                         "song_name": "Strawberries & Cigarettes",
                         "artist": "Troye Sivan",
                         "album_cover": "https://i.scdn.co/image/ab67616d00004851c9eb4c87e1d7f5353908b712"
                     },
                     { 
+                        "song_id": "3mtDgtcl4bxDN73kIM216c",
                         "song_name": "Strawberries & Cigarettes",
                         "artist": "Troye Sivan",
                         "album_cover": "https://i.scdn.co/image/ab67616d00004851c9eb4c87e1d7f5353908b712"
                     },
                     { 
+                        "song_id": "3mtDgtcl4bxDN73kIM216c",
                         "song_name": "Strawberries & Cigarettes",
                         "artist": "Troye Sivan",
                         "album_cover": "https://i.scdn.co/image/ab67616d00004851c9eb4c87e1d7f5353908b712"
                     },
                     { 
-                        "song_name": "Strawberries & Cigarettes",
-                        "artist": "Troye Sivan",
-                        "album_cover": "https://i.scdn.co/image/ab67616d00004851c9eb4c87e1d7f5353908b712"
-                    },
-                    { 
+                        "song_id": "3mtDgtcl4bxDN73kIM216c",
                         "song_name": "Strawberries & Cigarettes",
                         "artist": "Troye Sivan",
                         "album_cover": "https://i.scdn.co/image/ab67616d00004851c9eb4c87e1d7f5353908b712"
@@ -147,82 +191,102 @@
                 ],
                 "top_20_artists": [
                     {
+                        "artist_id": "7Dx7RhX0mFuXhCOUgB01uM",
                         "name": "JJ Lin",
                         "artist_image": "https://i.scdn.co/image/ab6761610000f1789df903ffec836b86e12879d2"
                     },
                     {
+                        "artist_id": "7Dx7RhX0mFuXhCOUgB01uM",
                         "name": "JJ Lin",
                         "artist_image": "https://i.scdn.co/image/ab6761610000f1789df903ffec836b86e12879d2"
                     },
                     {
+                        "artist_id": "7Dx7RhX0mFuXhCOUgB01uM",
                         "name": "JJ Lin",
                         "artist_image": "https://i.scdn.co/image/ab6761610000f1789df903ffec836b86e12879d2"
                     },
                     {
+                        "artist_id": "7Dx7RhX0mFuXhCOUgB01uM",
                         "name": "JJ Lin",
                         "artist_image": "https://i.scdn.co/image/ab6761610000f1789df903ffec836b86e12879d2"
                     },
                     {
+                        "artist_id": "7Dx7RhX0mFuXhCOUgB01uM",
                         "name": "JJ Lin",
                         "artist_image": "https://i.scdn.co/image/ab6761610000f1789df903ffec836b86e12879d2"
                     },
                     {
+                        "artist_id": "7Dx7RhX0mFuXhCOUgB01uM",
                         "name": "JJ Lin",
                         "artist_image": "https://i.scdn.co/image/ab6761610000f1789df903ffec836b86e12879d2"
                     },
                     {
+                        "artist_id": "7Dx7RhX0mFuXhCOUgB01uM",
                         "name": "JJ Lin",
                         "artist_image": "https://i.scdn.co/image/ab6761610000f1789df903ffec836b86e12879d2"
                     },
                     {
+                        "artist_id": "7Dx7RhX0mFuXhCOUgB01uM",
                         "name": "JJ Lin",
                         "artist_image": "https://i.scdn.co/image/ab6761610000f1789df903ffec836b86e12879d2"
                     },
                     {
+                        "artist_id": "7Dx7RhX0mFuXhCOUgB01uM",
                         "name": "JJ Lin",
                         "artist_image": "https://i.scdn.co/image/ab6761610000f1789df903ffec836b86e12879d2"
                     },
                     {
+                        "artist_id": "7Dx7RhX0mFuXhCOUgB01uM",
                         "name": "JJ Lin",
                         "artist_image": "https://i.scdn.co/image/ab6761610000f1789df903ffec836b86e12879d2"
                     },
                     {
+                        "artist_id": "7Dx7RhX0mFuXhCOUgB01uM",
                         "name": "JJ Lin",
                         "artist_image": "https://i.scdn.co/image/ab6761610000f1789df903ffec836b86e12879d2"
                     },
                     {
+                        "artist_id": "7Dx7RhX0mFuXhCOUgB01uM",
                         "name": "JJ Lin",
                         "artist_image": "https://i.scdn.co/image/ab6761610000f1789df903ffec836b86e12879d2"
                     },
                     {
+                        "artist_id": "7Dx7RhX0mFuXhCOUgB01uM",
                         "name": "JJ Lin",
                         "artist_image": "https://i.scdn.co/image/ab6761610000f1789df903ffec836b86e12879d2"
                     },
                     {
+                        "artist_id": "7Dx7RhX0mFuXhCOUgB01uM",
                         "name": "JJ Lin",
                         "artist_image": "https://i.scdn.co/image/ab6761610000f1789df903ffec836b86e12879d2"
                     },
                     {
+                        "artist_id": "7Dx7RhX0mFuXhCOUgB01uM",
                         "name": "JJ Lin",
                         "artist_image": "https://i.scdn.co/image/ab6761610000f1789df903ffec836b86e12879d2"
                     },
                     {
+                        "artist_id": "7Dx7RhX0mFuXhCOUgB01uM",
                         "name": "JJ Lin",
                         "artist_image": "https://i.scdn.co/image/ab6761610000f1789df903ffec836b86e12879d2"
                     },
                     {
+                        "artist_id": "7Dx7RhX0mFuXhCOUgB01uM",
                         "name": "JJ Lin",
                         "artist_image": "https://i.scdn.co/image/ab6761610000f1789df903ffec836b86e12879d2"
                     },
                     {
+                        "artist_id": "7Dx7RhX0mFuXhCOUgB01uM",
                         "name": "JJ Lin",
                         "artist_image": "https://i.scdn.co/image/ab6761610000f1789df903ffec836b86e12879d2"
                     },
                     {
+                        "artist_id": "7Dx7RhX0mFuXhCOUgB01uM",
                         "name": "JJ Lin",
                         "artist_image": "https://i.scdn.co/image/ab6761610000f1789df903ffec836b86e12879d2"
                     },
                     {
+                        "artist_id": "7Dx7RhX0mFuXhCOUgB01uM",
                         "name": "JJ Lin",
                         "artist_image": "https://i.scdn.co/image/ab6761610000f1789df903ffec836b86e12879d2"
                     }
@@ -240,19 +304,36 @@
                 "pronouns": "they/she",
                 "bio": "hello"
             },
+            "matches": {
+                "two_way_match": [
+                    {
+                        "other_user_id": 1,
+                        "score": 70
+                    },
+                    {
+                        "other_user_id": 4,
+                        "score": 89
+                    }
+                ],
+                "one_way_match": [
+                ]
+            },
             "spotify_history": {
                 "top_3_songs": [
                     {
+                        "song_id": "699OTQXzgjhIYAHMy9RyPD",
                         "song_name": "SHOOT!",
                         "artist": "ITZY",
                         "album_cover": "https://i.scdn.co/image/ab67616d000048512c214d5de552996f3dd74f17"
                     },
                     {
+                        "song_id": "699OTQXzgjhIYAHMy9RyPA",
                         "song_name": "Butter",
                         "artist": "BTS",
                         "album_cover": "https://i.scdn.co/image/ab67616d00004851ed656680374294d5217193fa"
                     },
                     {
+                        "song_id": "699OTQXzgjhIYAHMy9RyPF",
                         "song_name": "DNA",
                         "artist": "BTS",
                         "album_cover": "https://i.scdn.co/image/ab67616d000048516feb6d9ed7891f40e9a524dd"
@@ -260,198 +341,241 @@
                 ],
                 "top_3_artists":[
                     {
+                        "artist_id": "3Nrfpe0tUJi4K4DXYWgMUX",
                         "name": "BTS",
                         "artist_image": "https://i.scdn.co/image/ab6761610000f17882a5d58059f81867b871d8b6" 
                     },
                     {
+                        "artist_id": "06HL4z0CvFAxyc27GXpf02",
                         "name": "Taylor Swift",
                         "artist_image":  "https://i.scdn.co/image/ab6761610000f17826dbdbdacda5c30dc95e0c2c"
                     },
                     {
+                        "artist_id": "0ghlgldX5Dd6720Q3qFyQB",
                         "name": "TOMORROW X TOGETHER",
                         "artist_image":  "https://i.scdn.co/image/ab6761610000f178e808489e4855c3e16e4844c3"
                     } 
                 ],
                 "top_20_songs": [
                     {
+                        "song_id": "699OTQXzgjhIYAHMy9RyPD",
                         "song_name": "SHOOT!",
                         "artist": "ITZY",
                         "album_cover": "https://i.scdn.co/image/ab67616d000048512c214d5de552996f3dd74f17"
                     },
                     {
+                        "song_id": "699OTQXzgjhIYAHMy9RyPA",
                         "song_name": "Butter",
                         "artist": "BTS",
                         "album_cover": "https://i.scdn.co/image/ab67616d00004851ed656680374294d5217193fa"
                     },
                     {
+                        "song_id": "699OTQXzgjhIYAHMy9RyPF",
                         "song_name": "DNA",
                         "artist": "BTS",
                         "album_cover": "https://i.scdn.co/image/ab67616d000048516feb6d9ed7891f40e9a524dd"
                     },
                     {
+                        "song_id": "699OTQXzgjhIYAHMy9RyPD",
                         "song_name": "SHOOT!",
                         "artist": "ITZY",
                         "album_cover": "https://i.scdn.co/image/ab67616d000048512c214d5de552996f3dd74f17"
                     },
                     {
+                        "song_id": "699OTQXzgjhIYAHMy9RyPA",
                         "song_name": "Butter",
                         "artist": "BTS",
                         "album_cover": "https://i.scdn.co/image/ab67616d00004851ed656680374294d5217193fa"
                     },
                     {
+                        "song_id": "699OTQXzgjhIYAHMy9RyPF",
                         "song_name": "DNA",
                         "artist": "BTS",
                         "album_cover": "https://i.scdn.co/image/ab67616d000048516feb6d9ed7891f40e9a524dd"
                     },
                     {
+                        "song_id": "699OTQXzgjhIYAHMy9RyPD",
                         "song_name": "SHOOT!",
                         "artist": "ITZY",
                         "album_cover": "https://i.scdn.co/image/ab67616d000048512c214d5de552996f3dd74f17"
                     },
                     {
+                        "song_id": "699OTQXzgjhIYAHMy9RyPA",
                         "song_name": "Butter",
                         "artist": "BTS",
                         "album_cover": "https://i.scdn.co/image/ab67616d00004851ed656680374294d5217193fa"
                     },
                     {
+                        "song_id": "699OTQXzgjhIYAHMy9RyPF",
                         "song_name": "DNA",
                         "artist": "BTS",
                         "album_cover": "https://i.scdn.co/image/ab67616d000048516feb6d9ed7891f40e9a524dd"
                     },
                     {
+                        "song_id": "699OTQXzgjhIYAHMy9RyPD",
                         "song_name": "SHOOT!",
                         "artist": "ITZY",
                         "album_cover": "https://i.scdn.co/image/ab67616d000048512c214d5de552996f3dd74f17"
                     },
                     {
+                        "song_id": "699OTQXzgjhIYAHMy9RyPA",
                         "song_name": "Butter",
                         "artist": "BTS",
                         "album_cover": "https://i.scdn.co/image/ab67616d00004851ed656680374294d5217193fa"
                     },
                     {
+                        "song_id": "699OTQXzgjhIYAHMy9RyPF",
                         "song_name": "DNA",
                         "artist": "BTS",
                         "album_cover": "https://i.scdn.co/image/ab67616d000048516feb6d9ed7891f40e9a524dd"
                     },
                     {
+                        "song_id": "699OTQXzgjhIYAHMy9RyPD",
                         "song_name": "SHOOT!",
                         "artist": "ITZY",
                         "album_cover": "https://i.scdn.co/image/ab67616d000048512c214d5de552996f3dd74f17"
                     },
                     {
+                        "song_id": "699OTQXzgjhIYAHMy9RyPA",
                         "song_name": "Butter",
                         "artist": "BTS",
                         "album_cover": "https://i.scdn.co/image/ab67616d00004851ed656680374294d5217193fa"
                     },
                     {
+                        "song_id": "699OTQXzgjhIYAHMy9RyPF",
                         "song_name": "DNA",
                         "artist": "BTS",
                         "album_cover": "https://i.scdn.co/image/ab67616d000048516feb6d9ed7891f40e9a524dd"
                     },
                     {
+                        "song_id": "699OTQXzgjhIYAHMy9RyPD",
                         "song_name": "SHOOT!",
                         "artist": "ITZY",
                         "album_cover": "https://i.scdn.co/image/ab67616d000048512c214d5de552996f3dd74f17"
                     },
                     {
+                        "song_id": "699OTQXzgjhIYAHMy9RyPA",
                         "song_name": "Butter",
                         "artist": "BTS",
                         "album_cover": "https://i.scdn.co/image/ab67616d00004851ed656680374294d5217193fa"
                     },
                     {
+                        "song_id": "699OTQXzgjhIYAHMy9RyPF",
                         "song_name": "DNA",
                         "artist": "BTS",
                         "album_cover": "https://i.scdn.co/image/ab67616d000048516feb6d9ed7891f40e9a524dd"
                     },
                     {
+                        "song_id": "699OTQXzgjhIYAHMy9RyPD",
+                        "song_name": "SHOOT!",
+                        "artist": "ITZY",
+                        "album_cover": "https://i.scdn.co/image/ab67616d000048512c214d5de552996f3dd74f17"
+                    },
+                    {
+                        "song_id": "699OTQXzgjhIYAHMy9RyPA",
                         "song_name": "Butter",
                         "artist": "BTS",
                         "album_cover": "https://i.scdn.co/image/ab67616d00004851ed656680374294d5217193fa"
-                    },
-                    {
-                        "song_name": "DNA",
-                        "artist": "BTS",
-                        "album_cover": "https://i.scdn.co/image/ab67616d000048516feb6d9ed7891f40e9a524dd"
                     }
                 ],
                 "top_20_artists": [
                     {
+                        "artist_id": "3Nrfpe0tUJi4K4DXYWgMUX",
                         "name": "BTS",
                         "artist_image": "https://i.scdn.co/image/ab6761610000f17882a5d58059f81867b871d8b6" 
                     },
                     {
+                        "artist_id": "06HL4z0CvFAxyc27GXpf02",
                         "name": "Taylor Swift",
                         "artist_image":  "https://i.scdn.co/image/ab6761610000f17826dbdbdacda5c30dc95e0c2c"
                     },
                     {
+                        "artist_id": "0ghlgldX5Dd6720Q3qFyQB",
                         "name": "TOMORROW X TOGETHER",
                         "artist_image":  "https://i.scdn.co/image/ab6761610000f178e808489e4855c3e16e4844c3"
-                    },
+                    }, 
                     {
+                        "artist_id": "3Nrfpe0tUJi4K4DXYWgMUX",
                         "name": "BTS",
                         "artist_image": "https://i.scdn.co/image/ab6761610000f17882a5d58059f81867b871d8b6" 
                     },
                     {
+                        "artist_id": "06HL4z0CvFAxyc27GXpf02",
                         "name": "Taylor Swift",
                         "artist_image":  "https://i.scdn.co/image/ab6761610000f17826dbdbdacda5c30dc95e0c2c"
                     },
                     {
+                        "artist_id": "0ghlgldX5Dd6720Q3qFyQB",
                         "name": "TOMORROW X TOGETHER",
                         "artist_image":  "https://i.scdn.co/image/ab6761610000f178e808489e4855c3e16e4844c3"
                     },
                     {
+                        "artist_id": "3Nrfpe0tUJi4K4DXYWgMUX",
                         "name": "BTS",
                         "artist_image": "https://i.scdn.co/image/ab6761610000f17882a5d58059f81867b871d8b6" 
                     },
                     {
+                        "artist_id": "06HL4z0CvFAxyc27GXpf02",
                         "name": "Taylor Swift",
                         "artist_image":  "https://i.scdn.co/image/ab6761610000f17826dbdbdacda5c30dc95e0c2c"
                     },
                     {
+                        "artist_id": "0ghlgldX5Dd6720Q3qFyQB",
                         "name": "TOMORROW X TOGETHER",
                         "artist_image":  "https://i.scdn.co/image/ab6761610000f178e808489e4855c3e16e4844c3"
                     },
                     {
+                        "artist_id": "3Nrfpe0tUJi4K4DXYWgMUX",
                         "name": "BTS",
                         "artist_image": "https://i.scdn.co/image/ab6761610000f17882a5d58059f81867b871d8b6" 
                     },
                     {
+                        "artist_id": "06HL4z0CvFAxyc27GXpf02",
                         "name": "Taylor Swift",
                         "artist_image":  "https://i.scdn.co/image/ab6761610000f17826dbdbdacda5c30dc95e0c2c"
                     },
                     {
+                        "artist_id": "0ghlgldX5Dd6720Q3qFyQB",
                         "name": "TOMORROW X TOGETHER",
                         "artist_image":  "https://i.scdn.co/image/ab6761610000f178e808489e4855c3e16e4844c3"
                     },
                     {
+                        "artist_id": "3Nrfpe0tUJi4K4DXYWgMUX",
                         "name": "BTS",
                         "artist_image": "https://i.scdn.co/image/ab6761610000f17882a5d58059f81867b871d8b6" 
                     },
                     {
+                        "artist_id": "06HL4z0CvFAxyc27GXpf02",
                         "name": "Taylor Swift",
                         "artist_image":  "https://i.scdn.co/image/ab6761610000f17826dbdbdacda5c30dc95e0c2c"
                     },
                     {
+                        "artist_id": "0ghlgldX5Dd6720Q3qFyQB",
                         "name": "TOMORROW X TOGETHER",
                         "artist_image":  "https://i.scdn.co/image/ab6761610000f178e808489e4855c3e16e4844c3"
                     },
                     {
+                        "artist_id": "3Nrfpe0tUJi4K4DXYWgMUX",
                         "name": "BTS",
                         "artist_image": "https://i.scdn.co/image/ab6761610000f17882a5d58059f81867b871d8b6" 
                     },
                     {
+                        "artist_id": "06HL4z0CvFAxyc27GXpf02",
                         "name": "Taylor Swift",
                         "artist_image":  "https://i.scdn.co/image/ab6761610000f17826dbdbdacda5c30dc95e0c2c"
                     },
                     {
+                        "artist_id": "0ghlgldX5Dd6720Q3qFyQB",
                         "name": "TOMORROW X TOGETHER",
                         "artist_image":  "https://i.scdn.co/image/ab6761610000f178e808489e4855c3e16e4844c3"
                     },
                     {
+                        "artist_id": "3Nrfpe0tUJi4K4DXYWgMUX",
                         "name": "BTS",
                         "artist_image": "https://i.scdn.co/image/ab6761610000f17882a5d58059f81867b871d8b6" 
                     },
                     {
+                        "artist_id": "06HL4z0CvFAxyc27GXpf02",
                         "name": "Taylor Swift",
                         "artist_image":  "https://i.scdn.co/image/ab6761610000f17826dbdbdacda5c30dc95e0c2c"
                     }
@@ -469,19 +593,36 @@
                 "pronouns": "she/her",
                 "bio": "I am joyce"
             },
+            "matches": {
+                "two_way_match": [
+                    {
+                        "other_user_id": 4,
+                        "score": 67
+                    }
+                ],
+                "one_way_match": [
+                    {
+                        "other_user_id": 2,
+                        "score": 55
+                    }
+                ]
+            },
             "spotify_history": {
                 "top_3_songs": [
                     {
+                        "song_id": "699OTQXzgjhIYAHMy9RyAP",
                         "song_name": "Heat Waves",
                         "artist": "Glass Animals",
                         "album_cover": "https://i.scdn.co/image/ab67616d00004851712701c5e263efc8726b1464"
                     },
                     {
+                        "song_id": "699OTQXzgjhIYAHMy9RyAP",
                         "song_name": "Heat Waves",
                         "artist": "Glass Animals",
                         "album_cover": "https://i.scdn.co/image/ab67616d00004851712701c5e263efc8726b1464"
                     },
                     {
+                        "song_id": "699OTQXzgjhIYAHMy9RyAP",
                         "song_name": "Heat Waves",
                         "artist": "Glass Animals",
                         "album_cover": "https://i.scdn.co/image/ab67616d00004851712701c5e263efc8726b1464"
@@ -489,115 +630,138 @@
                 ],
                 "top_3_artists":[
                     {
+                        "artist_id": "4yvcSjfu4PC0CYQyLy4wSq",
                         "name": "Glass Animals",
                         "artist_image": "https://i.scdn.co/image/ab6761610000f178e113ca9b6bcd3d3cfc3ad784"
                     },
                     {
+                        "artist_id": "4yvcSjfu4PC0CYQyLy4wSq",
                         "name": "Glass Animals",
                         "artist_image": "https://i.scdn.co/image/ab6761610000f178e113ca9b6bcd3d3cfc3ad784"
                     },
                     {
+                        "artist_id": "4yvcSjfu4PC0CYQyLy4wSq",
                         "name": "Glass Animals",
                         "artist_image": "https://i.scdn.co/image/ab6761610000f178e113ca9b6bcd3d3cfc3ad784"
                     }
                 ],
                 "top_20_songs": [
                     { 
+                        "song_id": "699OTQXzgjhIYAHMy9RyAP",
                         "song_name": "Heat Waves",
                         "artist": "Glass Animals",
                         "album_cover": "https://i.scdn.co/image/ab67616d00004851712701c5e263efc8726b1464"
                     },
                     { 
+                        "song_id": "699OTQXzgjhIYAHMy9RyAP",
                         "song_name": "Heat Waves",
                         "artist": "Glass Animals",
                         "album_cover": "https://i.scdn.co/image/ab67616d00004851712701c5e263efc8726b1464"
                     },
                     { 
+                        "song_id": "699OTQXzgjhIYAHMy9RyAP",
                         "song_name": "Heat Waves",
                         "artist": "Glass Animals",
                         "album_cover": "https://i.scdn.co/image/ab67616d00004851712701c5e263efc8726b1464"
                     },
                     { 
+                        "song_id": "699OTQXzgjhIYAHMy9RyAP",
                         "song_name": "Heat Waves",
                         "artist": "Glass Animals",
                         "album_cover": "https://i.scdn.co/image/ab67616d00004851712701c5e263efc8726b1464"
                     },
                     { 
+                        "song_id": "699OTQXzgjhIYAHMy9RyAP",
                         "song_name": "Heat Waves",
                         "artist": "Glass Animals",
                         "album_cover": "https://i.scdn.co/image/ab67616d00004851712701c5e263efc8726b1464"
                     },
                     { 
+                        "song_id": "699OTQXzgjhIYAHMy9RyAP",
                         "song_name": "Heat Waves",
                         "artist": "Glass Animals",
                         "album_cover": "https://i.scdn.co/image/ab67616d00004851712701c5e263efc8726b1464"
                     },
                     { 
+                        "song_id": "699OTQXzgjhIYAHMy9RyAP",
                         "song_name": "Heat Waves",
                         "artist": "Glass Animals",
                         "album_cover": "https://i.scdn.co/image/ab67616d00004851712701c5e263efc8726b1464"
                     },
                     { 
+                        "song_id": "699OTQXzgjhIYAHMy9RyAP",
                         "song_name": "Heat Waves",
                         "artist": "Glass Animals",
                         "album_cover": "https://i.scdn.co/image/ab67616d00004851712701c5e263efc8726b1464"
                     },
                     { 
+                        "song_id": "699OTQXzgjhIYAHMy9RyAP",
                         "song_name": "Heat Waves",
                         "artist": "Glass Animals",
                         "album_cover": "https://i.scdn.co/image/ab67616d00004851712701c5e263efc8726b1464"
                     },
                     { 
+                        "song_id": "699OTQXzgjhIYAHMy9RyAP",
                         "song_name": "Heat Waves",
                         "artist": "Glass Animals",
                         "album_cover": "https://i.scdn.co/image/ab67616d00004851712701c5e263efc8726b1464"
                     },
                     { 
+                        "song_id": "699OTQXzgjhIYAHMy9RyAP",
                         "song_name": "Heat Waves",
                         "artist": "Glass Animals",
                         "album_cover": "https://i.scdn.co/image/ab67616d00004851712701c5e263efc8726b1464"
                     },
                     { 
+                        "song_id": "699OTQXzgjhIYAHMy9RyAP",
                         "song_name": "Heat Waves",
                         "artist": "Glass Animals",
                         "album_cover": "https://i.scdn.co/image/ab67616d00004851712701c5e263efc8726b1464"
                     },
                     { 
+                        "song_id": "699OTQXzgjhIYAHMy9RyAP",
                         "song_name": "Heat Waves",
                         "artist": "Glass Animals",
                         "album_cover": "https://i.scdn.co/image/ab67616d00004851712701c5e263efc8726b1464"
                     },
                     { 
+                        "song_id": "699OTQXzgjhIYAHMy9RyAP",
                         "song_name": "Heat Waves",
                         "artist": "Glass Animals",
                         "album_cover": "https://i.scdn.co/image/ab67616d00004851712701c5e263efc8726b1464"
                     },
                     { 
+                        "song_id": "699OTQXzgjhIYAHMy9RyAP",
                         "song_name": "Heat Waves",
                         "artist": "Glass Animals",
                         "album_cover": "https://i.scdn.co/image/ab67616d00004851712701c5e263efc8726b1464"
                     },
                     { 
+                        "song_id": "699OTQXzgjhIYAHMy9RyAP",
                         "song_name": "Heat Waves",
                         "artist": "Glass Animals",
                         "album_cover": "https://i.scdn.co/image/ab67616d00004851712701c5e263efc8726b1464"
                     },
                     { 
+                        "song_id": "699OTQXzgjhIYAHMy9RyAP",
                         "song_name": "Heat Waves",
                         "artist": "Glass Animals",
                         "album_cover": "https://i.scdn.co/image/ab67616d00004851712701c5e263efc8726b1464"
                     },
                     { 
+                        "song_id": "699OTQXzgjhIYAHMy9RyAP",
                         "song_name": "Heat Waves",
                         "artist": "Glass Animals",
                         "album_cover": "https://i.scdn.co/image/ab67616d00004851712701c5e263efc8726b1464"
                     },
                     { 
+                        "song_id": "699OTQXzgjhIYAHMy9RyAP",
                         "song_name": "Heat Waves",
                         "artist": "Glass Animals",
                         "album_cover": "https://i.scdn.co/image/ab67616d00004851712701c5e263efc8726b1464"
                     },
                     { 
+                        "song_id": "699OTQXzgjhIYAHMy9RyAP",
                         "song_name": "Heat Waves",
                         "artist": "Glass Animals",
                         "album_cover": "https://i.scdn.co/image/ab67616d00004851712701c5e263efc8726b1464"
@@ -605,82 +769,102 @@
                 ],
                 "top_20_artists": [
                     {
+                        "artist_id": "4yvcSjfu4PC0CYQyLy4wSq",
                         "name": "Glass Animals",
                         "artist_image": "https://i.scdn.co/image/ab6761610000f178e113ca9b6bcd3d3cfc3ad784"
                     },
                     {
+                        "artist_id": "4yvcSjfu4PC0CYQyLy4wSq",
                         "name": "Glass Animals",
                         "artist_image": "https://i.scdn.co/image/ab6761610000f178e113ca9b6bcd3d3cfc3ad784"
                     },
                     {
+                        "artist_id": "4yvcSjfu4PC0CYQyLy4wSq",
                         "name": "Glass Animals",
                         "artist_image": "https://i.scdn.co/image/ab6761610000f178e113ca9b6bcd3d3cfc3ad784"
                     },
                     {
+                        "artist_id": "4yvcSjfu4PC0CYQyLy4wSq",
                         "name": "Glass Animals",
                         "artist_image": "https://i.scdn.co/image/ab6761610000f178e113ca9b6bcd3d3cfc3ad784"
                     },
                     {
+                        "artist_id": "4yvcSjfu4PC0CYQyLy4wSq",
                         "name": "Glass Animals",
                         "artist_image": "https://i.scdn.co/image/ab6761610000f178e113ca9b6bcd3d3cfc3ad784"
                     },
                     {
+                        "artist_id": "4yvcSjfu4PC0CYQyLy4wSq",
                         "name": "Glass Animals",
                         "artist_image": "https://i.scdn.co/image/ab6761610000f178e113ca9b6bcd3d3cfc3ad784"
                     },
                     {
+                        "artist_id": "4yvcSjfu4PC0CYQyLy4wSq",
                         "name": "Glass Animals",
                         "artist_image": "https://i.scdn.co/image/ab6761610000f178e113ca9b6bcd3d3cfc3ad784"
                     },
                     {
+                        "artist_id": "4yvcSjfu4PC0CYQyLy4wSq",
                         "name": "Glass Animals",
                         "artist_image": "https://i.scdn.co/image/ab6761610000f178e113ca9b6bcd3d3cfc3ad784"
                     },
                     {
+                        "artist_id": "4yvcSjfu4PC0CYQyLy4wSq",
                         "name": "Glass Animals",
                         "artist_image": "https://i.scdn.co/image/ab6761610000f178e113ca9b6bcd3d3cfc3ad784"
                     },
                     {
+                        "artist_id": "4yvcSjfu4PC0CYQyLy4wSq",
                         "name": "Glass Animals",
                         "artist_image": "https://i.scdn.co/image/ab6761610000f178e113ca9b6bcd3d3cfc3ad784"
                     },
                     {
+                        "artist_id": "4yvcSjfu4PC0CYQyLy4wSq",
                         "name": "Glass Animals",
                         "artist_image": "https://i.scdn.co/image/ab6761610000f178e113ca9b6bcd3d3cfc3ad784"
                     },
                     {
+                        "artist_id": "4yvcSjfu4PC0CYQyLy4wSq",
                         "name": "Glass Animals",
                         "artist_image": "https://i.scdn.co/image/ab6761610000f178e113ca9b6bcd3d3cfc3ad784"
                     },
                     {
+                        "artist_id": "4yvcSjfu4PC0CYQyLy4wSq",
                         "name": "Glass Animals",
                         "artist_image": "https://i.scdn.co/image/ab6761610000f178e113ca9b6bcd3d3cfc3ad784"
                     },
                     {
+                        "artist_id": "4yvcSjfu4PC0CYQyLy4wSq",
                         "name": "Glass Animals",
                         "artist_image": "https://i.scdn.co/image/ab6761610000f178e113ca9b6bcd3d3cfc3ad784"
                     },
                     {
+                        "artist_id": "4yvcSjfu4PC0CYQyLy4wSq",
                         "name": "Glass Animals",
                         "artist_image": "https://i.scdn.co/image/ab6761610000f178e113ca9b6bcd3d3cfc3ad784"
                     },
                     {
+                        "artist_id": "4yvcSjfu4PC0CYQyLy4wSq",
                         "name": "Glass Animals",
                         "artist_image": "https://i.scdn.co/image/ab6761610000f178e113ca9b6bcd3d3cfc3ad784"
                     },
                     {
+                        "artist_id": "4yvcSjfu4PC0CYQyLy4wSq",
                         "name": "Glass Animals",
                         "artist_image": "https://i.scdn.co/image/ab6761610000f178e113ca9b6bcd3d3cfc3ad784"
                     },
                     {
+                        "artist_id": "4yvcSjfu4PC0CYQyLy4wSq",
                         "name": "Glass Animals",
                         "artist_image": "https://i.scdn.co/image/ab6761610000f178e113ca9b6bcd3d3cfc3ad784"
                     },
                     {
+                        "artist_id": "4yvcSjfu4PC0CYQyLy4wSq",
                         "name": "Glass Animals",
                         "artist_image": "https://i.scdn.co/image/ab6761610000f178e113ca9b6bcd3d3cfc3ad784"
                     },
                     {
+                        "artist_id": "4yvcSjfu4PC0CYQyLy4wSq",
                         "name": "Glass Animals",
                         "artist_image": "https://i.scdn.co/image/ab6761610000f178e113ca9b6bcd3d3cfc3ad784"
                     }
@@ -698,20 +882,36 @@
                 "age": 20,
                 "bio": "todo"
             },
-    
+            "matches": {
+                "two_way_match": [
+                    {
+                        "other_user_id": 2,
+                        "score": 89
+                    },
+                    {
+                        "other_user_id": 3,
+                        "score": 67
+                    }
+                ],
+                "one_way_match": [
+                ]
+            },
             "spotify_history": {
                 "top_3_songs": [
                     {
+                        "song_id": "699OTQXzgjhIYAHMy9R7rb",
                         "song_name": "Romance",
                         "artist":  "YOASOBI",
                         "album_cover": "https://i.scdn.co/image/ab67616d00004851ab5161c23cb5643c4ca61b8c"
                     },
                     {
+                        "song_id": "699OTQXzgjhIYAHMy9R7ra",
                         "song_name": "LALISA",
                         "artist":  "LISA",
                         "album_cover": "https://i.scdn.co/image/ab67616d00004851330f11fb125bb80b760f9e19"
                     },
                     {
+                        "song_id": "699OTQXzgjhIYAHMy9R7ji",
                         "song_name": "You can't sit with us",
                         "artist":  "SUNMI",
                         "album_cover": "https://i.scdn.co/image/ab67616d000048516c22dfd393c41eb98307dba3"
@@ -719,207 +919,243 @@
                 ],
                 "top_3_artists":[
                     {
+                        "artist_id": "49tQo2QULno7gxHutgccqF",
                         "name": "LANY",
                         "artist_image": "https://i.scdn.co/image/ab6761610000f178417454f70dfe686c18caeb2a"
                     },
                     {
+                        "artist_id": "0Vw76uk7P8yVtTClWyOhac",
                         "name": "HONNE",
                         "artist_image": "https://i.scdn.co/image/ab6761610000f178c8db673b6abf599da60d633b"
                     },
                     {
+                        "artist_id": "64tJ2EAv1R6UaZqc4iOCyj",
                         "name": "YOASOBI",
                         "artist_image": "https://i.scdn.co/image/ab6761610000f1782d2fd0dc219e6d12cf138e29"
                     } 
                 ],
                 "top_20_songs": [
                     {
+                        "song_id": "699OTQXzgjhIYAHMy9R7rb",
                         "song_name": "Romance",
                         "artist":  "YOASOBI",
                         "album_cover": "https://i.scdn.co/image/ab67616d00004851ab5161c23cb5643c4ca61b8c"
                     },
                     {
+                        "song_id": "699OTQXzgjhIYAHMy9R7ra",
                         "song_name": "LALISA",
                         "artist":  "LISA",
                         "album_cover": "https://i.scdn.co/image/ab67616d00004851330f11fb125bb80b760f9e19"
-                        
                     },
                     {
+                        "song_id": "699OTQXzgjhIYAHMy9R7ji",
                         "song_name": "You can't sit with us",
                         "artist":  "SUNMI",
-                        "album_cover": "https://i.scdn.co/image/ab67616d000048516c22dfd393c41eb98307dba3" 
+                        "album_cover": "https://i.scdn.co/image/ab67616d000048516c22dfd393c41eb98307dba3"
                     },
                     {
+                        "song_id": "699OTQXzgjhIYAHMy9R7rb",
                         "song_name": "Romance",
                         "artist":  "YOASOBI",
                         "album_cover": "https://i.scdn.co/image/ab67616d00004851ab5161c23cb5643c4ca61b8c"
                     },
                     {
+                        "song_id": "699OTQXzgjhIYAHMy9R7ra",
                         "song_name": "LALISA",
                         "artist":  "LISA",
                         "album_cover": "https://i.scdn.co/image/ab67616d00004851330f11fb125bb80b760f9e19"
-                        
                     },
                     {
+                        "song_id": "699OTQXzgjhIYAHMy9R7ji",
                         "song_name": "You can't sit with us",
                         "artist":  "SUNMI",
-                        "album_cover": "https://i.scdn.co/image/ab67616d000048516c22dfd393c41eb98307dba3" 
+                        "album_cover": "https://i.scdn.co/image/ab67616d000048516c22dfd393c41eb98307dba3"
                     },
                     {
+                        "song_id": "699OTQXzgjhIYAHMy9R7rb",
                         "song_name": "Romance",
                         "artist":  "YOASOBI",
                         "album_cover": "https://i.scdn.co/image/ab67616d00004851ab5161c23cb5643c4ca61b8c"
                     },
                     {
+                        "song_id": "699OTQXzgjhIYAHMy9R7ra",
                         "song_name": "LALISA",
                         "artist":  "LISA",
                         "album_cover": "https://i.scdn.co/image/ab67616d00004851330f11fb125bb80b760f9e19"
-                        
                     },
                     {
+                        "song_id": "699OTQXzgjhIYAHMy9R7ji",
                         "song_name": "You can't sit with us",
                         "artist":  "SUNMI",
-                        "album_cover": "https://i.scdn.co/image/ab67616d000048516c22dfd393c41eb98307dba3" 
+                        "album_cover": "https://i.scdn.co/image/ab67616d000048516c22dfd393c41eb98307dba3"
                     },
                     {
+                        "song_id": "699OTQXzgjhIYAHMy9R7rb",
                         "song_name": "Romance",
                         "artist":  "YOASOBI",
                         "album_cover": "https://i.scdn.co/image/ab67616d00004851ab5161c23cb5643c4ca61b8c"
                     },
                     {
+                        "song_id": "699OTQXzgjhIYAHMy9R7ra",
                         "song_name": "LALISA",
                         "artist":  "LISA",
                         "album_cover": "https://i.scdn.co/image/ab67616d00004851330f11fb125bb80b760f9e19"
-                        
                     },
                     {
+                        "song_id": "699OTQXzgjhIYAHMy9R7ji",
                         "song_name": "You can't sit with us",
                         "artist":  "SUNMI",
-                        "album_cover": "https://i.scdn.co/image/ab67616d000048516c22dfd393c41eb98307dba3" 
+                        "album_cover": "https://i.scdn.co/image/ab67616d000048516c22dfd393c41eb98307dba3"
                     },
                     {
+                        "song_id": "699OTQXzgjhIYAHMy9R7rb",
                         "song_name": "Romance",
                         "artist":  "YOASOBI",
                         "album_cover": "https://i.scdn.co/image/ab67616d00004851ab5161c23cb5643c4ca61b8c"
                     },
                     {
+                        "song_id": "699OTQXzgjhIYAHMy9R7ra",
                         "song_name": "LALISA",
                         "artist":  "LISA",
                         "album_cover": "https://i.scdn.co/image/ab67616d00004851330f11fb125bb80b760f9e19"
-                        
                     },
                     {
+                        "song_id": "699OTQXzgjhIYAHMy9R7ji",
                         "song_name": "You can't sit with us",
                         "artist":  "SUNMI",
-                        "album_cover": "https://i.scdn.co/image/ab67616d000048516c22dfd393c41eb98307dba3" 
+                        "album_cover": "https://i.scdn.co/image/ab67616d000048516c22dfd393c41eb98307dba3"
                     },
                     {
+                        "song_id": "699OTQXzgjhIYAHMy9R7rb",
                         "song_name": "Romance",
                         "artist":  "YOASOBI",
                         "album_cover": "https://i.scdn.co/image/ab67616d00004851ab5161c23cb5643c4ca61b8c"
                     },
                     {
+                        "song_id": "699OTQXzgjhIYAHMy9R7ra",
                         "song_name": "LALISA",
                         "artist":  "LISA",
                         "album_cover": "https://i.scdn.co/image/ab67616d00004851330f11fb125bb80b760f9e19"
-                        
                     },
                     {
+                        "song_id": "699OTQXzgjhIYAHMy9R7ji",
                         "song_name": "You can't sit with us",
                         "artist":  "SUNMI",
-                        "album_cover": "https://i.scdn.co/image/ab67616d000048516c22dfd393c41eb98307dba3" 
-                    }, 
+                        "album_cover": "https://i.scdn.co/image/ab67616d000048516c22dfd393c41eb98307dba3"
+                    },
                     {
+                        "song_id": "699OTQXzgjhIYAHMy9R7rb",
+                        "song_name": "Romance",
+                        "artist":  "YOASOBI",
+                        "album_cover": "https://i.scdn.co/image/ab67616d00004851ab5161c23cb5643c4ca61b8c"
+                    },
+                    {
+                        "song_id": "699OTQXzgjhIYAHMy9R7ra",
                         "song_name": "LALISA",
                         "artist":  "LISA",
                         "album_cover": "https://i.scdn.co/image/ab67616d00004851330f11fb125bb80b760f9e19"
-                        
-                    },
-                    {
-                        "song_name": "You can't sit with us",
-                        "artist":  "SUNMI",
-                        "album_cover": "https://i.scdn.co/image/ab67616d000048516c22dfd393c41eb98307dba3" 
-                    }  
+                    }
                 ],
                 "top_20_artists": [
                     {
+                        "artist_id": "49tQo2QULno7gxHutgccqF",
                         "name": "LANY",
                         "artist_image": "https://i.scdn.co/image/ab6761610000f178417454f70dfe686c18caeb2a"
                     },
                     {
+                        "artist_id": "0Vw76uk7P8yVtTClWyOhac",
                         "name": "HONNE",
                         "artist_image": "https://i.scdn.co/image/ab6761610000f178c8db673b6abf599da60d633b"
                     },
                     {
+                        "artist_id": "64tJ2EAv1R6UaZqc4iOCyj",
                         "name": "YOASOBI",
                         "artist_image": "https://i.scdn.co/image/ab6761610000f1782d2fd0dc219e6d12cf138e29"
                     },
                     {
+                        "artist_id": "49tQo2QULno7gxHutgccqF",
                         "name": "LANY",
                         "artist_image": "https://i.scdn.co/image/ab6761610000f178417454f70dfe686c18caeb2a"
                     },
                     {
+                        "artist_id": "0Vw76uk7P8yVtTClWyOhac",
                         "name": "HONNE",
                         "artist_image": "https://i.scdn.co/image/ab6761610000f178c8db673b6abf599da60d633b"
                     },
                     {
+                        "artist_id": "64tJ2EAv1R6UaZqc4iOCyj",
                         "name": "YOASOBI",
                         "artist_image": "https://i.scdn.co/image/ab6761610000f1782d2fd0dc219e6d12cf138e29"
                     },
                     {
+                        "artist_id": "49tQo2QULno7gxHutgccqF",
                         "name": "LANY",
                         "artist_image": "https://i.scdn.co/image/ab6761610000f178417454f70dfe686c18caeb2a"
                     },
                     {
+                        "artist_id": "0Vw76uk7P8yVtTClWyOhac",
                         "name": "HONNE",
                         "artist_image": "https://i.scdn.co/image/ab6761610000f178c8db673b6abf599da60d633b"
                     },
                     {
+                        "artist_id": "64tJ2EAv1R6UaZqc4iOCyj",
                         "name": "YOASOBI",
                         "artist_image": "https://i.scdn.co/image/ab6761610000f1782d2fd0dc219e6d12cf138e29"
                     },
                     {
+                        "artist_id": "49tQo2QULno7gxHutgccqF",
                         "name": "LANY",
                         "artist_image": "https://i.scdn.co/image/ab6761610000f178417454f70dfe686c18caeb2a"
                     },
                     {
+                        "artist_id": "0Vw76uk7P8yVtTClWyOhac",
                         "name": "HONNE",
                         "artist_image": "https://i.scdn.co/image/ab6761610000f178c8db673b6abf599da60d633b"
                     },
                     {
+                        "artist_id": "64tJ2EAv1R6UaZqc4iOCyj",
                         "name": "YOASOBI",
                         "artist_image": "https://i.scdn.co/image/ab6761610000f1782d2fd0dc219e6d12cf138e29"
                     },
                     {
+                        "artist_id": "49tQo2QULno7gxHutgccqF",
                         "name": "LANY",
                         "artist_image": "https://i.scdn.co/image/ab6761610000f178417454f70dfe686c18caeb2a"
                     },
                     {
+                        "artist_id": "0Vw76uk7P8yVtTClWyOhac",
                         "name": "HONNE",
                         "artist_image": "https://i.scdn.co/image/ab6761610000f178c8db673b6abf599da60d633b"
                     },
                     {
+                        "artist_id": "64tJ2EAv1R6UaZqc4iOCyj",
                         "name": "YOASOBI",
                         "artist_image": "https://i.scdn.co/image/ab6761610000f1782d2fd0dc219e6d12cf138e29"
                     },
                     {
+                        "artist_id": "49tQo2QULno7gxHutgccqF",
                         "name": "LANY",
                         "artist_image": "https://i.scdn.co/image/ab6761610000f178417454f70dfe686c18caeb2a"
                     },
                     {
+                        "artist_id": "0Vw76uk7P8yVtTClWyOhac",
                         "name": "HONNE",
                         "artist_image": "https://i.scdn.co/image/ab6761610000f178c8db673b6abf599da60d633b"
                     },
                     {
+                        "artist_id": "64tJ2EAv1R6UaZqc4iOCyj",
                         "name": "YOASOBI",
                         "artist_image": "https://i.scdn.co/image/ab6761610000f1782d2fd0dc219e6d12cf138e29"
-                    }, 
-                    {
-                        "name": "HONNE",
-                        "artist_image": "https://i.scdn.co/image/ab6761610000f178c8db673b6abf599da60d633b"
                     },
                     {
-                        "name": "YOASOBI",
-                        "artist_image": "https://i.scdn.co/image/ab6761610000f1782d2fd0dc219e6d12cf138e29"
+                        "artist_id": "49tQo2QULno7gxHutgccqF",
+                        "name": "LANY",
+                        "artist_image": "https://i.scdn.co/image/ab6761610000f178417454f70dfe686c18caeb2a"
+                    },
+                    {
+                        "artist_id": "0Vw76uk7P8yVtTClWyOhac",
+                        "name": "HONNE",
+                        "artist_image": "https://i.scdn.co/image/ab6761610000f178c8db673b6abf599da60d633b"
                     }
                 ]
             }

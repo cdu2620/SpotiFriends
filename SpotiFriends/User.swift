@@ -8,6 +8,7 @@
 import Foundation
 import SwiftUI
 
+// Database of all users on the SpotiFriends app
 struct Users: Codable {
     let users: [User]
     
@@ -16,6 +17,7 @@ struct Users: Codable {
     }
 }
 
+// An individual user has personal information, the list of people they've matched with, and their Spotify top artists/songs
 struct User: Codable, Identifiable {
     let id: Int
     let personal_info: [Info]
@@ -26,10 +28,11 @@ struct User: Codable, Identifiable {
         case id = "uid"
         case personal_info
         case matches
-        case spotify_history
+        case spotify_history = "items"
     }
 }
 
+// In the list of matches, we indicate if both parties have matchedd, or just the first user has matched.
 struct Matches: Codable {
     let two_way_match: [Match]
     let one_way_match: [Match]
@@ -39,6 +42,7 @@ struct Matches: Codable {
     }
 }
 
+//In a match, we know the other person's user ID (refer to struct User) as well as the % match score.
 struct Match: Codable {
     let other_user_id: Int
     let score: Int
@@ -48,6 +52,7 @@ struct Match: Codable {
     }
 }
 
+//The personal info section contains the person's first name, last name, age, pronouns, bio and profile picture. The name & profile picture will be populated by an external API call.
 struct Info: Codable {
     let f_name: String
     let l_name: String
@@ -57,14 +62,16 @@ struct Info: Codable {
     let profile_pic: String
     
     enum CodingKeys : String, CodingKey {
-        case f_name
+        case f_name = "display_name"
         case l_name
         case age
         case pronouns
         case bio
-        case profile_pic
+        case profile_pic = "url"
     }
 }
+
+//The history contains the top 3 songs/artists to be displayed on the user's own profile, as well as the top 20 songs/artists to be used in comparison with other users.
 
 struct History: Codable {
     let top_3_songs: [Song]
@@ -79,30 +86,32 @@ struct History: Codable {
     }
 }
 
+// The song data will be populated by an external API call; namely, we want to store the song ID, name, artist and cover art.
 struct Song: Codable, Identifiable {
-    let id: Int
+    let id: String
     let song_name: String
     let artist: String
     let album_cover: String
     
     enum CodingKeys : String, CodingKey {
-        case id = "song_id"
-        case song_name
+        case id
+        case song_name = "name"
         case artist
-        case album_cover
+        case album_cover = "url"
     }
     
 }
 
+// The artist data will be populated by an external API call; namely, we want to store the artist ID, name, and cover art.
 struct Artist: Codable, Identifiable {
-    let id: Int
+    let id: String
     let name: String
     let artist_image: String
     
     enum CodingKeys : String, CodingKey {
-        case id = "artist_id"
+        case id
         case name
-        case artist_image
+        case artist_image = "url"
 
     }
     

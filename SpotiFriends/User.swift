@@ -19,12 +19,32 @@ struct Users: Codable {
 struct User: Codable, Identifiable {
     let id: Int
     let personal_info: [Info]
+    let matches: [Matches]
     let spotify_history: [History]
     
     enum CodingKeys : String, CodingKey {
         case id = "uid"
         case personal_info
+        case matches
         case spotify_history
+    }
+}
+
+struct Matches: Codable {
+    let two_way_match: [Match]
+    let one_way_match: [Match]
+    enum CodingKeys : String, CodingKey {
+        case two_way_match
+        case one_way_match
+    }
+}
+
+struct Match: Codable {
+    let other_user_id: Int
+    let score: Int
+    enum CodingKeys : String, CodingKey {
+        case other_user_id
+        case score
     }
 }
 
@@ -34,6 +54,7 @@ struct Info: Codable {
     let age: Int
     let pronouns: String
     let bio: String
+    let profile_pic: String
     
     enum CodingKeys : String, CodingKey {
         case f_name
@@ -41,6 +62,7 @@ struct Info: Codable {
         case age
         case pronouns
         case bio
+        case profile_pic
     }
 }
 

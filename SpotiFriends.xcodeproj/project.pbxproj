@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3373AD9B271F3E9F000E25E5 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3373AD9A271F3E9F000E25E5 /* User.swift */; };
 		339BB71527162A71003CA493 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339BB71427162A71003CA493 /* AppDelegate.swift */; };
 		339BB71727162A71003CA493 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339BB71627162A71003CA493 /* SceneDelegate.swift */; };
 		339BB71927162A71003CA493 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339BB71827162A71003CA493 /* ContentView.swift */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3373AD9A271F3E9F000E25E5 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		339BB71127162A71003CA493 /* SpotiFriends.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpotiFriends.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		339BB71427162A71003CA493 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		339BB71627162A71003CA493 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 				339BB71F27162A73003CA493 /* LaunchScreen.storyboard */,
 				339BB72227162A73003CA493 /* Info.plist */,
 				339BB71C27162A73003CA493 /* Preview Content */,
+				3373AD9A271F3E9F000E25E5 /* User.swift */,
 			);
 			path = SpotiFriends;
 			sourceTree = "<group>";
@@ -272,6 +275,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3373AD9B271F3E9F000E25E5 /* User.swift in Sources */,
 				339BB71527162A71003CA493 /* AppDelegate.swift in Sources */,
 				339BB71727162A71003CA493 /* SceneDelegate.swift in Sources */,
 				339BB71927162A71003CA493 /* ContentView.swift in Sources */,

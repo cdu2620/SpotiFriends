@@ -16,7 +16,8 @@
 		339BB72127162A73003CA493 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 339BB71F27162A73003CA493 /* LaunchScreen.storyboard */; };
 		339BB72C27162A74003CA493 /* SpotiFriendsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339BB72B27162A74003CA493 /* SpotiFriendsTests.swift */; };
 		339BB73727162A74003CA493 /* SpotiFriendsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339BB73627162A74003CA493 /* SpotiFriendsUITests.swift */; };
-		339BB74D27162B8C003CA493 /* SpotifyiOS.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 339BB74C27162B8C003CA493 /* SpotifyiOS.xcframework */; };
+		33F523CF27211DF300650BAD /* SpotifyiOS.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33F523BA27211D4D00650BAD /* SpotifyiOS.xcframework */; };
+		33F523D027211DF300650BAD /* SpotifyiOS.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 33F523BA27211D4D00650BAD /* SpotifyiOS.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		46F7EB700F6D43014969C9DB /* Pods_SpotiFriendsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE977AC110927556B617F391 /* Pods_SpotiFriendsTests.framework */; };
 		C456EA5F4481AFD52D56375F /* Pods_SpotiFriends.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF1568AED54D070229528602 /* Pods_SpotiFriends.framework */; };
 		EC41DA2DEC8457FAFC8848BA /* Pods_SpotiFriends_SpotiFriendsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5F0455A643ED8C4BE9D0CA5 /* Pods_SpotiFriends_SpotiFriendsUITests.framework */; };
@@ -39,6 +40,20 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		33F523D127211DF300650BAD /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				33F523D027211DF300650BAD /* SpotifyiOS.xcframework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		336E48962720F78D001B794D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		339BB71127162A71003CA493 /* SpotiFriends.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpotiFriends.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -55,8 +70,9 @@
 		339BB73227162A74003CA493 /* SpotiFriendsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpotiFriendsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		339BB73627162A74003CA493 /* SpotiFriendsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotiFriendsUITests.swift; sourceTree = "<group>"; };
 		339BB73827162A74003CA493 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		339BB74C27162B8C003CA493 /* SpotifyiOS.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SpotifyiOS.xcframework; path = "../ios-sdk/SpotifyiOS.xcframework"; sourceTree = "<group>"; };
 		339BB75427162D72003CA493 /* SpotiFriends-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SpotiFriends-Bridging-Header.h"; sourceTree = "<group>"; };
+		33F523BA27211D4D00650BAD /* SpotifyiOS.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SpotifyiOS.xcframework; path = "../Downloads/ios-sdk-master/SpotifyiOS.xcframework"; sourceTree = "<group>"; };
+		33F523CA27211DD100650BAD /* SpotifyiOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpotifyiOS.framework; path = "../../Downloads/ios-sdk-master/SpotifyiOS.framework"; sourceTree = "<group>"; };
 		4A97391F05652084E7560246 /* Pods-SpotiFriendsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpotiFriendsTests.release.xcconfig"; path = "Target Support Files/Pods-SpotiFriendsTests/Pods-SpotiFriendsTests.release.xcconfig"; sourceTree = "<group>"; };
 		4F430A619D8006F36D2E598A /* Pods-SpotiFriendsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpotiFriendsTests.debug.xcconfig"; path = "Target Support Files/Pods-SpotiFriendsTests/Pods-SpotiFriendsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		82D630C9125D8FA194D9D67D /* Pods-SpotiFriends.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpotiFriends.release.xcconfig"; path = "Target Support Files/Pods-SpotiFriends/Pods-SpotiFriends.release.xcconfig"; sourceTree = "<group>"; };
@@ -73,7 +89,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				339BB74D27162B8C003CA493 /* SpotifyiOS.xcframework in Frameworks */,
+				33F523CF27211DF300650BAD /* SpotifyiOS.xcframework in Frameworks */,
 				C456EA5F4481AFD52D56375F /* Pods_SpotiFriends.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -111,7 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				339BB75427162D72003CA493 /* SpotiFriends-Bridging-Header.h */,
-				339BB74C27162B8C003CA493 /* SpotifyiOS.xcframework */,
+				33F523BA27211D4D00650BAD /* SpotifyiOS.xcframework */,
 				339BB71327162A71003CA493 /* SpotiFriends */,
 				339BB72A27162A74003CA493 /* SpotiFriendsTests */,
 				339BB73527162A74003CA493 /* SpotiFriendsUITests */,
@@ -134,6 +150,7 @@
 		339BB71327162A71003CA493 /* SpotiFriends */ = {
 			isa = PBXGroup;
 			children = (
+				33F523CA27211DD100650BAD /* SpotifyiOS.framework */,
 				336E48962720F78D001B794D /* GoogleService-Info.plist */,
 				339BB71427162A71003CA493 /* AppDelegate.swift */,
 				339BB71627162A71003CA493 /* SceneDelegate.swift */,
@@ -197,6 +214,7 @@
 				339BB70E27162A71003CA493 /* Frameworks */,
 				339BB70F27162A71003CA493 /* Resources */,
 				AD26E250763235EA8E3E2213 /* [CP] Embed Pods Frameworks */,
+				33F523D127211DF300650BAD /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -608,6 +626,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				OTHER_CODE_SIGN_FLAGS = "--generate-entitlement-der";
 				PRODUCT_BUNDLE_IDENTIFIER = com.CMU.SpotiFriends;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -630,6 +649,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				OTHER_CODE_SIGN_FLAGS = "--generate-entitlement-der";
 				PRODUCT_BUNDLE_IDENTIFIER = com.CMU.SpotiFriends;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

@@ -6,19 +6,17 @@
 //
 
 import SwiftUI
+import Firebase
 
 struct ContentView: View {
+    @ObservedObject var model = ViewModel()
     var body: some View {
-        Text("Spotifriends")
-            .padding()
-        Spacer()
-        Text("Click to login")
-            .padding()
+        List(model.list) { item in
+            Text(item.f_name)
+            
+        }
     }
-}
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
+    init() {
+        model.getData()
     }
 }

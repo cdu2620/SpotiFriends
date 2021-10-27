@@ -38,6 +38,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SPTSessionManagerDelegate
         let requestedScopes: SPTScope = [.appRemoteControl]
         self.sessionManager.initiateSession(with: requestedScopes, options: .default)
         FirebaseApp.configure()
+        
         return true
     }
     

@@ -6,6 +6,7 @@ target 'SpotiFriends' do
   use_frameworks!
   pod 'Firebase/Core'
   pod 'Firebase/Firestore'
+  pod 'Firebase/Database'
 
   # Pods for SpotiFriends
 

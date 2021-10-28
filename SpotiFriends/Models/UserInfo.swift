@@ -15,7 +15,7 @@ class UserInfo: Identifiable {
     var pronouns: String?
     var bio: String?
     var profile_picture_url: String?
-    var profile_picture: Image?
+    var profile_picture: UIImage?
     
     
     init(f_name: String, l_name: String, age: Int, pronouns: String? = nil, bio: String? = nil, profile_pic_url: String? = nil) {
@@ -25,8 +25,11 @@ class UserInfo: Identifiable {
         self.pronouns = pronouns
         self.bio = bio
         self.profile_picture_url = profile_pic_url
-        if let image = profile_pic_url {
-            self.profile_picture = Image(image)
+        
+        let url = URL(string: self.profile_picture_url!)
+        let data = try? Data(contentsOf:url!)
+        if let imageData = data {
+            self.profile_picture = UIImage(data: imageData)
         }
     }
 }

@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		330476A327274C5C004A5764 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330476A227274C5C004A5764 /* ViewController.swift */; };
 		330476A827275133004A5764 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330476A727275133004A5764 /* UserInfo.swift */; };
-		330476AC2727519B004A5764 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330476AB2727519B004A5764 /* ViewModel.swift */; };
 		336E48972720F78D001B794D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 336E48962720F78D001B794D /* GoogleService-Info.plist */; };
 		339BB71527162A71003CA493 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339BB71427162A71003CA493 /* AppDelegate.swift */; };
 		339BB71727162A71003CA493 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339BB71627162A71003CA493 /* SceneDelegate.swift */; };
@@ -60,7 +59,6 @@
 /* Begin PBXFileReference section */
 		330476A227274C5C004A5764 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		330476A727275133004A5764 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
-		330476AB2727519B004A5764 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		336E48962720F78D001B794D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		339BB71127162A71003CA493 /* SpotiFriends.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpotiFriends.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		339BB71427162A71003CA493 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -175,7 +173,6 @@
 				339BB72227162A73003CA493 /* Info.plist */,
 				339BB71C27162A73003CA493 /* Preview Content */,
 				330476A227274C5C004A5764 /* ViewController.swift */,
-				330476AB2727519B004A5764 /* ViewModel.swift */,
 			);
 			path = SpotiFriends;
 			sourceTree = "<group>";
@@ -463,7 +460,6 @@
 				339BB71727162A71003CA493 /* SceneDelegate.swift in Sources */,
 				330476A327274C5C004A5764 /* ViewController.swift in Sources */,
 				330476A827275133004A5764 /* UserInfo.swift in Sources */,
-				330476AC2727519B004A5764 /* ViewModel.swift in Sources */,
 				339BB71927162A71003CA493 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

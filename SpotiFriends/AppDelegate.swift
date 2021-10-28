@@ -5,6 +5,7 @@ import UIKit
 import Firebase
 
 @UIApplicationMain
+
 class AppDelegate: UIResponder, UIApplicationDelegate, SPTSessionManagerDelegate, SPTAppRemoteDelegate, SPTAppRemotePlayerStateDelegate {
     var window: UIWindow?
     

@@ -60,7 +60,6 @@ struct Info: Codable {
     let pronouns: String
     let bio: String
     let profile_pic: String
-    let profile_picture: Image
     
     enum CodingKeys : String, CodingKey {
         case f_name = "display_name"

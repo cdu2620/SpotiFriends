@@ -16,7 +16,9 @@
 		339BB72127162A73003CA493 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 339BB71F27162A73003CA493 /* LaunchScreen.storyboard */; };
 		339BB72C27162A74003CA493 /* SpotiFriendsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339BB72B27162A74003CA493 /* SpotiFriendsTests.swift */; };
 		339BB73727162A74003CA493 /* SpotiFriendsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339BB73627162A74003CA493 /* SpotiFriendsUITests.swift */; };
-		339BB74D27162B8C003CA493 /* SpotifyiOS.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 339BB74C27162B8C003CA493 /* SpotifyiOS.xcframework */; };
+		A076FDEC272B2CAD00BE5782 /* SpotifyiOS.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A076FDEB272B2CAD00BE5782 /* SpotifyiOS.xcframework */; };
+		A076FDF6272B2D5300BE5782 /* ProfileDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = A076FDF5272B2D5300BE5782 /* ProfileDetails.swift */; };
+		A076FE07272B301C00BE5782 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A076FE06272B301C00BE5782 /* UserInfo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,8 +54,10 @@
 		339BB73227162A74003CA493 /* SpotiFriendsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpotiFriendsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		339BB73627162A74003CA493 /* SpotiFriendsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotiFriendsUITests.swift; sourceTree = "<group>"; };
 		339BB73827162A74003CA493 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		339BB74C27162B8C003CA493 /* SpotifyiOS.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SpotifyiOS.xcframework; path = "../ios-sdk/SpotifyiOS.xcframework"; sourceTree = "<group>"; };
 		339BB75427162D72003CA493 /* SpotiFriends-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SpotiFriends-Bridging-Header.h"; sourceTree = "<group>"; };
+		A076FDEB272B2CAD00BE5782 /* SpotifyiOS.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SpotifyiOS.xcframework; path = "../../Downloads/ios-sdk-master/SpotifyiOS.xcframework"; sourceTree = "<group>"; };
+		A076FDF5272B2D5300BE5782 /* ProfileDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileDetails.swift; path = ../../../../Downloads/ProfileDetails.swift; sourceTree = "<group>"; };
+		A076FE06272B301C00BE5782 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,7 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				339BB74D27162B8C003CA493 /* SpotifyiOS.xcframework in Frameworks */,
+				A076FDEC272B2CAD00BE5782 /* SpotifyiOS.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,7 +90,7 @@
 			isa = PBXGroup;
 			children = (
 				339BB75427162D72003CA493 /* SpotiFriends-Bridging-Header.h */,
-				339BB74C27162B8C003CA493 /* SpotifyiOS.xcframework */,
+				A076FDEB272B2CAD00BE5782 /* SpotifyiOS.xcframework */,
 				339BB71327162A71003CA493 /* SpotiFriends */,
 				339BB72A27162A74003CA493 /* SpotiFriendsTests */,
 				339BB73527162A74003CA493 /* SpotiFriendsUITests */,
@@ -107,6 +111,8 @@
 		339BB71327162A71003CA493 /* SpotiFriends */ = {
 			isa = PBXGroup;
 			children = (
+				A076FDFA272B2D8400BE5782 /* Models */,
+				A076FDF4272B2D3900BE5782 /* Views */,
 				339BB71427162A71003CA493 /* AppDelegate.swift */,
 				339BB71627162A71003CA493 /* SceneDelegate.swift */,
 				339BB71827162A71003CA493 /* ContentView.swift */,
@@ -114,7 +120,6 @@
 				339BB71F27162A73003CA493 /* LaunchScreen.storyboard */,
 				339BB72227162A73003CA493 /* Info.plist */,
 				339BB71C27162A73003CA493 /* Preview Content */,
-				3373AD9A271F3E9F000E25E5 /* User.swift */,
 			);
 			path = SpotiFriends;
 			sourceTree = "<group>";
@@ -143,6 +148,23 @@
 				339BB73827162A74003CA493 /* Info.plist */,
 			);
 			path = SpotiFriendsUITests;
+			sourceTree = "<group>";
+		};
+		A076FDF4272B2D3900BE5782 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A076FDF5272B2D5300BE5782 /* ProfileDetails.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A076FDFA272B2D8400BE5782 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3373AD9A271F3E9F000E25E5 /* User.swift */,
+				A076FE06272B301C00BE5782 /* UserInfo.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -277,7 +299,9 @@
 			files = (
 				3373AD9B271F3E9F000E25E5 /* User.swift in Sources */,
 				339BB71527162A71003CA493 /* AppDelegate.swift in Sources */,
+				A076FDF6272B2D5300BE5782 /* ProfileDetails.swift in Sources */,
 				339BB71727162A71003CA493 /* SceneDelegate.swift in Sources */,
+				A076FE07272B301C00BE5782 /* UserInfo.swift in Sources */,
 				339BB71927162A71003CA493 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

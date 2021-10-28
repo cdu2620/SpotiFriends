@@ -20,9 +20,9 @@ struct Users: Codable {
 // An individual user has personal information, the list of people they've matched with, and their Spotify top artists/songs
 struct User: Codable, Identifiable {
     let id: Int
-    let personal_info: [Info]
-    let matches: [Matches]
-    let spotify_history: [History]
+    let personal_info: Info
+    let matches: Matches
+    let spotify_history: History
     
     enum CodingKeys : String, CodingKey {
         case id = "uid"
@@ -60,6 +60,7 @@ struct Info: Codable {
     let pronouns: String
     let bio: String
     let profile_pic: String
+    let profile_picture: Image
     
     enum CodingKeys : String, CodingKey {
         case f_name = "display_name"

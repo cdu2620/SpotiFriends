@@ -9,7 +9,7 @@ import Foundation
 import Firebase
 import FirebaseDatabase
 
-struct History: Identifiable {
+class History: Identifiable {
     let ref: DatabaseReference?
     let id: String = UUID().uuidString
     let top_3_songs: [Song]

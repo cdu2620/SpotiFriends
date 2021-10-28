@@ -9,7 +9,7 @@ import Foundation
 import Firebase
 import FirebaseDatabase
 
-struct Artist: Identifiable {
+class Artist: Identifiable {
     let ref: DatabaseReference?
     let id: String
     let name: String

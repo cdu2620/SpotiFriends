@@ -107,7 +107,7 @@ class ViewModel: ObservableObject {
  
                             
                         } // end of individual user
-                print(self.users)
+                print(self.users[0].personal_info.age)
             }})
     }
     

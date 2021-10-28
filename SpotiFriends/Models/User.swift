@@ -9,7 +9,7 @@ import Foundation
 import Firebase
 import FirebaseDatabase
 
-struct User: Identifiable {
+class User: Identifiable {
     let ref: DatabaseReference?
     let id: String = UUID().uuidString
     let personal_info: UserInfo

@@ -21,6 +21,7 @@
 		A076FE25272B384300BE5782 /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = A076FE24272B384300BE5782 /* Song.swift */; };
 		A076FE2D272B3A5C00BE5782 /* SpotifyHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A076FE2C272B3A5C00BE5782 /* SpotifyHistory.swift */; };
 		A0DAF59F272C672300D3B355 /* ProfileDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0DAF59E272C672300D3B355 /* ProfileDetail.swift */; };
+		A0DAF5A7272C67ED00D3B355 /* Artist.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0DAF5A6272C67ED00D3B355 /* Artist.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,7 @@
 		A076FE24272B384300BE5782 /* Song.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.xcfilelist; };
 		A076FE2C272B3A5C00BE5782 /* SpotifyHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyHistory.swift; sourceTree = "<group>"; };
 		A0DAF59E272C672300D3B355 /* ProfileDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDetail.swift; sourceTree = "<group>"; };
+		A0DAF5A6272C67ED00D3B355 /* Artist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artist.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +171,7 @@
 				A076FE06272B301C00BE5782 /* UserInfo.swift */,
 				A076FE24272B384300BE5782 /* Song.swift */,
 				A076FE2C272B3A5C00BE5782 /* SpotifyHistory.swift */,
+				A0DAF5A6272C67ED00D3B355 /* Artist.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -306,6 +309,7 @@
 				A076FE25272B384300BE5782 /* Song.swift in Sources */,
 				3373AD9B271F3E9F000E25E5 /* User.swift in Sources */,
 				339BB71527162A71003CA493 /* AppDelegate.swift in Sources */,
+				A0DAF5A7272C67ED00D3B355 /* Artist.swift in Sources */,
 				A0DAF59F272C672300D3B355 /* ProfileDetail.swift in Sources */,
 				339BB71727162A71003CA493 /* SceneDelegate.swift in Sources */,
 				A076FE07272B301C00BE5782 /* UserInfo.swift in Sources */,

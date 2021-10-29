@@ -7,6 +7,9 @@ target 'SpotiFriends' do
   pod 'Firebase/Core'
   pod 'Firebase/Firestore'
   pod 'Firebase/Database'
+pod 'Alamofire', '~> 4.1'
+pod 'Spartan'
+
 
   # Pods for SpotiFriends
 

@@ -338,6 +338,12 @@ PODS:
     - abseil/base/base_internal
     - abseil/base/config
     - abseil/meta/type_traits
+  - Alamofire (4.9.1)
+  - AlamofireObjectMapper (5.2.1):
+    - Alamofire (~> 4.7)
+    - ObjectMapper (~> 3.4)
+  - AlamoRecord (1.2.2):
+    - AlamofireObjectMapper (~> 5.1)
   - BoringSSL-GRPC (0.0.7):
     - BoringSSL-GRPC/Implementation (= 0.0.7)
     - BoringSSL-GRPC/Interface (= 0.0.7)
@@ -476,16 +482,24 @@ PODS:
     - nanopb/encode (= 2.30908.0)
   - nanopb/decode (2.30908.0)
   - nanopb/encode (2.30908.0)
+  - ObjectMapper (3.5.3)
   - PromisesObjC (2.0.0)
+  - Spartan (1.2.1):
+    - AlamoRecord (~> 1.2.0)
 
 DEPENDENCIES:
+  - Alamofire (~> 4.1)
   - Firebase/Core
   - Firebase/Database
   - Firebase/Firestore
+  - Spartan
 
 SPEC REPOS:
   trunk:
     - abseil
+    - Alamofire
+    - AlamofireObjectMapper
+    - AlamoRecord
     - BoringSSL-GRPC
     - Firebase
     - FirebaseAnalytics
@@ -501,10 +515,15 @@ SPEC REPOS:
     - gRPC-Core
     - leveldb-library
     - nanopb
+    - ObjectMapper
     - PromisesObjC
+    - Spartan
 
 SPEC CHECKSUMS:
   abseil: 6c8eb7892aefa08d929b39f9bb108e5367e3228f
+  Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
+  AlamofireObjectMapper: 1989f690e982b71921b9253f53a4f33a9bc00d88
+  AlamoRecord: 5850c563a811fdca40cd361b1b27622004bccef3
   BoringSSL-GRPC: 8edf627ee524575e2f8d19d56f068b448eea3879
   Firebase: 629510f1a9ddb235f3a7c5c8ceb23ba887f0f814
   FirebaseAnalytics: 5506ea8b867d8423485a84b4cd612d279f7b0b8a
@@ -520,8 +539,10 @@ SPEC CHECKSUMS:
   gRPC-Core: 4afa11bfbedf7cdecd04de535a9e046893404ed5
   leveldb-library: 50c7b45cbd7bf543c81a468fe557a16ae3db8729
   nanopb: a0ba3315591a9ae0a16a309ee504766e90db0c96
+  ObjectMapper: 97111c97e054a6ee25917662106689f0b4127b37
   PromisesObjC: 68159ce6952d93e17b2dfe273b8c40907db5ba58
+  Spartan: 2fb99ad25f2b0e8182799f251c800091977f0a40
 
-PODFILE CHECKSUM: d17a9d893b9a55f516ef1abe6a78395016a8b734
+PODFILE CHECKSUM: c663628142b95185b9d6472955754c60fd4320c9
 
 COCOAPODS: 1.11.2

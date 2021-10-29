@@ -10,6 +10,7 @@ import UIKit
 import Foundation
 import FirebaseFirestore
 import FirebaseDatabase
+import Spartan
 
 class ViewModel: ObservableObject {
     @Published var list = [UserInfo]()
@@ -17,6 +18,12 @@ class ViewModel: ObservableObject {
     let ref = Database.database().reference()
     
     func getData() {
+        
+        _ = Spartan.getMyTopArtists(limit: 20, offset: 0, timeRange: .mediumTerm, success: { (pagingObject) in
+            // Get the artists via pagingObject.items
+        }, failure: { (error) in
+            print(error)
+        })
         let liveRef = self.ref.child("users")
         liveRef.observe(.value, with: {
             (snapshot) in if let snapCast = snapshot.value as? [String:AnyObject]{

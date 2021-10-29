@@ -10,7 +10,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SPTSessionManagerDelegate
     var window: UIWindow?
     
     let SpotifyClientID = "315f0b82a8ab414297fc77c7830b9254"
-    let SpotifyRedirectURL = URL(string: "spotify-ios-quick-start://spotify-login-callback")!
+    let SpotifyRedirectURL = URL(string: "http://localhost:8888/callback")!
     
     lazy var configuration = SPTConfiguration(
         clientID: SpotifyClientID,

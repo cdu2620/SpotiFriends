@@ -21,7 +21,7 @@ struct ContentView: View {
         
         NavigationView{
             NavigationLink(
-                destination: ProfileDetails(user: testUser, spotifyHistory: spotifyHistory),
+                destination: ProfileDetail(user: testUser, spotifyHistory: spotifyHistory),
                 label: {
                     Text("Navigate")
                 })

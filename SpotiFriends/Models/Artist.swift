@@ -25,6 +25,7 @@ class Artist: Identifiable {
         
         let url = URL(string: self.artist_image_url!)
         let artist_image = try? Data(contentsOf:url!)
+        
     }
     
     init?(snapshot: DataSnapshot) {

@@ -15,6 +15,7 @@ struct ProfileDetail: View {
     var spotifyHistory: SpotifyHistory
     
     var body: some View {
+        // Display User Info
         VStack{
             Image(uiImage: user.profile_picture!)
                     .scaledToFit()
@@ -36,51 +37,51 @@ struct ProfileDetail: View {
                 Text(bio)
             }
             Spacer().frame(height: 50)
-//            HStack{
-//                Text("Your Top 3 Artists: ").fontWeight(.bold)
-//                Button(action: {}) {
-//                  Text("Edit")
-//                }
-//            }
-//            HStack{
-//                VStack{
-//                    user.spotify_history.top_3_artists[0].artist_picture
-//                        .resizable()
-//                        .scaledToFit()
-//                        .clipShape(Circle())
-//                        .overlay(
-//                          Circle()
-//                            .stroke(Color.white, lineWidth: 4)
-//                            .shadow(radius: 2)
-//                        )
-//                    Text(user.spotify_history.top_3_artists[0].name)
-//                }
-//                VStack{
-//                    user.spotify_history.top_3_artists[1].artist_picture
-//                        .resizable()
-//                        .scaledToFit()
-//                        .clipShape(Circle())
-//                        .overlay(
-//                          Circle()
-//                            .stroke(Color.white, lineWidth: 4)
-//                            .shadow(radius: 2)
-//                        )
-//                    Text(user.spotify_history.top_3_artists[1].name)
-//                }
-//                VStack{
-//                    user.spotify_history.top_3_artists[2].artist_picture
-//                        .resizable()
-//                        .scaledToFit()
-//                        .clipShape(Circle())
-//                        .overlay(
-//                          Circle()
-//                            .stroke(Color.white, lineWidth: 4)
-//                            .shadow(radius: 2)
-//                        )
-//                    Text(user.spotify_history.top_3_artists[2].name)
-//                }
-//            }
-//
+        
+            // Display Top 3 Artists
+            HStack{
+                VStack{
+                    if let imageData = spotifyHistory.top_3_artists[0].artist_image {
+                        Image(uiImage: UIImage(data: imageData)!)
+                                .scaledToFit()
+                                .clipShape(Circle())
+                                .overlay(
+                                  Circle()
+                                    .stroke(Color.white, lineWidth: 4)
+                                    .shadow(radius: 5)
+                              )
+                        }
+                    Text(spotifyHistory.top_3_artists[0].name)
+                }
+                VStack{
+                    if let imageData = spotifyHistory.top_3_artists[1].artist_image {
+                        Image(uiImage: UIImage(data: imageData)!)
+                                .scaledToFit()
+                                .clipShape(Circle())
+                                .overlay(
+                                  Circle()
+                                    .stroke(Color.white, lineWidth: 4)
+                                    .shadow(radius: 5)
+                              )
+                        }
+                    Text(spotifyHistory.top_3_artists[1].name)
+                }
+                VStack{
+                    if let imageData = spotifyHistory.top_3_artists[2].artist_image {
+                        Image(uiImage: UIImage(data: imageData)!)
+                                .scaledToFit()
+                                .clipShape(Circle())
+                                .overlay(
+                                  Circle()
+                                    .stroke(Color.white, lineWidth: 4)
+                                    .shadow(radius: 5)
+                              )
+                        }
+                    Text(spotifyHistory.top_3_artists[2].name)
+                }
+            }
+        
+            // Display Top 3 Songs
             HStack{
                 VStack{
                     Image(uiImage: spotifyHistory.top_3_songs[0].album_image!)
@@ -91,8 +92,8 @@ struct ProfileDetail: View {
                                 .stroke(Color.white, lineWidth: 4)
                                 .shadow(radius: 5)
                           )
-                    }
                     Text(spotifyHistory.top_3_songs[0].song_name)
+                }
                 VStack{
                     Image(uiImage: spotifyHistory.top_3_songs[1].album_image!)
                             .scaledToFit()
@@ -102,8 +103,8 @@ struct ProfileDetail: View {
                                 .stroke(Color.white, lineWidth: 4)
                                 .shadow(radius: 5)
                           )
-                    }
-                    Text(spotifyHistory.top_3_songs[1].song_name)
+                    Text(spotifyHistory.top_3_songs[0].song_name)
+                }
                 VStack{
                     Image(uiImage: spotifyHistory.top_3_songs[2].album_image!)
                             .scaledToFit()
@@ -113,19 +114,7 @@ struct ProfileDetail: View {
                                 .stroke(Color.white, lineWidth: 4)
                                 .shadow(radius: 5)
                           )
+                    Text(spotifyHistory.top_3_songs[0].song_name)
                     }
-                    Text(spotifyHistory.top_3_songs[2].song_name)
                 }
             }
-//
-//
-//        }
-//    }
-//}
-//
-//struct ProfileDetails_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ProfileDetails()
-    }
-
-

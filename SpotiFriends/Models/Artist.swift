@@ -1,8 +1,8 @@
 //
-//  Artist.swift
+//  Song.swift
 //  SpotiFriends
 //
-//  Created by Xinyi Huang on 10/29/21.
+//  Created by Catherine D on 10/28/21.
 //
 
 import Foundation
@@ -34,7 +34,7 @@ class Artist: Identifiable {
         let value = snapshot.value as? [String: AnyObject],
         let id = value["id"] as? String,
         let song_name = value["name"] as? String,
-        let artist_image_url = value["artist_image"] as? String
+        let artist_image_url = value["artist_image_url"] as? String
        else {
          return nil
        }

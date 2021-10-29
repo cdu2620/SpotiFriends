@@ -1,0 +1,6 @@
+framework module Pods_SpotiFriends {
+  umbrella header "Pods-SpotiFriends-umbrella.h"
+
+  export *
+  module * { export * }
+}

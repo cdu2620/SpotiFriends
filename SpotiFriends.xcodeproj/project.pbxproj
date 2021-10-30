@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		330476A327274C5C004A5764 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330476A227274C5C004A5764 /* ViewController.swift */; };
 		330476A827275133004A5764 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330476A727275133004A5764 /* UserInfo.swift */; };
+		3372092E272DAB300093523E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3372092D272DAB300093523E /* GoogleService-Info.plist */; };
+		33720932272DAB3F0093523E /* SpotifyiOS.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33720931272DAB3F0093523E /* SpotifyiOS.xcframework */; };
+		3372093E272DABA00093523E /* SpotifyiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3372093A272DAB890093523E /* SpotifyiOS.framework */; };
+		3372093F272DABA00093523E /* SpotifyiOS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3372093A272DAB890093523E /* SpotifyiOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		337C3610272B429300B7B259 /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = 337C360F272B429300B7B259 /* Song.swift */; };
 		337C3614272B439D00B7B259 /* Artist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 337C3613272B439D00B7B259 /* Artist.swift */; };
 		337C3618272B442800B7B259 /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = 337C3617272B442800B7B259 /* History.swift */; };
@@ -24,9 +28,6 @@
 		339BB72C27162A74003CA493 /* SpotiFriendsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339BB72B27162A74003CA493 /* SpotiFriendsTests.swift */; };
 		339BB73727162A74003CA493 /* SpotiFriendsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339BB73627162A74003CA493 /* SpotiFriendsUITests.swift */; };
 		46F7EB700F6D43014969C9DB /* Pods_SpotiFriendsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE977AC110927556B617F391 /* Pods_SpotiFriendsTests.framework */; };
-		C0748FEF272C9099002C812D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C0748FEE272C9099002C812D /* GoogleService-Info.plist */; };
-		C0748FF1272C90E8002C812D /* SpotifyiOS.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0748FF0272C90E8002C812D /* SpotifyiOS.xcframework */; };
-		C0748FF3272C90F0002C812D /* SpotifyiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0748FF2272C90F0002C812D /* SpotifyiOS.framework */; };
 		C456EA5F4481AFD52D56375F /* Pods_SpotiFriends.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF1568AED54D070229528602 /* Pods_SpotiFriends.framework */; };
 		EC41DA2DEC8457FAFC8848BA /* Pods_SpotiFriends_SpotiFriendsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5F0455A643ED8C4BE9D0CA5 /* Pods_SpotiFriends_SpotiFriendsUITests.framework */; };
 /* End PBXBuildFile section */
@@ -55,6 +56,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				3372093F272DABA00093523E /* SpotifyiOS.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -64,6 +66,9 @@
 /* Begin PBXFileReference section */
 		330476A227274C5C004A5764 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		330476A727275133004A5764 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
+		3372092D272DAB300093523E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		33720931272DAB3F0093523E /* SpotifyiOS.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SpotifyiOS.xcframework; path = "../Downloads/ios-sdk-master/SpotifyiOS.xcframework"; sourceTree = "<group>"; };
+		3372093A272DAB890093523E /* SpotifyiOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpotifyiOS.framework; path = "../../Downloads/ios-sdk-master/SpotifyiOS.framework"; sourceTree = "<group>"; };
 		337C360F272B429300B7B259 /* Song.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
 		337C3613272B439D00B7B259 /* Artist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artist.swift; sourceTree = "<group>"; };
 		337C3617272B442800B7B259 /* History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
@@ -90,9 +95,6 @@
 		82D630C9125D8FA194D9D67D /* Pods-SpotiFriends.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpotiFriends.release.xcconfig"; path = "Target Support Files/Pods-SpotiFriends/Pods-SpotiFriends.release.xcconfig"; sourceTree = "<group>"; };
 		A5875D76C8137DD0736B756A /* Pods-SpotiFriends.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpotiFriends.debug.xcconfig"; path = "Target Support Files/Pods-SpotiFriends/Pods-SpotiFriends.debug.xcconfig"; sourceTree = "<group>"; };
 		BE732E195FB50E52DAD1A9C2 /* Pods-SpotiFriends-SpotiFriendsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpotiFriends-SpotiFriendsUITests.debug.xcconfig"; path = "Target Support Files/Pods-SpotiFriends-SpotiFriendsUITests/Pods-SpotiFriends-SpotiFriendsUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		C0748FEE272C9099002C812D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../GoogleService-Info.plist"; sourceTree = "<group>"; };
-		C0748FF0272C90E8002C812D /* SpotifyiOS.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SpotifyiOS.xcframework; path = "../../../ios-sdk-master/SpotifyiOS.xcframework"; sourceTree = "<group>"; };
-		C0748FF2272C90F0002C812D /* SpotifyiOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpotifyiOS.framework; path = "../../../../ios-sdk-master/SpotifyiOS.framework"; sourceTree = "<group>"; };
 		CF1568AED54D070229528602 /* Pods_SpotiFriends.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SpotiFriends.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5F0455A643ED8C4BE9D0CA5 /* Pods_SpotiFriends_SpotiFriendsUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SpotiFriends_SpotiFriendsUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6A0974DD62E2584C1D2AA35 /* Pods-SpotiFriends-SpotiFriendsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpotiFriends-SpotiFriendsUITests.release.xcconfig"; path = "Target Support Files/Pods-SpotiFriends-SpotiFriendsUITests/Pods-SpotiFriends-SpotiFriendsUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -105,8 +107,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				337C3624272C419300B7B259 /* AuthenticationServices.framework in Frameworks */,
-				C0748FF3272C90F0002C812D /* SpotifyiOS.framework in Frameworks */,
-				C0748FF1272C90E8002C812D /* SpotifyiOS.xcframework in Frameworks */,
+				3372093E272DABA00093523E /* SpotifyiOS.framework in Frameworks */,
+				33720932272DAB3F0093523E /* SpotifyiOS.xcframework in Frameworks */,
 				C456EA5F4481AFD52D56375F /* Pods_SpotiFriends.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -158,7 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				339BB75427162D72003CA493 /* SpotiFriends-Bridging-Header.h */,
-				C0748FF0272C90E8002C812D /* SpotifyiOS.xcframework */,
+				33720931272DAB3F0093523E /* SpotifyiOS.xcframework */,
 				339BB71327162A71003CA493 /* SpotiFriends */,
 				339BB72A27162A74003CA493 /* SpotiFriendsTests */,
 				339BB73527162A74003CA493 /* SpotiFriendsUITests */,
@@ -181,9 +183,9 @@
 		339BB71327162A71003CA493 /* SpotiFriends */ = {
 			isa = PBXGroup;
 			children = (
+				3372093A272DAB890093523E /* SpotifyiOS.framework */,
 				330476A627275125004A5764 /* Models */,
-				C0748FF2272C90F0002C812D /* SpotifyiOS.framework */,
-				C0748FEE272C9099002C812D /* GoogleService-Info.plist */,
+				3372092D272DAB300093523E /* GoogleService-Info.plist */,
 				339BB71427162A71003CA493 /* AppDelegate.swift */,
 				339BB71627162A71003CA493 /* SceneDelegate.swift */,
 				339BB71827162A71003CA493 /* ContentView.swift */,
@@ -345,7 +347,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				339BB72127162A73003CA493 /* LaunchScreen.storyboard in Resources */,
-				C0748FEF272C9099002C812D /* GoogleService-Info.plist in Resources */,
+				3372092E272DAB300093523E /* GoogleService-Info.plist in Resources */,
 				339BB71E27162A73003CA493 /* Preview Assets.xcassets in Resources */,
 				339BB71B27162A73003CA493 /* Assets.xcassets in Resources */,
 			);

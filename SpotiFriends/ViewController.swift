@@ -16,17 +16,69 @@ class ViewModel: ObservableObject {
     @Published var list = [UserInfo]()
     @Published var users = [User]()
     let ref = Database.database().reference()
+  
 
   
     
     func getData() {
-      
+      var top_3sg_api = [Song]()
+      var top_3art_api = [Artist]()
         
-        _ = Spartan.getMyTopArtists(limit: 20, offset: 0, timeRange: .mediumTerm, success: { (pagingObject) in
+        let apiCall = Spartan.getMyTopTracks(limit: 3, offset: 0, timeRange: .mediumTerm, success: { (pagingObject) in
             // Get the artists via pagingObject.items
+          print("paging obj")
+          
+          var i = 0
+          for obj in pagingObject.items {
+            
+//            obj = pagingObject.items[i]
+//            print(obj.name!)
+            let path = "/users/user3/spotify_history/top_3_songs/"+String(i)
+            
+            let namePath = path+"/song_name"
+//            let testRef = Database.database().reference().child(path)
+            let nameRef = Database.database().reference().child(namePath)
+            let song_name = obj.name!
+            nameRef.setValue(song_name)
+            
+            let idPath = path+"/song_id"
+            let idRef = Database.database().reference().child(idPath)
+            let song_id = obj.id as! String
+            idRef.setValue(song_id)
+            
+//            print(song_id)
+//            print(obj.artists[0].name!)
+            let artistPath = path+"/artist"
+            let artistRef = Database.database().reference().child(artistPath)
+            let artist = obj.artists[0].name!
+            artistRef.setValue(artist)
+            
+            let coverPath = path+"/album_cover"
+            let coverRef = Database.database().reference().child(coverPath)
+            let cover = obj.album.images[0].url!
+            coverRef.setValue(cover)
+//            print(obj.album.images[0].url!)
+            let newsong = Song(id:song_id, song_name: song_name, artist: artist, album_cover: cover)
+            top_3sg_api.append(newsong)
+            i += 1
+          
+          }
+          print("helpererperep")
+          print(top_3sg_api)
+//          self.testRef.setValue(top_3sg_api)
+          print("done with for loop")
+          
+
+          
         }, failure: { (error) in
             print(error)
         })
+//      print("start")
+//      print(apiCall)
+//      print("end")
+      
+//      print(top_3sg_api)
+      print("firebase below")
         let liveRef = self.ref.child("users")
         liveRef.observe(.value, with: {
             (snapshot) in if let snapCast = snapshot.value as? [String:AnyObject]{
@@ -117,7 +169,9 @@ class ViewModel: ObservableObject {
  
                             
                         } // end of individual user
-                print(self.users[0].personal_info.age)
+              for user in self.users {
+                print(user.id)//personal_info.age)
+              }
             }})
     }
     

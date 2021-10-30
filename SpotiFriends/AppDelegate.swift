@@ -54,7 +54,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate,  SPTSessionManagerDelegat
 
     func sessionManager(manager: SPTSessionManager, didInitiate session: SPTSession) {
         self.appRemote.connectionParameters.accessToken = session.accessToken
+      print("access token should not be nil")
+      print(session.accessToken)
         Spartan.authorizationToken = session.accessToken
+      print("i just set spartan it should not be nil")
+      print(Spartan.authorizationToken)
         self.appRemote.connect()
     }
 

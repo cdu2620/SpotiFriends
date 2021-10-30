@@ -649,7 +649,8 @@ public class Spartan: NSObject {
                                       timeRange: TimeRange = .mediumTerm,
                                       success: @escaping ((PagingObject<Artist>) -> Void),
                                       failure: ((SpartanError) -> Void)?) -> Request {
-        
+        print("token should not be nil in Spartan")
+      print(authorizationToken)
         let url = SpartanURL(url: "me/top/\(Artist.pluralRoot)")
         let parameters: [String: Any] = ["limit" : limit, "offset" : offset, "time_range" : timeRange.rawValue]
         return SpartanRequestManager.default.mapObject(.get,

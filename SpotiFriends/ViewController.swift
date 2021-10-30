@@ -16,8 +16,11 @@ class ViewModel: ObservableObject {
     @Published var list = [UserInfo]()
     @Published var users = [User]()
     let ref = Database.database().reference()
+
+  
     
     func getData() {
+      
         
         _ = Spartan.getMyTopArtists(limit: 20, offset: 0, timeRange: .mediumTerm, success: { (pagingObject) in
             // Get the artists via pagingObject.items

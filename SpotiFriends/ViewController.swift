@@ -16,7 +16,7 @@ class ViewModel: ObservableObject {
     @Published var list = [UserInfo]()
     @Published var users = [User]()
     let ref = Database.database().reference()
-    lef testRef = Database.database().reference()
+  
 
   
     
@@ -28,22 +28,44 @@ class ViewModel: ObservableObject {
             // Get the artists via pagingObject.items
           print("paging obj")
           
+          var i = 0
           for obj in pagingObject.items {
+            
+//            obj = pagingObject.items[i]
 //            print(obj.name!)
-            print("help")
+            let path = "/users/user3/spotify_history/top_3_songs/"+String(i)
+            
+            let namePath = path+"/song_name"
+//            let testRef = Database.database().reference().child(path)
+            let nameRef = Database.database().reference().child(namePath)
             let song_name = obj.name!
+            nameRef.setValue(song_name)
+            
+            let idPath = path+"/song_id"
+            let idRef = Database.database().reference().child(idPath)
             let song_id = obj.id as! String
+            idRef.setValue(song_id)
+            
 //            print(song_id)
 //            print(obj.artists[0].name!)
+            let artistPath = path+"/artist"
+            let artistRef = Database.database().reference().child(artistPath)
             let artist = obj.artists[0].name!
+            artistRef.setValue(artist)
+            
+            let coverPath = path+"/album_cover"
+            let coverRef = Database.database().reference().child(coverPath)
             let cover = obj.album.images[0].url!
+            coverRef.setValue(cover)
 //            print(obj.album.images[0].url!)
             let newsong = Song(id:song_id, song_name: song_name, artist: artist, album_cover: cover)
             top_3sg_api.append(newsong)
+            i += 1
           
           }
           print("helpererperep")
           print(top_3sg_api)
+//          self.testRef.setValue(top_3sg_api)
           print("done with for loop")
           
 

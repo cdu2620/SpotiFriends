@@ -16,17 +16,47 @@ class ViewModel: ObservableObject {
     @Published var list = [UserInfo]()
     @Published var users = [User]()
     let ref = Database.database().reference()
+    lef testRef = Database.database().reference()
 
   
     
     func getData() {
-      
+      var top_3sg_api = [Song]()
+      var top_3art_api = [Artist]()
         
-        _ = Spartan.getMyTopArtists(limit: 20, offset: 0, timeRange: .mediumTerm, success: { (pagingObject) in
+        let apiCall = Spartan.getMyTopTracks(limit: 3, offset: 0, timeRange: .mediumTerm, success: { (pagingObject) in
             // Get the artists via pagingObject.items
+          print("paging obj")
+          
+          for obj in pagingObject.items {
+//            print(obj.name!)
+            print("help")
+            let song_name = obj.name!
+            let song_id = obj.id as! String
+//            print(song_id)
+//            print(obj.artists[0].name!)
+            let artist = obj.artists[0].name!
+            let cover = obj.album.images[0].url!
+//            print(obj.album.images[0].url!)
+            let newsong = Song(id:song_id, song_name: song_name, artist: artist, album_cover: cover)
+            top_3sg_api.append(newsong)
+          
+          }
+          print("helpererperep")
+          print(top_3sg_api)
+          print("done with for loop")
+          
+
+          
         }, failure: { (error) in
             print(error)
         })
+//      print("start")
+//      print(apiCall)
+//      print("end")
+      
+//      print(top_3sg_api)
+      print("firebase below")
         let liveRef = self.ref.child("users")
         liveRef.observe(.value, with: {
             (snapshot) in if let snapCast = snapshot.value as? [String:AnyObject]{
@@ -117,7 +147,9 @@ class ViewModel: ObservableObject {
  
                             
                         } // end of individual user
-                print(self.users[0].personal_info.age)
+              for user in self.users {
+                print(user.id)//personal_info.age)
+              }
             }})
     }
     

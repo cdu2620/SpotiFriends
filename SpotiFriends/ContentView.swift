@@ -14,10 +14,10 @@ struct ContentView: View {
     @ObservedObject var vm = ViewModel()
     var body: some View {
         Text("hello")
-//        List(vm.list)  { item in
-//            Text(item.f_name)
-//
-//        }
+        List(vm.list)  { item in
+            Text(item.f_name)
+
+        }
       Button(action: {
           print("hi")
         vm.getData()

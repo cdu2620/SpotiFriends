@@ -27,7 +27,9 @@ class Artist: Identifiable {
         if let imageData = data {
             self.artist_image = UIImage(data: imageData)!
         } else {
-            self.artist_image = UIImage()
+            let url = URL(string: "https://st4.depositphotos.com/14953852/24787/v/600/depositphotos_247872612-stock-illustration-no-image-available-icon-vector.jpg")
+            let data = try? Data(contentsOf:url!)
+            self.artist_image = UIImage(data: data!)!
         }
     }
     

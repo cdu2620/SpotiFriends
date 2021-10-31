@@ -20,14 +20,14 @@ struct ContentView: View {
         NavigationView{
             VStack {
                 if populatedData == true {
-                    NavigationLink("hi", destination: ProfileDetail(user: vm.list[0]))
+                    NavigationLink("hi", destination: ProfileDetail(user: vm.users[0]))
                 } else {
                     Button(action: {
                         vm.getData()
                         DispatchQueue.main.asyncAfter(deadline: .now()+10) {
                             print(vm.list)
                             populatedData = true
-                            NavigationLink("hi", destination: ProfileDetail(user: vm.list[0]))
+                            NavigationLink("hi", destination: ProfileDetail(user: vm.users[0]))
                         }
                         
                     }) {

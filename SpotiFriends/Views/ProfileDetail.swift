@@ -51,7 +51,7 @@ struct ProfileDetail: View {
                               Circle()
                                 .stroke(Color.white, lineWidth: 4)
                                 .shadow(radius: 5)
-                          )
+                            )
                     Text(user.spotify_history.top_3_artists[0].name)
                     }
                     
@@ -64,7 +64,7 @@ struct ProfileDetail: View {
                               Circle()
                                 .stroke(Color.white, lineWidth: 4)
                                 .shadow(radius: 5)
-                          )
+                            )
                     Text(user.spotify_history.top_3_artists[1].name)
                     }
                     
@@ -80,8 +80,10 @@ struct ProfileDetail: View {
                           )
                     Text(user.spotify_history.top_3_artists[2].name)
                     }
+                Spacer().frame(height: 30)
                 }
-        
+            
+            
             HStack{
                 Text("Your Top 3 Songs: ").fontWeight(.bold)
                 Button(action: {}) {

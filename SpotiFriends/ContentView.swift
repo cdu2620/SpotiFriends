@@ -13,25 +13,28 @@ struct ContentView: View {
 
     @ObservedObject var vm = ViewModel()
     @State var populatedData = false
-    var testUser = UserInfo(f_name: "Null", l_name: "Null", age: 0, pronouns: "", bio: "", profile_pic_url: "https://artscimedia.case.edu/wp-content/uploads/sites/79/2016/12/14205134/no-user-image.gif")
+    
+        
+ 
 
     var body: some View {
         
         NavigationView{
             VStack {
                 if populatedData == true {
-                    NavigationLink("hi", destination: ProfileDetail(user: vm.users[0]))
+                    var testUser = vm.users.filter{ $0.personal_info.f_name == "Catherine" }[0]
+                    NavigationLink("View Profile", destination: ProfileDetail(user: testUser))
                 } else {
                     Button(action: {
                         vm.getData()
                         DispatchQueue.main.asyncAfter(deadline: .now()+10) {
-                            print(vm.list)
+                            var testUser = vm.users.filter{ $0.personal_info.f_name == "Catherine" }[0]
                             populatedData = true
-                            NavigationLink("hi", destination: ProfileDetail(user: vm.users[0]))
+                            NavigationLink("View Profile", destination: ProfileDetail(user: testUser))
                         }
                         
                     }) {
-                        Text("Populate")
+                        Text("Log In")
                     }
                 }
             }

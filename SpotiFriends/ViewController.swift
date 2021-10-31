@@ -56,7 +56,6 @@ class ViewModel: ObservableObject {
           i += 1
         
         }
-        print(top_3sg_api)
       }, failure: { (error) in
           print(error)
       })
@@ -72,34 +71,36 @@ class ViewModel: ObservableObject {
           let nameRef = Database.database().reference().child(namePath)
           let name = obj.name!
           nameRef.setValue(name)
-          print(nameRef)
-          print(name)
+//          print(nameRef)
+//          print(name)
           
           let idPath = path+"/artist_id"
           let idRef = Database.database().reference().child(idPath)
           let artist_id = obj.id as! String
           idRef.setValue(artist_id)
-          print(idRef)
+//          print(idRef)
           
           
           let coverPath = path+"/artist_image"
           let coverRef = Database.database().reference().child(coverPath)
           let cover = obj.images[0].url!
           coverRef.setValue(cover)
-          print(coverRef)
+//          print(coverRef)
 
           let newartist = Artist(id: artist_id, name: name, artist_image: cover)
           top_3art_api.append(newartist)
           i += 1
         
         }
-        print(top_3art_api)
+//        print(top_3art_api)
       }, failure: { (error) in
           print(error)
       })
 
       
       print("firebase below")
+        if (self.users.count == 0) {
+            print("should print only 10x")
         let liveRef = self.ref.child("users")
         liveRef.observe(.value, with: {
             (snapshot) in if let snapCast = snapshot.value as? [String:AnyObject]{
@@ -189,12 +190,11 @@ class ViewModel: ObservableObject {
                             }
  
                             
-                        } // end of individual user
-              for user in self.users {
-                print(user.id)//personal_info.age)
-              }
+                        }// end of individual user
+                print("dummy")
+                print(self.users[0].personal_info.age)
             }})
     }
     
-}
+    }}
 

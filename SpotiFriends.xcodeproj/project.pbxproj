@@ -10,9 +10,8 @@
 		330476A327274C5C004A5764 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330476A227274C5C004A5764 /* ViewController.swift */; };
 		330476A827275133004A5764 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330476A727275133004A5764 /* UserInfo.swift */; };
 		3372092E272DAB300093523E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3372092D272DAB300093523E /* GoogleService-Info.plist */; };
-		33720932272DAB3F0093523E /* SpotifyiOS.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33720931272DAB3F0093523E /* SpotifyiOS.xcframework */; };
-		3372093E272DABA00093523E /* SpotifyiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3372093A272DAB890093523E /* SpotifyiOS.framework */; };
-		3372093F272DABA00093523E /* SpotifyiOS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3372093A272DAB890093523E /* SpotifyiOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		33720990272E30610093523E /* SpotifyiOS.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33720931272DAB3F0093523E /* SpotifyiOS.xcframework */; };
+		33720991272E30610093523E /* SpotifyiOS.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 33720931272DAB3F0093523E /* SpotifyiOS.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		337C3610272B429300B7B259 /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = 337C360F272B429300B7B259 /* Song.swift */; };
 		337C3614272B439D00B7B259 /* Artist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 337C3613272B439D00B7B259 /* Artist.swift */; };
 		337C3618272B442800B7B259 /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = 337C3617272B442800B7B259 /* History.swift */; };
@@ -50,13 +49,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		33F523D127211DF300650BAD /* Embed Frameworks */ = {
+		33720992272E30610093523E /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				3372093F272DABA00093523E /* SpotifyiOS.framework in Embed Frameworks */,
+				33720991272E30610093523E /* SpotifyiOS.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -107,8 +106,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				337C3624272C419300B7B259 /* AuthenticationServices.framework in Frameworks */,
-				3372093E272DABA00093523E /* SpotifyiOS.framework in Frameworks */,
-				33720932272DAB3F0093523E /* SpotifyiOS.xcframework in Frameworks */,
+				33720990272E30610093523E /* SpotifyiOS.xcframework in Frameworks */,
 				C456EA5F4481AFD52D56375F /* Pods_SpotiFriends.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -249,7 +247,7 @@
 				339BB70E27162A71003CA493 /* Frameworks */,
 				339BB70F27162A71003CA493 /* Resources */,
 				AD26E250763235EA8E3E2213 /* [CP] Embed Pods Frameworks */,
-				33F523D127211DF300650BAD /* Embed Frameworks */,
+				33720992272E30610093523E /* Embed Frameworks */,
 			);
 			buildRules = (
 			);

@@ -24,60 +24,81 @@ class ViewModel: ObservableObject {
       var top_3sg_api = [Song]()
       var top_3art_api = [Artist]()
         
-        let apiCall = Spartan.getMyTopTracks(limit: 3, offset: 0, timeRange: .mediumTerm, success: { (pagingObject) in
-            // Get the artists via pagingObject.items
-          print("paging obj")
+      let apiCallSongs = Spartan.getMyTopTracks(limit: 3, offset: 0, timeRange: .mediumTerm, success: { (pagingObject) in
+        // Get the artists via pagingObject.items
+        
+        var i = 0
+        for obj in pagingObject.items {
+          let path = "/users/user3/spotify_history/top_3_songs/"+String(i)
+        
+          let namePath = path+"/song_name"
+          let nameRef = Database.database().reference().child(namePath)
+          let song_name = obj.name!
+          nameRef.setValue(song_name)
           
-          var i = 0
-          for obj in pagingObject.items {
-            
-//            obj = pagingObject.items[i]
-//            print(obj.name!)
-            let path = "/users/user3/spotify_history/top_3_songs/"+String(i)
-            
-            let namePath = path+"/song_name"
-//            let testRef = Database.database().reference().child(path)
-            let nameRef = Database.database().reference().child(namePath)
-            let song_name = obj.name!
-            nameRef.setValue(song_name)
-            
-            let idPath = path+"/song_id"
-            let idRef = Database.database().reference().child(idPath)
-            let song_id = obj.id as! String
-            idRef.setValue(song_id)
-            
-//            print(song_id)
-//            print(obj.artists[0].name!)
-            let artistPath = path+"/artist"
-            let artistRef = Database.database().reference().child(artistPath)
-            let artist = obj.artists[0].name!
-            artistRef.setValue(artist)
-            
-            let coverPath = path+"/album_cover"
-            let coverRef = Database.database().reference().child(coverPath)
-            let cover = obj.album.images[0].url!
-            coverRef.setValue(cover)
-//            print(obj.album.images[0].url!)
-            let newsong = Song(id:song_id, song_name: song_name, artist: artist, album_cover: cover)
-            top_3sg_api.append(newsong)
-            i += 1
+          let idPath = path+"/song_id"
+          let idRef = Database.database().reference().child(idPath)
+          let song_id = obj.id as! String
+          idRef.setValue(song_id)
           
-          }
-          print("helpererperep")
-          print(top_3sg_api)
-//          self.testRef.setValue(top_3sg_api)
-          print("done with for loop")
+          let artistPath = path+"/artist"
+          let artistRef = Database.database().reference().child(artistPath)
+          let artist = obj.artists[0].name!
+          artistRef.setValue(artist)
           
+          let coverPath = path+"/album_cover"
+          let coverRef = Database.database().reference().child(coverPath)
+          let cover = obj.album.images[0].url!
+          coverRef.setValue(cover)
 
-          
-        }, failure: { (error) in
-            print(error)
-        })
-//      print("start")
-//      print(apiCall)
-//      print("end")
+          let newsong = Song(id:song_id, song_name: song_name, artist: artist, album_cover: cover)
+          top_3sg_api.append(newsong)
+          i += 1
+        
+        }
+        print(top_3sg_api)
+      }, failure: { (error) in
+          print(error)
+      })
       
-//      print(top_3sg_api)
+      let apiCallArtists = Spartan.getMyTopArtists(limit: 3, offset: 0, timeRange: .mediumTerm, success: { (pagingObject) in
+        // Get the artists via pagingObject.items
+        
+        var i = 0
+        for obj in pagingObject.items {
+          let path = "/users/user3/spotify_history/top_3_artists/"+String(i)
+        
+          let namePath = path+"/name"
+          let nameRef = Database.database().reference().child(namePath)
+          let name = obj.name!
+          nameRef.setValue(name)
+          print(nameRef)
+          print(name)
+          
+          let idPath = path+"/artist_id"
+          let idRef = Database.database().reference().child(idPath)
+          let artist_id = obj.id as! String
+          idRef.setValue(artist_id)
+          print(idRef)
+          
+          
+          let coverPath = path+"/artist_image"
+          let coverRef = Database.database().reference().child(coverPath)
+          let cover = obj.images[0].url!
+          coverRef.setValue(cover)
+          print(coverRef)
+
+          let newartist = Artist(id: artist_id, name: name, artist_image: cover)
+          top_3art_api.append(newartist)
+          i += 1
+        
+        }
+        print(top_3art_api)
+      }, failure: { (error) in
+          print(error)
+      })
+
+      
       print("firebase below")
         let liveRef = self.ref.child("users")
         liveRef.observe(.value, with: {

@@ -51,7 +51,7 @@ class ViewModel: ObservableObject {
           let cover = obj.album.images[0].url!
           coverRef.setValue(cover)
 
-          let newsong = Song(id:song_id, song_name: song_name, artist: artist, album_cover: cover)
+          let newsong = Song(id:song_id, song_name: song_name, artist: artist, album_image_url: cover)
           top_3sg_api.append(newsong)
           i += 1
         
@@ -87,7 +87,7 @@ class ViewModel: ObservableObject {
           coverRef.setValue(cover)
 //          print(coverRef)
 
-          let newartist = Artist(id: artist_id, name: name, artist_image: cover)
+          let newartist = Artist(id: artist_id, name: name, artist_image_url: cover)
           top_3art_api.append(newartist)
           i += 1
         
@@ -121,7 +121,7 @@ class ViewModel: ObservableObject {
                                             let song_name = song["song_name"] as! String
                                                                     let artist = song["artist"] as! String
                                             let cover = song["album_cover"] as! String
-                                            let newsong = Song(id:song_id, song_name: song_name, artist: artist, album_cover: cover)
+                                            let newsong = Song(id:song_id, song_name: song_name, artist: artist, album_image_url: cover)
                                             top_3sg.append(newsong)
                                         }
                                        
@@ -136,7 +136,7 @@ class ViewModel: ObservableObject {
                                             let song_name = song["song_name"] as! String
                                                                     let artist = song["artist"] as! String
                                             let cover = song["album_cover"] as! String
-                                            let newsong = Song(id:song_id, song_name: song_name, artist: artist, album_cover: cover)
+                                            let newsong = Song(id:song_id, song_name: song_name, artist: artist, album_image_url: cover)
                                             top_20sg.append(newsong)
                                         }
                                        
@@ -150,7 +150,7 @@ class ViewModel: ObservableObject {
                                             let artist_id = art["artist_id"] as! String
                                             let name = art["name"] as! String
                                             let image = art["artist_image"] as! String
-                                            let newart = Artist(id:artist_id, name: name, artist_image: image)
+                                            let newart = Artist(id:artist_id, name: name, artist_image_url: image)
                                             top_3art.append(newart)
                                         }
                                        
@@ -164,7 +164,7 @@ class ViewModel: ObservableObject {
                                             let artist_id = art["artist_id"] as! String
                                             let name = art["name"] as! String
                                             let image = art["artist_image"] as! String
-                                            let newart = Artist(id:artist_id, name: name, artist_image: image)
+                                            let newart = Artist(id:artist_id, name: name, artist_image_url: image)
                                             top_20art.append(newart)
                                         }
                                        
@@ -183,7 +183,7 @@ class ViewModel: ObservableObject {
                                 let pronouns = vals["pronouns"] as? String ?? ""
                                 let bio = vals["bio"] as! String
                                 let profile_pic = vals["profile_pic"] as! String
-                                let person = UserInfo(f_name:f_name,l_name: l_name, age: age, pronouns: pronouns, bio: bio, profile_pic: profile_pic)
+                                let person = UserInfo(f_name:f_name,l_name: l_name, age: age, pronouns: pronouns, bio: bio, profile_pic_url: profile_pic)
                                 let one = User(personal_info:person, spotify_history: his)
                                 self.list.append(person)
                                 self.users.append(one)
@@ -192,8 +192,9 @@ class ViewModel: ObservableObject {
                             
                         }// end of individual user
                 print("dummy")
-                print(self.users[0].personal_info.age)
             }})
+            
+          
     }
     
     }}

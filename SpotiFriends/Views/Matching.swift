@@ -8,8 +8,12 @@
 import SwiftUI
 
 struct Matching: View {
-    var user: User
+    var potentialMatches: [User]
+    var index: Int
+    
     var body: some View {
+        // Get next user
+        var user = potentialMatches[index]
         // List artists
         Text("Top 3 Artists in Common").fontWeight(.bold)
         HStack{
@@ -122,23 +126,50 @@ struct Matching: View {
         
         // Yes/ No buttons
         HStack{
-            Button(action: {}) {
-              Image(systemName: "checkmark")
-                .padding()
-                .background(Color.green)
-                .clipShape(Circle())
-                .font(.largeTitle)
-                .foregroundColor(.white)
+            NavigationView {
+                VStack {
+                    NavigationLink(destination: Matching(potentialMatches: potentialMatches, index: index+1)) {
+                        Image(systemName: "checkmark")
+                          .padding()
+                          .background(Color.green)
+                          .clipShape(Circle())
+                          .font(.largeTitle)
+                          .foregroundColor(.white)
+                    }
+                }
             }
-            Button(action: {}) {
-                Image(systemName: "xmark")
-                  .padding()
-                  .background(Color.green)
-                  .clipShape(Circle())
-                  .font(.largeTitle)
-                  .foregroundColor(.white)
+            NavigationView {
+                VStack {
+                    NavigationLink(destination: Matching(potentialMatches: potentialMatches, index: index+1)) {
+                        Image(systemName: "xmark")
+                          .padding()
+                          .background(Color.green)
+                          .clipShape(Circle())
+                          .font(.largeTitle)
+                          .foregroundColor(.white)
+                    }
+                }
             }
         }
+            
+// Trying with buttons
+//            Button(action: {}) {
+//              Image(systemName: "checkmark")
+//                .padding()
+//                .background(Color.green)
+//                .clipShape(Circle())
+//                .font(.largeTitle)
+//                .foregroundColor(.white)
+//            }
+//            Button(action: {}) {
+//                Image(systemName: "xmark")
+//                  .padding()
+//                  .background(Color.green)
+//                  .clipShape(Circle())
+//                  .font(.largeTitle)
+//                  .foregroundColor(.white)
+//            }
+        
         
         
     }

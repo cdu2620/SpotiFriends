@@ -23,14 +23,23 @@ struct ContentView: View {
             VStack {
                 if populatedData == true {
                     var testUser = vm.users.filter{ $0.personal_info.f_name == "Catherine" }[0]
-                    NavigationLink("View Profile", destination: ProfileDetail(user: testUser))
+                    var otherUsers = vm.users.filter{ $0.personal_info.f_name != "Catherine" }[0]
+                    HStack {
+                        NavigationLink("View Profile", destination: ProfileDetail(user: testUser))
+                        NavigationLink("View Matches", destination: Matching(potentialMatches: otherUsers, index: 0))
+                    }
+                   
                 } else {
                     Button(action: {
                         vm.getData()
                         DispatchQueue.main.asyncAfter(deadline: .now()+10) {
-                            var testUser = vm.users.filter{ $0.personal_info.f_name == "Catherine" }[0]
                             populatedData = true
-                            NavigationLink("View Profile", destination: ProfileDetail(user: testUser))
+                            var testUser = vm.users.filter{ $0.personal_info.f_name == "Catherine" }[0]
+                            var otherUsers = vm.users.filter{ $0.personal_info.f_name != "Catherine" }[0]
+                            HStack {
+                                NavigationLink("View Profile", destination: ProfileDetail(user: testUser))
+                                NavigationLink("View Matches", destination: Matching(potentialMatches: otherUsers, index: 0))
+                            }
                         }
                         
                     }) {

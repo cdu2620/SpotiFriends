@@ -23,6 +23,16 @@ class ViewModel: ObservableObject {
     func getData() {
       var top_3sg_api = [Song]()
       var top_3art_api = [Artist]()
+
+        let getMe = Spartan.getMe(success: { (user) in
+            // Do something with the user object
+            let path = "/users/user2/personal_info/profile_pic"
+            let pfpRef = Database.database().reference().child(path)
+            let pfp = user.images![0].url!
+            pfpRef.setValue(pfp)
+        }, failure: { (error) in
+            print(error)
+        })
         
       let apiCallSongs = Spartan.getMyTopTracks(limit: 3, offset: 0, timeRange: .mediumTerm, success: { (pagingObject) in
         // Get the artists via pagingObject.items
@@ -100,7 +110,6 @@ class ViewModel: ObservableObject {
       
       print("firebase below")
         if (self.users.count == 0) {
-            print("should print only 10x")
         let liveRef = self.ref.child("users")
         liveRef.observe(.value, with: {
             (snapshot) in if let snapCast = snapshot.value as? [String:AnyObject]{
@@ -183,7 +192,7 @@ class ViewModel: ObservableObject {
                                 let pronouns = vals["pronouns"] as? String ?? ""
                                 let bio = vals["bio"] as! String
                                 let profile_pic = vals["profile_pic"] as! String
-                                let person = UserInfo(f_name:f_name,l_name: l_name, age: age, pronouns: pronouns, bio: bio, profile_pic_url: profile_pic)
+                                let person = UserInfo(f_name:f_name,l_name: l_name, age: age, pronouns: pronouns, bio: bio,profile_picture_url: profile_pic)
                                 let one = User(personal_info:person, spotify_history: his)
                                 self.list.append(person)
                                 self.users.append(one)
@@ -191,6 +200,9 @@ class ViewModel: ObservableObject {
  
                             
                         }// end of individual user
+                for user in self.users {
+                    print(user.personal_info.profile_picture_url!)
+                }
                 print("dummy")
             }})
             

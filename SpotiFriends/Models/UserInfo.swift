@@ -22,14 +22,14 @@ class UserInfo: Identifiable {
     var profile_picture: UIImage?
     
     
-    init(f_name: String, l_name: String, age: Int, pronouns: String? = nil, bio: String? = nil, profile_pic_url: String? = nil) {
+    init(f_name: String, l_name: String, age: Int, pronouns: String? = nil, bio: String? = nil, profile_picture_url: String? = nil) {
         
         self.f_name = f_name
         self.l_name = l_name
         self.age = age
         self.pronouns = pronouns
         self.bio = bio
-        self.profile_picture_url = profile_pic_url
+        self.profile_picture_url = profile_picture_url
         
         let url = URL(string: self.profile_picture_url!)
         let data = try? Data(contentsOf:url!)

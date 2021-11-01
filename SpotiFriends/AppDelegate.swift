@@ -39,7 +39,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate,  SPTSessionManagerDelegat
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        let requestedScopes: SPTScope = [.appRemoteControl,  .userTopRead]
+        let requestedScopes: SPTScope = [.appRemoteControl,  .userTopRead, .userReadPrivate]
         self.sessionManager.initiateSession(with: requestedScopes, options: .default)
         FirebaseApp.configure()
         

@@ -20,43 +20,48 @@ struct Matching: View {
             VStack{
                 Image(uiImage: user.spotify_history.top_3_artists[0].artist_image)
                         .resizable()
-                        .scaledToFit()
                         .clipShape(Circle())
                         .overlay(
                           Circle()
                             .stroke(Color.white, lineWidth: 4)
-                            .shadow(radius: 5)
+                            .shadow(radius: 7)
                         )
+                    .frame(width: 50, height: 50)
                 Text(user.spotify_history.top_3_artists[0].name)
+                    .multilineTextAlignment(.center)
                 }
                 
             VStack{
                 Image(uiImage: user.spotify_history.top_3_artists[1].artist_image)
                         .resizable()
-                        .scaledToFit()
                         .clipShape(Circle())
                         .overlay(
                           Circle()
                             .stroke(Color.white, lineWidth: 4)
-                            .shadow(radius: 5)
+                            .shadow(radius: 7)
                         )
+                    .frame(width: 50, height: 50)
                 Text(user.spotify_history.top_3_artists[1].name)
+                    .multilineTextAlignment(.center)
                 }
                 
             VStack{
                 Image(uiImage: user.spotify_history.top_3_artists[2].artist_image)
                         .resizable()
-                        .scaledToFit()
                         .clipShape(Circle())
                         .overlay(
                           Circle()
                             .stroke(Color.white, lineWidth: 4)
-                            .shadow(radius: 5)
+                            .shadow(radius: 7)
                       )
+                    .frame(width: 50, height: 50)
                 Text(user.spotify_history.top_3_artists[2].name)
+                    .multilineTextAlignment(.center)
                 }
-            Spacer().frame(height: 30)
+            .frame(alignment: .center)
         }
+        
+        Spacer().frame(height: 40)
         
         // List songs
         Text("Top 3 Songs in Common").fontWeight(.bold)
@@ -64,41 +69,45 @@ struct Matching: View {
             VStack{
                 Image(uiImage: user.spotify_history.top_3_songs[0].album_image!)
                         .resizable()
-                        .scaledToFit()
                         .clipShape(Circle())
                         .overlay(
                           Circle()
                             .stroke(Color.white, lineWidth: 4)
-                            .shadow(radius: 5)
+                            .shadow(radius: 7)
                       )
+                    .frame(width: 50, height: 50)
                 Text(user.spotify_history.top_3_songs[0].song_name)
+                    .multilineTextAlignment(.center)
                 }
                 
             VStack{
                 Image(uiImage: user.spotify_history.top_3_songs[1].album_image!)
                         .resizable()
-                        .scaledToFit()
                         .clipShape(Circle())
                         .overlay(
                           Circle()
                             .stroke(Color.white, lineWidth: 4)
-                            .shadow(radius: 5)
+                            .shadow(radius: 7)
                       )
+                    .frame(width: 50, height: 50)
                 Text(user.spotify_history.top_3_songs[1].song_name)
+                    .multilineTextAlignment(.center)
                 }
                 
             VStack{
                 Image(uiImage: user.spotify_history.top_3_songs[2].album_image!)
                         .resizable()
-                        .scaledToFit()
                         .clipShape(Circle())
                         .overlay(
                           Circle()
                             .stroke(Color.white, lineWidth: 4)
-                            .shadow(radius: 5)
+                            .shadow(radius: 7)
                       )
+                    .frame(width: 50, height: 50)
                 Text(user.spotify_history.top_3_songs[2].song_name)
+                    .multilineTextAlignment(.center)
                 }
+            .frame(alignment: .center)
         }
         
         // Display User Info
@@ -109,7 +118,7 @@ struct Matching: View {
                     .overlay(
                       Circle()
                         .stroke(Color.white, lineWidth: 4)
-                        .shadow(radius: 5)
+                        .shadow(radius: 10)
                   )
             
             Spacer().frame(height: 50)
@@ -121,7 +130,6 @@ struct Matching: View {
             if let bio = user.personal_info.bio {
                 Text(bio)
             }
-            Spacer().frame(height: 50)
         }
         
         // Yes/ No buttons

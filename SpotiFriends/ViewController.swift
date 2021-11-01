@@ -24,16 +24,6 @@ class ViewModel: ObservableObject {
       var top_3sg_api = [Song]()
       var top_3art_api = [Artist]()
 
-        let getMe = Spartan.getMe(success: { (user) in
-            // Do something with the user object
-            let path = "/users/user2/personal_info/profile_pic"
-            let pfpRef = Database.database().reference().child(path)
-            let pfp = user.images![0].url!
-            pfpRef.setValue(pfp)
-        }, failure: { (error) in
-            print(error)
-        })
-        
       let apiCallSongs = Spartan.getMyTopTracks(limit: 3, offset: 0, timeRange: .mediumTerm, success: { (pagingObject) in
         // Get the artists via pagingObject.items
         
@@ -69,6 +59,17 @@ class ViewModel: ObservableObject {
       }, failure: { (error) in
           print(error)
       })
+        
+      let getMe = Spartan.getMe(success: { (user) in
+            // Do something with the user object
+            let path = "/users/user2/personal_info/profile_pic"
+            let pfpRef = Database.database().reference().child(path)
+            let pfp = user.images![0].url!
+            pfpRef.setValue(pfp)
+        }, failure: { (error) in
+            print(error)
+        })
+        
       
       let apiCallArtists = Spartan.getMyTopArtists(limit: 3, offset: 0, timeRange: .mediumTerm, success: { (pagingObject) in
         // Get the artists via pagingObject.items
@@ -200,9 +201,9 @@ class ViewModel: ObservableObject {
  
                             
                         }// end of individual user
-                for user in self.users {
-                    print(user.personal_info.profile_picture_url!)
-                }
+//                for user in self.users {
+//                    print(user.personal_info.profile_picture_url!)
+//                }
                 print("dummy")
             }})
             

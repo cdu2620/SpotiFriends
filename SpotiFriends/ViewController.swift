@@ -29,7 +29,7 @@ class ViewModel: ObservableObject {
         
         var i = 0
         for obj in pagingObject.items {
-          let path = "/users/user3/spotify_history/top_3_songs/"+String(i)
+          let path = "/users/user2/spotify_history/top_3_songs/"+String(i)
         
           let namePath = path+"/song_name"
           let nameRef = Database.database().reference().child(namePath)
@@ -76,7 +76,7 @@ class ViewModel: ObservableObject {
         
         var i = 0
         for obj in pagingObject.items {
-          let path = "/users/user3/spotify_history/top_3_artists/"+String(i)
+          let path = "/users/user2/spotify_history/top_3_artists/"+String(i)
         
           let namePath = path+"/name"
           let nameRef = Database.database().reference().child(namePath)

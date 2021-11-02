@@ -24,9 +24,13 @@ struct ContentView: View {
                 if populatedData == true {
                     var testUser = vm.users.filter{ $0.personal_info.f_name == "Catherine" }[0]
                     var otherUsers = vm.users.filter{ $0.personal_info.f_name != "Catherine" }
-                    HStack {
-                        NavigationLink("View Profile", destination: ProfileDetail(user: testUser))
-                        NavigationLink("View Matches", destination: Matching(potentialMatches: otherUsers, index: 0))
+                    VStack{
+//                        HStack {
+//                            NavigationLink("View Profile", destination: ProfileDetail(potentialMatches: otherUsers, user: testUser))
+//                            NavigationLink("View Matches", destination: Matching(potentialMatches: otherUsers, index: 0,currUser:testUser))
+//                        }
+                        NavBar(potentialMatches: otherUsers, index: 0, user: testUser)
+                        
                     }
                    
                 } else {
@@ -36,9 +40,12 @@ struct ContentView: View {
                             populatedData = true
                             var testUser = vm.users.filter{ $0.personal_info.f_name == "Catherine" }[0]
                             var otherUsers = vm.users.filter{ $0.personal_info.f_name != "Catherine" }
-                            HStack {
-                                NavigationLink("View Profile", destination: ProfileDetail(user: testUser))
-                                NavigationLink("View Matches", destination: Matching(potentialMatches: otherUsers, index: 0))
+                            VStack{
+//                                HStack {
+//                                    NavigationLink("View Profile", destination: ProfileDetail(potentialMatches: otherUsers, user: testUser))
+//                                    NavigationLink("View Matches", destination: Matching(potentialMatches: otherUsers, index: 0,currUser:testUser))
+//                                }
+                                NavBar(potentialMatches: otherUsers, index: 0, user: testUser)
                             }
                         }
                         

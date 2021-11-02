@@ -10,14 +10,19 @@ import SwiftUI
 struct Matching: View {
     var potentialMatches: [User]
     var index: Int
+    var currUser: User
     
     var body: some View {
         // Get next user
         var user = potentialMatches[index]
+        ScrollView{
+        VStack{
+        Text("72% Match").fontWeight(.bold).font(.system(size: 60))
         // List artists
         Text("Top 3 Artists in Common").fontWeight(.bold)
         HStack{
             VStack{
+                let  _ = print(user.spotify_history)
                 Image(uiImage: user.spotify_history.top_3_artists[0].artist_image)
                         .resizable()
                         .clipShape(Circle())
@@ -134,32 +139,26 @@ struct Matching: View {
         
         // Yes/ No buttons
         HStack{
-            NavigationView {
-                VStack {
-                    NavigationLink(destination: Matching(potentialMatches: potentialMatches, index: index+1)) {
-                        Image(systemName: "checkmark")
-                          .padding()
-                          .background(Color.green)
-                          .clipShape(Circle())
-                          .font(.largeTitle)
-                          .foregroundColor(.white)
-                    }
-                }
+            NavigationLink(destination: Matching(potentialMatches: potentialMatches, index: index<potentialMatches.count ? index+1: 0,currUser:currUser)) {
+                Image(systemName: "checkmark")
+                  .padding()
+                  .background(Color.green)
+                  .clipShape(Circle())
+                  .font(.largeTitle)
+                  .foregroundColor(.white)
             }
-            NavigationView {
-                VStack {
-                    NavigationLink(destination: Matching(potentialMatches: potentialMatches, index: index+1)) {
-                        Image(systemName: "xmark")
-                          .padding()
-                          .background(Color.green)
-                          .clipShape(Circle())
-                          .font(.largeTitle)
-                          .foregroundColor(.white)
-                    }
-                }
+            NavigationLink(destination: Matching(potentialMatches: potentialMatches, index: index<potentialMatches.count ? index+1: 0,currUser:currUser)) {
+                Image(systemName: "xmark")
+                  .padding()
+                  .background(Color.red)
+                  .clipShape(Circle())
+                  .font(.largeTitle)
+                  .foregroundColor(.white)
             }
         }
-            
+    }
+}
+//        NavBar(potentialMatches: potentialMatches, index: index, user: currUser)
 // Trying with buttons
 //            Button(action: {}) {
 //              Image(systemName: "checkmark")
@@ -177,7 +176,7 @@ struct Matching: View {
 //                  .font(.largeTitle)
 //                  .foregroundColor(.white)
 //            }
-        
+//
         
         
     }

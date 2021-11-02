@@ -8,10 +8,11 @@ import SwiftUI
 
 
 struct ProfileDetail: View {
-    
+    var potentialMatches: [User]
     var user: User
     
     var body: some View {
+        ScrollView{
         VStack{
             Image(uiImage: user.personal_info.profile_picture!)
                     .scaledToFit()
@@ -93,9 +94,9 @@ struct ProfileDetail: View {
         VStack{
             HStack{
                 Text("Your Top 3 Songs: ").fontWeight(.bold)
-                Button(action: {}) {
-                  Text("Edit")
-                }
+//                Button(action: {}) {
+//                  Text("Edit")
+//                }
             }
         
             HStack{
@@ -143,9 +144,10 @@ struct ProfileDetail: View {
                 }
             .frame(alignment: .center)
         }
+        }
            
             
-
+//NavBar(potentialMatches: potentialMatches, index: 0, user: user)
 
 //        }
 //    }

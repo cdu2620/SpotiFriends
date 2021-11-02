@@ -25,6 +25,8 @@
 		339BB72C27162A74003CA493 /* SpotiFriendsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339BB72B27162A74003CA493 /* SpotiFriendsTests.swift */; };
 		339BB73727162A74003CA493 /* SpotiFriendsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339BB73627162A74003CA493 /* SpotiFriendsUITests.swift */; };
 		46F7EB700F6D43014969C9DB /* Pods_SpotiFriendsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE977AC110927556B617F391 /* Pods_SpotiFriendsTests.framework */; };
+		9E850DAE2731E2D000D99E66 /* NavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E850DAD2731E2D000D99E66 /* NavBar.swift */; };
+		9E850DB22731E2D500D99E66 /* MatchesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E850DB12731E2D500D99E66 /* MatchesList.swift */; };
 		9E8ABA1527306FE400544AEA /* SpotifyiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E8ABA1427306FE400544AEA /* SpotifyiOS.framework */; };
 		9E8ABA1927306FF600544AEA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9E8ABA1827306FF600544AEA /* GoogleService-Info.plist */; };
 		A044E10A27305A7E00DE0514 /* Matching.swift in Sources */ = {isa = PBXBuildFile; fileRef = A044E10927305A7E00DE0514 /* Matching.swift */; };
@@ -90,6 +92,8 @@
 		4A97391F05652084E7560246 /* Pods-SpotiFriendsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpotiFriendsTests.release.xcconfig"; path = "Target Support Files/Pods-SpotiFriendsTests/Pods-SpotiFriendsTests.release.xcconfig"; sourceTree = "<group>"; };
 		4F430A619D8006F36D2E598A /* Pods-SpotiFriendsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpotiFriendsTests.debug.xcconfig"; path = "Target Support Files/Pods-SpotiFriendsTests/Pods-SpotiFriendsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		82D630C9125D8FA194D9D67D /* Pods-SpotiFriends.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpotiFriends.release.xcconfig"; path = "Target Support Files/Pods-SpotiFriends/Pods-SpotiFriends.release.xcconfig"; sourceTree = "<group>"; };
+		9E850DAD2731E2D000D99E66 /* NavBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavBar.swift; sourceTree = "<group>"; };
+		9E850DB12731E2D500D99E66 /* MatchesList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchesList.swift; sourceTree = "<group>"; };
 		9E8ABA1327306FDA00544AEA /* SpotifyiOS.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SpotifyiOS.xcframework; path = "../../Downloads/ios-sdk-master/SpotifyiOS.xcframework"; sourceTree = "<group>"; };
 		9E8ABA1427306FE400544AEA /* SpotifyiOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpotifyiOS.framework; path = "../../../Downloads/ios-sdk-master/SpotifyiOS.framework"; sourceTree = "<group>"; };
 		9E8ABA1827306FF600544AEA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -160,6 +164,8 @@
 			isa = PBXGroup;
 			children = (
 				33720996272F19840093523E /* ProfileDetail.swift */,
+				9E850DB12731E2D500D99E66 /* MatchesList.swift */,
+				9E850DAD2731E2D000D99E66 /* NavBar.swift */,
 				A044E10927305A7E00DE0514 /* Matching.swift */,
 			);
 			path = Views;
@@ -488,6 +494,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				337C3610272B429300B7B259 /* Song.swift in Sources */,
+				9E850DB22731E2D500D99E66 /* MatchesList.swift in Sources */,
 				33720997272F19840093523E /* ProfileDetail.swift in Sources */,
 				339BB71527162A71003CA493 /* AppDelegate.swift in Sources */,
 				3372099F272F1DAB0093523E /* History.swift in Sources */,
@@ -495,6 +502,7 @@
 				330476A327274C5C004A5764 /* ViewController.swift in Sources */,
 				337C3620272C3EB600B7B259 /* Constants.swift in Sources */,
 				337C361C272B486600B7B259 /* User.swift in Sources */,
+				9E850DAE2731E2D000D99E66 /* NavBar.swift in Sources */,
 				A044E10A27305A7E00DE0514 /* Matching.swift in Sources */,
 				330476A827275133004A5764 /* UserInfo.swift in Sources */,
 				339BB71927162A71003CA493 /* ContentView.swift in Sources */,

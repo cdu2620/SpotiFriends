@@ -32,31 +32,31 @@ class Song: Identifiable {
         }
     }
 
-    init?(snapshot: DataSnapshot) {
-       // This is what we call a failable init because
-       // it returns nil if initialization fails
-       guard
-          let value = snapshot.value as? [String: AnyObject],
-          let id = value["id"] as? String,
-          let song_name = value["song_name"] as? String,
-          let artist = value["artist"] as? String,
-          let album_image_url = value["album_image_url"] as? String
-       else {
-          return nil
-       }
-       
-        self.ref = snapshot.ref
-        self.id = id
-        self.song_name = song_name
-        self.artist = artist
-        self.album_image_url = album_image_url
-        let url = URL(string: self.album_image_url)
-        let data = try? Data(contentsOf:url!)
-        if let imageData = data {
-            self.album_image = UIImage(data: imageData)
-        }
-        
-     }
+//    init?(snapshot: DataSnapshot) {
+//       // This is what we call a failable init because
+//       // it returns nil if initialization fails
+//       guard
+//          let value = snapshot.value as? [String: AnyObject],
+//          let id = value["id"] as? String,
+//          let song_name = value["song_name"] as? String,
+//          let artist = value["artist"] as? String,
+//          let album_image_url = value["album_image_url"] as? String
+//       else {
+//          return nil
+//       }
+//
+//        self.ref = snapshot.ref
+//        self.id = id
+//        self.song_name = song_name
+//        self.artist = artist
+//        self.album_image_url = album_image_url
+//        let url = URL(string: self.album_image_url)
+//        let data = try? Data(contentsOf:url!)
+//        if let imageData = data {
+//            self.album_image = UIImage(data: imageData)
+//        }
+//
+//     }
      
      func toAnyObject() -> Any {
        return [

@@ -194,13 +194,12 @@ class SpotiFriendsTests: XCTestCase {
 
             }
         })
-        Spartan.authorizationToken = "BQAfKCuAHFAWX0JlDkmBm_0Pdg1kcGyfi867svkMrrvAcDTHFX7gmUGtlGQ8LBB8XMOOY1p8wwz4271i23zEwoKeH5fXgUUonohjkMiK7vPhsST0FY2Fl94c_kcsNvaCxODU8BXZzFEpqtfCNU3m64G6hoK8Zg"
-        let getMe = Spartan.getMe(success: { (user) in
-              let pfp = user.images![0].url!
-            XCTAssertEqual(pfp, "https://platform-lookaside.fbsbx.com/platform/profilepic/?asid=1417385178570391&height=300&width=300&ext=1638469658&hash=AeTi5IabKOCwz7fVICM")
-          }, failure: { (error) in
-              print(error)
-          })
+        Spartan.authorizationToken = "BQBP-tMWgc9VAwYTBEMbbwbSJC-xmiR2_5w3LWvoL-f6xDZRQrYZv0pS2RL5zUqPmuxZpYyQ2ADddGPBrNEhwinWoDAL5CN3ylq5Rq0_cczXq4QwjTnCdW-rQ6-HE1VHDqy8eYNP5IZN9MFXMZPXvzo8dJOiRw"
+        let apiCallSongs = Spartan.getMyTopTracks(limit: 3, offset: 0, timeRange: .mediumTerm, success: { (pagingObject) in
+            XCTAssertEqual(pagingObject.items.count, 3)
+        }, failure: { (error) in
+            print(error)
+        })
     }
 
     func testPerformanceExample() throws {

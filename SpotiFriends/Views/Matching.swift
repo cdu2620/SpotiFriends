@@ -140,17 +140,18 @@ struct Matching: View {
         // Yes/ No buttons
         HStack{
             NavigationLink(destination: Matching(potentialMatches: potentialMatches, index: index<potentialMatches.count ? index+1: 0,currUser:currUser)) {
-                Image(systemName: "checkmark")
+                Image(systemName: "xmark")
                   .padding()
-                  .background(Color.green)
+                  .background(Color.red)
                   .clipShape(Circle())
                   .font(.largeTitle)
                   .foregroundColor(.white)
             }
+            Spacer()
             NavigationLink(destination: Matching(potentialMatches: potentialMatches, index: index<potentialMatches.count ? index+1: 0,currUser:currUser)) {
-                Image(systemName: "xmark")
+                Image(systemName: "checkmark")
                   .padding()
-                  .background(Color.red)
+                  .background(Color.green)
                   .clipShape(Circle())
                   .font(.largeTitle)
                   .foregroundColor(.white)

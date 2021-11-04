@@ -139,18 +139,18 @@ struct Matching: View {
                 // Trying with buttons
                 HStack{
                     Button(action: {increment()}) {
-                      Image(systemName: "checkmark")
+                      Image(systemName: "xmark")
                         .padding()
-                        .background(Color.green)
+                        .background(Color.red)
                         .clipShape(Circle())
                         .font(.largeTitle)
                         .foregroundColor(.white)
                     }
                     Spacer().frame(height: 30)
                     Button(action: {increment()}) {
-                        Image(systemName: "xmark")
+                        Image(systemName: "checkmark")
                           .padding()
-                          .background(Color.red)
+                          .background(Color.green)
                           .clipShape(Circle())
                           .font(.largeTitle)
                           .foregroundColor(.white)

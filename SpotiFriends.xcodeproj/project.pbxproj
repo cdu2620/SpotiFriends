@@ -11,8 +11,8 @@
 		330476A827275133004A5764 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330476A727275133004A5764 /* UserInfo.swift */; };
 		3308645027321A510059F944 /* Artist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3308644F27321A510059F944 /* Artist.swift */; };
 		33340E4E2731EFAB0093C6BE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 33340E4D2731EFAB0093C6BE /* GoogleService-Info.plist */; };
-		33340E522731EFB30093C6BE /* SpotifyiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33340E512731EFB30093C6BE /* SpotifyiOS.framework */; };
-		33340E542731EFB90093C6BE /* SpotifyiOS.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33340E532731EFB90093C6BE /* SpotifyiOS.xcframework */; };
+		3347B28227347F2E00EF6D79 /* SpotifyiOS.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33340E532731EFB90093C6BE /* SpotifyiOS.xcframework */; };
+		3347B28327347F2E00EF6D79 /* SpotifyiOS.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 33340E532731EFB90093C6BE /* SpotifyiOS.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		33720997272F19840093523E /* ProfileDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33720996272F19840093523E /* ProfileDetail.swift */; };
 		3372099F272F1DAB0093523E /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3372099E272F1DAB0093523E /* History.swift */; };
 		337C3610272B429300B7B259 /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = 337C360F272B429300B7B259 /* Song.swift */; };
@@ -59,6 +59,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				3347B28327347F2E00EF6D79 /* SpotifyiOS.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -113,8 +114,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				337C3624272C419300B7B259 /* AuthenticationServices.framework in Frameworks */,
-				33340E522731EFB30093C6BE /* SpotifyiOS.framework in Frameworks */,
-				33340E542731EFB90093C6BE /* SpotifyiOS.xcframework in Frameworks */,
+				3347B28227347F2E00EF6D79 /* SpotifyiOS.xcframework in Frameworks */,
 				C456EA5F4481AFD52D56375F /* Pods_SpotiFriends.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

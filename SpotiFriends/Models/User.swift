@@ -11,12 +11,13 @@ import FirebaseDatabase
 
 class User: Identifiable {
     let ref: DatabaseReference?
-    let id: String = UUID().uuidString
+    let id: String
     let personal_info: UserInfo
     let spotify_history: History
     
-    init(personal_info: UserInfo, spotify_history: History) {
+    init(id: String, personal_info: UserInfo, spotify_history: History) {
         self.ref = nil
+        self.id = id
         self.personal_info = personal_info
         self.spotify_history = spotify_history
     }
@@ -39,6 +40,7 @@ class User: Identifiable {
      
      func toAnyObject() -> Any {
        return [
+        "id" : id,
          "personal_info": personal_info,
          "spotify_history": spotify_history
        ]

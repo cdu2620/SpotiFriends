@@ -16,7 +16,7 @@ class ViewModel: ObservableObject {
     @Published var list = [UserInfo]()
     @Published var users = [User]()
     let ref = Database.database().reference()
-
+    var username = ""
   
     
     func getData() {
@@ -25,17 +25,17 @@ class ViewModel: ObservableObject {
         
         let getMe = Spartan.getMe(success: { (user) in
               // Do something with the user object
-          let username = user.id as! String
-            let path2 = "/users/" + username + "/uid"
+            self.username = user.id as! String
+            let path2 = "/users/" + self.username + "/uid"
 //            let path2 = String(format:"/users/%s/uid",username as! String)
             print(path2)
           let userRef = Database.database().reference().child(path2)
 //          let path = "/users/cdu2620/personal_info/profile_pic"
-            let path = "/users/" + username + "/personal_info/profile_pic"
+            let path = "/users/" + self.username + "/personal_info/profile_pic"
           let pfpRef = Database.database().reference().child(path)
           let pfp = user.images![0].url!
               pfpRef.setValue(pfp)
-          userRef.setValue(username)
+            userRef.setValue(self.username)
           }, failure: { (error) in
               print(error)
           })
@@ -45,7 +45,7 @@ class ViewModel: ObservableObject {
         
         var i = 0
         for obj in pagingObject.items {
-          let path = "/users/cdu2620/spotify_history/top_3_songs/"+String(i)
+            let path = "/users/" + self.username + "/spotify_history/top_3_songs/"+String(i)
         
           let namePath = path+"/song_name"
           let nameRef = Database.database().reference().child(namePath)
@@ -83,7 +83,7 @@ class ViewModel: ObservableObject {
         
         var i = 0
         for obj in pagingObject.items {
-          let path = "/users/cdu2620/spotify_history/top_3_artists/"+String(i)
+            let path = "/users/" + self.username + "/spotify_history/top_3_artists/"+String(i)
         
           let namePath = path+"/name"
           let nameRef = Database.database().reference().child(namePath)
@@ -192,6 +192,7 @@ class ViewModel: ObservableObject {
                             }
                     let his = History(top_3_songs: top_3sg, top_3_artists: top_3art, top_20_songs: top_20sg, top_20_artists: top_20art)
                     
+                    let temp_match = Match(one_way_matches: [User](), two_way_matches: [User]())
                     let uid = val["uid"] as! String
                             if let vals = val["personal_info"] as? [String: Any]
                             {
@@ -202,21 +203,65 @@ class ViewModel: ObservableObject {
                                 let bio = vals["bio"] as! String
                                 let profile_pic = vals["profile_pic"] as! String
                                 let person = UserInfo(f_name:f_name,l_name: l_name, age: age, pronouns: pronouns, bio: bio,profile_picture_url: profile_pic)
-                                let one = User(id: uid, personal_info:person, spotify_history: his)
+                                let one = User(id: uid, matches: temp_match, personal_info:person, spotify_history: his)
                                 self.list.append(person)
                                 self.users.append(one)
                             }
  
                             
                         }// end of individual user
-//                for user in self.users {
-//                    print(user.personal_info.profile_picture_url!)
-//                }
                 print("dummy")
             }})
             
           
     }
     
-    }}
+    } // end of getData
+    
+    func getMatches() {
+        getData()
+        let liveRef = self.ref.child("users")
+        liveRef.observe(.value, with: {
+            (snapshot) in if let snapCast = snapshot.value as? [String:AnyObject]{
+                for snap in snapCast
+                            {
+                    var one_match = [User]()
+                    var two_match = [User]()
+                    let val = snap.value as! [String: Any]
+                    let uid = val["uid"] as! String
+                    let og_user = self.users.filter{ $0.id == uid }[0]
+                            if let matches = val["matches"] as? [String: Any]
+                            {
+ 
+                                if let one_way = matches["one_way_match"] as? [Any] {
+                                    for one in one_way {
+                                        if let match = one as? [String: Any] {
+                                            let user = match["other_user_id"] as! String
+                                            let find = self.users.filter{ $0.id == user }[0]
+                                            one_match.append(find)
+                                        }
+                                    }} // one way
+                                
+                                if let two_way = matches["two_way_match"] as? [Any] {
+                                    for two in two_way {
+                                        if let match = two as? [String: Any] {
+                                            let user = match["other_user_id"] as! String
+                                            let find = self.users.filter{ $0.id == user }[0]
+                                            two_match.append(find)
+                                        }
+                                    }} // two way
+                                
+                                let users_matches = Match(one_way_matches: one_match, two_way_matches: two_match)
+                                og_user.matches = users_matches
+                                if (og_user.personal_info.f_name == "Catherine") {
+                                    print(og_user.matches.one_way_matches[0].personal_info.f_name)
+                                }
+                            }
+                    
+                } // end of individual user
+                
+            }})
+        print("ok")
+    } // end of getmatches
+ }
 

@@ -35,7 +35,7 @@ struct ContentView: View {
                    
                 } else {
                     Button(action: {
-                        vm.getData()
+                        vm.getMatches()
                         DispatchQueue.main.asyncAfter(deadline: .now()+10) {
                             populatedData = true
                             var testUser = vm.users.filter{ $0.personal_info.f_name == "Catherine" }[0]

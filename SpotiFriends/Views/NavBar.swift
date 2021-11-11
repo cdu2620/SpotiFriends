@@ -11,6 +11,13 @@ struct NavBar: View {
     var potentialMatches: [User]
     var index: Int
     var user: User
+    
+    init(potentialMatches:[User], index: Int, user: User) {
+        UITabBar.appearance().backgroundColor = .clear
+        self.potentialMatches = potentialMatches
+        self.index = index
+        self.user = user
+    }
     var body: some View {
 //        NavigationView{
             TabView{
@@ -30,6 +37,7 @@ struct NavBar: View {
                         Text("Profile")
                     }
                 }
+            .background(Color.black)
 //            .navigationBarHidden(true)
         }
         

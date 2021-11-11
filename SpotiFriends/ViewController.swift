@@ -29,7 +29,7 @@ class ViewModel: ObservableObject {
         
         var i = 0
         for obj in pagingObject.items {
-          let path = "/users/user2/spotify_history/top_3_songs/"+String(i)
+          let path = "/users/user4/spotify_history/top_3_songs/"+String(i)
         
           let namePath = path+"/song_name"
           let nameRef = Database.database().reference().child(namePath)
@@ -62,7 +62,7 @@ class ViewModel: ObservableObject {
         
       let getMe = Spartan.getMe(success: { (user) in
             // Do something with the user object
-            let path = "/users/user2/personal_info/profile_pic"
+            let path = "/users/user4/personal_info/profile_pic"
             let pfpRef = Database.database().reference().child(path)
             let pfp = user.images![0].url!
             pfpRef.setValue(pfp)
@@ -76,7 +76,7 @@ class ViewModel: ObservableObject {
         
         var i = 0
         for obj in pagingObject.items {
-          let path = "/users/user2/spotify_history/top_3_artists/"+String(i)
+          let path = "/users/user4/spotify_history/top_3_artists/"+String(i)
         
           let namePath = path+"/name"
           let nameRef = Database.database().reference().child(namePath)

@@ -191,7 +191,8 @@ class ViewModel: ObservableObject {
                                 
                             }
                     let his = History(top_3_songs: top_3sg, top_3_artists: top_3art, top_20_songs: top_20sg, top_20_artists: top_20art)
-
+                    
+                    let uid = val["uid"] as! String
                             if let vals = val["personal_info"] as? [String: Any]
                             {
                                 let f_name = vals["f_name"] as! String
@@ -201,7 +202,7 @@ class ViewModel: ObservableObject {
                                 let bio = vals["bio"] as! String
                                 let profile_pic = vals["profile_pic"] as! String
                                 let person = UserInfo(f_name:f_name,l_name: l_name, age: age, pronouns: pronouns, bio: bio,profile_picture_url: profile_pic)
-                                let one = User(personal_info:person, spotify_history: his)
+                                let one = User(id: uid, personal_info:person, spotify_history: his)
                                 self.list.append(person)
                                 self.users.append(one)
                             }

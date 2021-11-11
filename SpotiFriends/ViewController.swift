@@ -16,20 +16,35 @@ class ViewModel: ObservableObject {
     @Published var list = [UserInfo]()
     @Published var users = [User]()
     let ref = Database.database().reference()
-  
 
   
     
     func getData() {
       var top_3sg_api = [Song]()
       var top_3art_api = [Artist]()
+        
+        let getMe = Spartan.getMe(success: { (user) in
+              // Do something with the user object
+          let username = user.id as! String
+            let path2 = "/users/" + username + "/uid"
+//            let path2 = String(format:"/users/%s/uid",username as! String)
+            print(path2)
+          let userRef = Database.database().reference().child(path2)
+          let path = "/users/cdu2620/personal_info/profile_pic"
+          let pfpRef = Database.database().reference().child(path)
+          let pfp = user.images![0].url!
+              pfpRef.setValue(pfp)
+          userRef.setValue(username)
+          }, failure: { (error) in
+              print(error)
+          })
 
       let apiCallSongs = Spartan.getMyTopTracks(limit: 3, offset: 0, timeRange: .mediumTerm, success: { (pagingObject) in
         // Get the artists via pagingObject.items
         
         var i = 0
         for obj in pagingObject.items {
-          let path = "/users/user4/spotify_history/top_3_songs/"+String(i)
+          let path = "/users/cdu2620/spotify_history/top_3_songs/"+String(i)
         
           let namePath = path+"/song_name"
           let nameRef = Database.database().reference().child(namePath)
@@ -60,15 +75,6 @@ class ViewModel: ObservableObject {
           print(error)
       })
         
-      let getMe = Spartan.getMe(success: { (user) in
-            // Do something with the user object
-            let path = "/users/user4/personal_info/profile_pic"
-            let pfpRef = Database.database().reference().child(path)
-            let pfp = user.images![0].url!
-            pfpRef.setValue(pfp)
-        }, failure: { (error) in
-            print(error)
-        })
         
       
       let apiCallArtists = Spartan.getMyTopArtists(limit: 3, offset: 0, timeRange: .mediumTerm, success: { (pagingObject) in
@@ -76,7 +82,7 @@ class ViewModel: ObservableObject {
         
         var i = 0
         for obj in pagingObject.items {
-          let path = "/users/user4/spotify_history/top_3_artists/"+String(i)
+          let path = "/users/cdu2620/spotify_history/top_3_artists/"+String(i)
         
           let namePath = path+"/name"
           let nameRef = Database.database().reference().child(namePath)

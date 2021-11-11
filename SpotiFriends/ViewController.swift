@@ -30,7 +30,8 @@ class ViewModel: ObservableObject {
 //            let path2 = String(format:"/users/%s/uid",username as! String)
             print(path2)
           let userRef = Database.database().reference().child(path2)
-          let path = "/users/cdu2620/personal_info/profile_pic"
+//          let path = "/users/cdu2620/personal_info/profile_pic"
+            let path = "/users/" + username + "/personal_info/profile_pic"
           let pfpRef = Database.database().reference().child(path)
           let pfp = user.images![0].url!
               pfpRef.setValue(pfp)

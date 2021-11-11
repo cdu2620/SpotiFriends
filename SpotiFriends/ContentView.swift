@@ -22,8 +22,8 @@ struct ContentView: View {
         NavigationView{
             VStack {
                 if populatedData == true {
-                    var testUser = vm.users.filter{ $0.personal_info.f_name == "Catherine" }[0]
-                    var otherUsers = vm.users.filter{ $0.personal_info.f_name != "Catherine" }
+                    var testUser = vm.users.filter{ $0.id == vm.username  }[0]
+                    var otherUsers = vm.users.filter{ $0.id != vm.username  }
                     VStack{
 //                        HStack {
 //                            NavigationLink("View Profile", destination: ProfileDetail(potentialMatches: otherUsers, user: testUser))
@@ -38,8 +38,8 @@ struct ContentView: View {
                         vm.getMatches()
                         DispatchQueue.main.asyncAfter(deadline: .now()+10) {
                             populatedData = true
-                            var testUser = vm.users.filter{ $0.personal_info.f_name == "Catherine" }[0]
-                            var otherUsers = vm.users.filter{ $0.personal_info.f_name != "Catherine" }
+                            var testUser = vm.users.filter{ $0.id == vm.username  }[0]
+                            var otherUsers = vm.users.filter{ $0.id != vm.username  }
                             VStack{
 //                                HStack {
 //                                    NavigationLink("View Profile", destination: ProfileDetail(potentialMatches: otherUsers, user: testUser))

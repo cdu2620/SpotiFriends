@@ -277,9 +277,18 @@ class ViewModel: ObservableObject {
     var commonSongs = [Song]()
 
     for (i, u1_song) in user1_songs.enumerated() {
+//      print("u1 song")
+      print(u1_song.song_name)
       for (j, u2_song) in user2_songs.enumerated() {
+//        print("u2 song")
+        print(u2_song.song_name)
         if (u1_song.song_name == u2_song.song_name &&
-              u1_song.id == u2_song.id) {
+              u1_song.artist == u2_song.artist) {
+              //u1_song.id == u2_song.id) {
+          print("other user is")
+          print(user2.personal_info.f_name)
+          print("common")
+          print(u1_song.song_name)
           commonSongRankings.append((i,j))
           let absDiff = abs(i-j)
           let avgRank: Int = (i+j)/2
@@ -304,9 +313,9 @@ class ViewModel: ObservableObject {
     songScore = bestScoreSongs / actualScoreSongs
     songScore = min(1.0, songScore*2.0)
     
-    commonSongsPriorities.sort(by: {
-      return $0.0 > $1.0
-    })
+//    commonSongsPriorities.sort(by: {
+//      return $0.0 > $1.0
+//    })
     
     commonSongs = commonSongsPriorities.map { (x : Int, a: Song) -> Song in
       return a
@@ -321,7 +330,7 @@ class ViewModel: ObservableObject {
     
     for (i, u1_artist) in user1_artists.enumerated() {
       for (j, u2_artist) in user2_artists.enumerated() {
-        if (u1_artist.name == u2_artist.name &&
+        if (//u1_artist.name == u2_artist.name &&
               u1_artist.id == u2_artist.id) {
           commonArtistRankings.append((i,j))
           let absDiff = abs(i-j)
@@ -347,9 +356,9 @@ class ViewModel: ObservableObject {
     artistScore = bestScoreArtists / actualScoreArtists
     artistScore = min(1.0, artistScore*2.0)
     
-    commonArtistsPriorities.sort(by: {
-      return $0.0 > $1.0
-    })
+//    commonArtistsPriorities.sort(by: {
+//      return $0.0 > $1.0
+//    })
     
     commonArtists = commonArtistsPriorities.map { (x : Int, a: Artist) -> Artist in
       return a
@@ -358,8 +367,14 @@ class ViewModel: ObservableObject {
 
     
     
-    let totalScore = songScore * 0.3 + artistScore * 0.7
+    let totalScore = (songScore * 0.3 + artistScore * 0.7) * 100
 //    getMatches()
+    print(totalScore)
+    print(commonArtists[0].name)
+    print(commonArtists[1].name)
+    print(commonArtists[2].name)
+    print(commonArtists.count)
+    print(commonSongs)
     return (Int(round(totalScore)), commonArtists, commonSongs)
   } // end of matching
  }

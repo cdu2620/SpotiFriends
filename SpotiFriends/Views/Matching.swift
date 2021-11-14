@@ -40,12 +40,13 @@ struct Matching: View {
                                     .shadow(radius: 7)
                                 )
                             .frame(width: 50, height: 50)
-                        Text(user.spotify_history.top_3_artists[0].name)
+                        //Text(user.spotify_history.top_3_artists[0].name)
+                      Text(res.1[0].name)
                             .multilineTextAlignment(.center)
                         }
                         
                     VStack{
-                        Image(uiImage: res.1[2].artist_image
+                        Image(uiImage: res.1[1].artist_image
                                 //user.spotify_history.top_3_artists[1].artist_image
                           )
                                 .resizable()
@@ -56,7 +57,8 @@ struct Matching: View {
                                     .shadow(radius: 7)
                                 )
                             .frame(width: 50, height: 50)
-                        Text(user.spotify_history.top_3_artists[1].name)
+                        //Text(user.spotify_history.top_3_artists[1].name)
+                      Text(res.1[1].name)
                             .multilineTextAlignment(.center)
                         }
                         
@@ -72,7 +74,8 @@ struct Matching: View {
                                     .shadow(radius: 7)
                               )
                             .frame(width: 50, height: 50)
-                        Text(user.spotify_history.top_3_artists[2].name)
+                      //Text(user.spotify_history.top_3_artists[2].name)
+                      Text(res.1[2].name)
                             .multilineTextAlignment(.center)
                         }
                     .frame(alignment: .center)
@@ -95,7 +98,8 @@ struct Matching: View {
                                     .shadow(radius: 7)
                               )
                             .frame(width: 50, height: 50)
-                        Text(user.spotify_history.top_3_songs[0].song_name)
+                      Text(res.2[0].song_name)
+                        //Text(user.spotify_history.top_3_songs[0].song_name)
                             .multilineTextAlignment(.center)
                         }
                         
@@ -111,7 +115,8 @@ struct Matching: View {
                                     .shadow(radius: 7)
                               )
                             .frame(width: 50, height: 50)
-                        Text(user.spotify_history.top_3_songs[1].song_name)
+                      Text(res.2[1].song_name)
+                        //Text(user.spotify_history.top_3_songs[1].song_name)
                             .multilineTextAlignment(.center)
                         }
                         
@@ -127,7 +132,8 @@ struct Matching: View {
                                     .shadow(radius: 7)
                               )
                             .frame(width: 50, height: 50)
-                        Text(user.spotify_history.top_3_songs[2].song_name)
+                      Text(res.2[2].song_name)
+                        //Text(user.spotify_history.top_3_songs[2].song_name)
                             .multilineTextAlignment(.center)
                         }
                     .frame(alignment: .center)

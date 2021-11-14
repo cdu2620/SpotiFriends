@@ -26,7 +26,8 @@ struct NavBar: View {
                         Image(systemName: "list.bullet.indent")
                         Text("Matches")
                     }
-                Matching(potentialMatches: potentialMatches, index: 0, currUser:user)
+//                Matching(potentialMatches: potentialMatches, index: 0, currUser:user)
+                  SwipeView(potentialMatches: potentialMatches, currUser: user)
                     .tabItem {
                         Image(systemName: "plus")
                         Text("Match")

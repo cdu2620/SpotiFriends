@@ -11,19 +11,27 @@ struct Matching: View {
     var potentialMatches: [User]
     @State var index: Int
     var currUser: User
+  @ObservedObject var vm = ViewModel()
     
     var body: some View {
-        // Get next user
-        var user = potentialMatches[index]
+      // Get next user
+      var user = potentialMatches[index]
+//      var currUser = vm.users.filter{ $0.id == vm.username  }[0]
+      var res = vm.matching(currUser, user)
+
         ScrollView{
             VStack{
-                Text("72% Match").fontWeight(.bold).font(.system(size: 60))
+              Text(String(res.0)+"% Match").fontWeight(.bold).font(.system(size: 60))
                 // List artists
                 Text("Top 3 Artists in Common").fontWeight(.bold)
                 HStack{
                     VStack{
-                        let  _ = print(user.spotify_history)
-                        Image(uiImage: user.spotify_history.top_3_artists[0].artist_image)
+                        let  _ = print(user.matches.one_way_matches[0].id)
+                        Image(uiImage:
+                                res.1[0].artist_image
+                                
+//                               user.spotify_history.top_3_artists[0].artist_image
+                        )
                                 .resizable()
                                 .clipShape(Circle())
                                 .overlay(
@@ -37,7 +45,9 @@ struct Matching: View {
                         }
                         
                     VStack{
-                        Image(uiImage: user.spotify_history.top_3_artists[1].artist_image)
+                        Image(uiImage: res.1[2].artist_image
+                                //user.spotify_history.top_3_artists[1].artist_image
+                          )
                                 .resizable()
                                 .clipShape(Circle())
                                 .overlay(
@@ -51,7 +61,9 @@ struct Matching: View {
                         }
                         
                     VStack{
-                        Image(uiImage: user.spotify_history.top_3_artists[2].artist_image)
+                        Image(uiImage: res.1[2].artist_image
+                                //user.spotify_history.top_3_artists[2].artist_image
+                        )
                                 .resizable()
                                 .clipShape(Circle())
                                 .overlay(
@@ -72,7 +84,9 @@ struct Matching: View {
                 Text("Top 3 Songs in Common").fontWeight(.bold)
                 HStack{
                     VStack{
-                        Image(uiImage: user.spotify_history.top_3_songs[0].album_image!)
+                        Image(uiImage: res.2[0].album_image!
+                                //user.spotify_history.top_3_songs[0].album_image!
+                        )
                                 .resizable()
                                 .clipShape(Circle())
                                 .overlay(
@@ -86,7 +100,9 @@ struct Matching: View {
                         }
                         
                     VStack{
-                        Image(uiImage: user.spotify_history.top_3_songs[1].album_image!)
+                        Image(uiImage: res.2[1].album_image!
+                                //user.spotify_history.top_3_songs[1].album_image!
+                        )
                                 .resizable()
                                 .clipShape(Circle())
                                 .overlay(
@@ -100,7 +116,9 @@ struct Matching: View {
                         }
                         
                     VStack{
-                        Image(uiImage: user.spotify_history.top_3_songs[2].album_image!)
+                        Image(uiImage: res.2[2].album_image!
+                                //user.spotify_history.top_3_songs[2].album_image!
+                        )
                                 .resizable()
                                 .clipShape(Circle())
                                 .overlay(

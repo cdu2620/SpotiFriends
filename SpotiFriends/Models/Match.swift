@@ -15,22 +15,6 @@ class Match: Identifiable {
         self.one_way_matches = one_way_matches
         self.two_way_matches = two_way_matches
     }
-//    init?(snapshot: DataSnapshot) {
-//       // This is what we call a failable init because
-//       // it returns nil if initialization fails
-//       guard
-//         let value = snapshot.value as? [String: AnyObject],
-//         let personal_info = value["personal_info"] as? UserInfo,
-//         let spotify_history = value["spotify_history"] as? History
-//
-//       else {
-//         return nil
-//       }
-//
-//       self.ref = snapshot.ref
-//        self.personal_info = personal_info
-//        self.spotify_history = spotify_history
-//     }
      
      func toAnyObject() -> Any {
        return [

@@ -24,7 +24,7 @@ struct MatchRow: View {
             )
           VStack {
             Text(match.personal_info.f_name + " " + match.personal_info.l_name)
-            Text(score + "% Match")
+            Text(String(score) + "% Match")
           }
           Image(systemName: "message")
           .padding()

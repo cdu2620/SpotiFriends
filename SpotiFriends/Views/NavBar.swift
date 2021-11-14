@@ -21,7 +21,7 @@ struct NavBar: View {
     var body: some View {
 //        NavigationView{
             TabView{
-                MatchesList()
+                MatchesList(currUser:user)
                     .tabItem {
                         Image(systemName: "list.bullet.indent")
                         Text("Matches")

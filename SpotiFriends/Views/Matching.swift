@@ -175,7 +175,7 @@ struct Matching: View {
             let match_path2 = "/users/" + user1.id + "/matches/two_way_match/"+String(user1.matches.two_way_matches.count-1) + "/other_user_id"
             let userRef2 = Database.database().reference().child(match_path2)
             userRef2.setValue(user2.id)
-            // make a copy
+            // remove from one way match in db
             let path_og = "/users/" + user2.id
             let refToCopy = Database.database().reference().child(path_og)
             refToCopy.observe(.value, with: {

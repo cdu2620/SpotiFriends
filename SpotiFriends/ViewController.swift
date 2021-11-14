@@ -253,9 +253,6 @@ class ViewModel: ObservableObject {
                                 
                                 let users_matches = Match(one_way_matches: one_match, two_way_matches: two_match)
                                 og_user.matches = users_matches
-                                if (og_user.personal_info.f_name == "Catherine") {
-                                    print(og_user.matches.one_way_matches[0].personal_info.f_name)
-                                }
                             }
                     
                 } // end of individual user

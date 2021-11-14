@@ -41,9 +41,6 @@ struct ProfileDetail: View {
             VStack{
                 HStack{
                     Text("Your Top 3 Artists: ").fontWeight(.bold).foregroundColor(.white)
-                    Button(action: {}) {
-                      Text("Edit")
-                    }
                 }
             
                 HStack{
@@ -101,9 +98,6 @@ struct ProfileDetail: View {
         VStack{
             HStack{
                 Text("Your Top 3 Songs: ").fontWeight(.bold).foregroundColor(.white)
-//                Button(action: {}) {
-//                  Text("Edit")
-//                }
             }
         
             HStack{

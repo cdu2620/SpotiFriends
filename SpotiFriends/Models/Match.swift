@@ -6,8 +6,8 @@ import FirebaseDatabase
 class Match: Identifiable {
     let ref: DatabaseReference?
 //    let id: UUID.
-    let one_way_matches: [User]
-    let two_way_matches: [User]
+    var one_way_matches: [User]
+    var two_way_matches: [User]
 
     
     init(one_way_matches: [User], two_way_matches: [User]) {

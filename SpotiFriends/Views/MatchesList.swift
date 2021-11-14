@@ -15,7 +15,7 @@ struct MatchesList: View {
       NavigationView {
         (List {
           ForEach(matches) { match in
-            NavigationLink(destination: OtherProfileDetail(user: match)) {
+            NavigationLink(destination: OtherProfileDetail(user: match, matchScore: 50)) {
               MatchRow(match: match, score: 50)
             }
           } //.onDelete(perform: delete)

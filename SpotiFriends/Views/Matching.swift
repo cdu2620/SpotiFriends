@@ -14,9 +14,9 @@ struct Matching: View {
     
     var body: some View {
       // Get next user
-      var user = potentialMatches[index]
+//      var user = potentialMatches[index]
 //      var currUser = vm.users.filter{ $0.id == vm.username  }[0]
-      var res = vm.matching(currUser, user)
+      var res = vm.matching(currUser, potentialMatchUser)
 
         ScrollView{
             VStack{
@@ -25,7 +25,7 @@ struct Matching: View {
                 Text("Top 3 Artists in Common").fontWeight(.bold).foregroundColor(.white)
                 HStack{
                     VStack{
-                        let  _ = print(user.matches.one_way_matches[0].id)
+//                        let  _ = print(user.matches.one_way_matches[0].id)
                         Image(uiImage:
                                 res.1[0].artist_image
                                 
@@ -122,6 +122,8 @@ struct Matching: View {
                         }
                         
                     VStack{
+                        let _ = print(currUser.personal_info.f_name, potentialMatchUser.personal_info.f_name)
+                        let _ = print(res.2)
                         Image(uiImage: res.2[2].album_image!
                                 //user.spotify_history.top_3_songs[2].album_image!
                         )
@@ -195,4 +197,4 @@ struct Matching: View {
     }
     
     
-}
+

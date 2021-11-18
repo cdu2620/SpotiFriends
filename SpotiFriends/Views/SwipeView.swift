@@ -17,49 +17,13 @@ struct SwipeView: View {
     var currUser: User
 
     var body: some View {
-        GeometryReader { geometry in
-            return ScrollView(.horizontal, showsIndicators: true) {
-                HStack(spacing: self.spacing) {
-                    ForEach(self.potentialMatches) { user in
-                        Matching(potentialMatchUser:user, currUser:currUser)
-                            .frame(width: geometry.size.width)
-                    }
+        ZStack{
+            Color.black.opacity(0.05).edgesIgnoringSafeArea(.all)
+            ZStack{
+                ForEach(0..<potentialMatches.count, id: \.self){ i in
+                    Matching(potentialMatchUser: potentialMatches[i], currUser: currUser)
                 }
-            }
-            .content.offset(x: self.offset)
-            .frame(width: geometry.size.width, alignment: .leading)
-            .gesture(
-                
-                DragGesture()
-                    .onChanged({ value in
-                        self.offset = value.translation.width - geometry.size.width * CGFloat(self.index)
-                    })
-                    .onEnded({ value in
-                        if -value.predictedEndTranslation.width > geometry.size.width / (1.5){
-                            //this is when user accepts/likes potential match
-                            
-//                            matched(user1:currUser, user2:potentialMatches[index])
-                            if self.index + 1 >= self.potentialMatches.count{
-                                self.index = 0
-                            } else {
-                                self.index += 1
-                            }
-                            withAnimation { self.offset = -(geometry.size.width + self.spacing) * CGFloat(self.index) }
-
-                        }
-                        if value.predictedEndTranslation.width > geometry.size.width / (1.5) {
-                            //this is when user rejects potential match
-                            if self.index + 1 >= self.potentialMatches.count{
-                                self.index = 0
-                            } else {
-                                self.index += 1
-                            }
-                            withAnimation { self.offset = (geometry.size.width + self.spacing) * CGFloat(self.index) }
-                        }
-                        
-                       
-                    })
-            )
+            }.padding()
         }
     }
     // user1 is you, user2 is other user

@@ -27,6 +27,10 @@
 		46F7EB700F6D43014969C9DB /* Pods_SpotiFriendsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE977AC110927556B617F391 /* Pods_SpotiFriendsTests.framework */; };
 		694B287527409848007511F9 /* MatchRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694B287427409848007511F9 /* MatchRow.swift */; };
 		694B287727409AC4007511F9 /* OtherProfileDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694B287627409AC4007511F9 /* OtherProfileDetail.swift */; };
+		6950B4262746E30C0037DE7A /* EditProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6950B4252746E30C0037DE7A /* EditProfile.swift */; };
+		6950B42A2746EABC0037DE7A /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6950B4272746EABC0037DE7A /* ImagePicker.swift */; };
+		6950B42B2746EABC0037DE7A /* PhotoCaptureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6950B4282746EABC0037DE7A /* PhotoCaptureView.swift */; };
+		6950B42C2746EABC0037DE7A /* ImagePickerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6950B4292746EABC0037DE7A /* ImagePickerCoordinator.swift */; };
 		9E850DAE2731E2D000D99E66 /* NavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E850DAD2731E2D000D99E66 /* NavBar.swift */; };
 		9E850DB22731E2D500D99E66 /* MatchesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E850DB12731E2D500D99E66 /* MatchesList.swift */; };
 		9E8658DE2740A01100ABA729 /* SpotifyiOS.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E8658DD2740A01100ABA729 /* SpotifyiOS.xcframework */; };
@@ -96,6 +100,10 @@
 		4F430A619D8006F36D2E598A /* Pods-SpotiFriendsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpotiFriendsTests.debug.xcconfig"; path = "Target Support Files/Pods-SpotiFriendsTests/Pods-SpotiFriendsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		694B287427409848007511F9 /* MatchRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchRow.swift; sourceTree = "<group>"; };
 		694B287627409AC4007511F9 /* OtherProfileDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherProfileDetail.swift; sourceTree = "<group>"; };
+		6950B4252746E30C0037DE7A /* EditProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfile.swift; sourceTree = "<group>"; };
+		6950B4272746EABC0037DE7A /* ImagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImagePicker.swift; path = ../../../Labs/Contacts/Contacts/ImagePicker.swift; sourceTree = "<group>"; };
+		6950B4282746EABC0037DE7A /* PhotoCaptureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhotoCaptureView.swift; path = ../../../Labs/Contacts/Contacts/PhotoCaptureView.swift; sourceTree = "<group>"; };
+		6950B4292746EABC0037DE7A /* ImagePickerCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImagePickerCoordinator.swift; path = ../../../Labs/Contacts/Contacts/ImagePickerCoordinator.swift; sourceTree = "<group>"; };
 		82D630C9125D8FA194D9D67D /* Pods-SpotiFriends.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpotiFriends.release.xcconfig"; path = "Target Support Files/Pods-SpotiFriends/Pods-SpotiFriends.release.xcconfig"; sourceTree = "<group>"; };
 		9E850DAD2731E2D000D99E66 /* NavBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavBar.swift; sourceTree = "<group>"; };
 		9E850DB12731E2D500D99E66 /* MatchesList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchesList.swift; sourceTree = "<group>"; };
@@ -169,12 +177,16 @@
 		33720995272F191C0093523E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				6950B4272746EABC0037DE7A /* ImagePicker.swift */,
+				6950B4292746EABC0037DE7A /* ImagePickerCoordinator.swift */,
+				6950B4282746EABC0037DE7A /* PhotoCaptureView.swift */,
 				33720996272F19840093523E /* ProfileDetail.swift */,
 				9E850DB12731E2D500D99E66 /* MatchesList.swift */,
 				9E850DAD2731E2D000D99E66 /* NavBar.swift */,
 				A044E10927305A7E00DE0514 /* Matching.swift */,
 				694B287427409848007511F9 /* MatchRow.swift */,
 				694B287627409AC4007511F9 /* OtherProfileDetail.swift */,
+				6950B4252746E30C0037DE7A /* EditProfile.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -502,8 +514,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				337C3610272B429300B7B259 /* Song.swift in Sources */,
+				6950B42B2746EABC0037DE7A /* PhotoCaptureView.swift in Sources */,
 				9E850DB22731E2D500D99E66 /* MatchesList.swift in Sources */,
 				33720997272F19840093523E /* ProfileDetail.swift in Sources */,
+				6950B42C2746EABC0037DE7A /* ImagePickerCoordinator.swift in Sources */,
+				6950B42A2746EABC0037DE7A /* ImagePicker.swift in Sources */,
+				6950B4262746E30C0037DE7A /* EditProfile.swift in Sources */,
 				339BB71527162A71003CA493 /* AppDelegate.swift in Sources */,
 				3372099F272F1DAB0093523E /* History.swift in Sources */,
 				694B287527409848007511F9 /* MatchRow.swift in Sources */,

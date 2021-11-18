@@ -19,10 +19,11 @@ struct Matching: View {
       var res = vm.matching(currUser, potentialMatchUser)
 
         ScrollView{
+            Text(String(res.0)+"% Match").font(.system(size: 35)).foregroundColor(.white)
+            Spacer().frame(height:10)
             VStack{
-              Text(String(res.0)+"% Match").fontWeight(.bold).font(.system(size: 60))
                 // List artists
-                Text("Top 3 Artists in Common").fontWeight(.bold).foregroundColor(.white)
+                Text("Top 3 Artists in Common").fontWeight(.bold).foregroundColor(.white).font(.system(size: 20))
                 HStack{
                     VStack{
 //                        let  _ = print(user.matches.one_way_matches[0].id)
@@ -32,16 +33,17 @@ struct Matching: View {
 //                               user.spotify_history.top_3_artists[0].artist_image
                         )
                                 .resizable()
-                                .clipShape(Circle())
+                                .cornerRadius(10)
                                 .overlay(
-                                  Circle()
-                                    .stroke(Color.white, lineWidth: 4)
-                                    .shadow(radius: 7)
+                                    RoundedRectangle(cornerRadius:10)
+                                    .stroke(Color.white, lineWidth: 0)
+                                    .shadow(radius: 2)
                                 )
-                            .frame(width: 50, height: 50)
+                            .frame(width: 70, height: 70)
                         //Text(user.spotify_history.top_3_artists[0].name)
                       Text(res.1[0].name)
                             .multilineTextAlignment(.center)
+                            .foregroundColor(.white)
                         }
                         
                     VStack{
@@ -49,16 +51,17 @@ struct Matching: View {
                                 //user.spotify_history.top_3_artists[1].artist_image
                           )
                                 .resizable()
-                                .clipShape(Circle())
+                                .cornerRadius(10)
                                 .overlay(
-                                  Circle()
-                                    .stroke(Color.white, lineWidth: 4)
-                                    .shadow(radius: 7)
+                                    RoundedRectangle(cornerRadius:10)
+                                    .stroke(Color.white, lineWidth: 0)
+                                    .shadow(radius: 2)
                                 )
-                            .frame(width: 50, height: 50)
+                            .frame(width: 70, height: 70)
                         //Text(user.spotify_history.top_3_artists[1].name)
                       Text(res.1[1].name)
                             .multilineTextAlignment(.center)
+                            .foregroundColor(.white)
                         }
                         
                     VStack{
@@ -66,37 +69,38 @@ struct Matching: View {
                                 //user.spotify_history.top_3_artists[2].artist_image
                         )
                                 .resizable()
-                                .clipShape(Circle())
+                                .cornerRadius(10)
                                 .overlay(
-                                  Circle()
-                                    .stroke(Color.white, lineWidth: 4)
-                                    .shadow(radius: 7)
-                              )
-                            .frame(width: 50, height: 50)
+                                    RoundedRectangle(cornerRadius:10)
+                                    .stroke(Color.white, lineWidth: 0)
+                                    .shadow(radius: 2)
+                                )
+                            .frame(width: 70, height: 70)
                       //Text(user.spotify_history.top_3_artists[2].name)
                       Text(res.1[2].name)
                             .multilineTextAlignment(.center)
+                            .foregroundColor(.white)
                         }
                     .frame(alignment: .center)
                 }
                 
-                Spacer().frame(height: 40)
+                Spacer().frame(height: 20)
                 
                 // List songs
-                Text("Top 3 Songs in Common").fontWeight(.bold).foregroundColor(.white)
+                Text("Top 3 Songs in Common").fontWeight(.bold).foregroundColor(.white).font(.system(size: 20))
                 HStack{
                     VStack{
                         Image(uiImage: res.2[0].album_image!
                                 //user.spotify_history.top_3_songs[0].album_image!
                         )
                                 .resizable()
-                                .clipShape(Circle())
+                                .cornerRadius(10)
                                 .overlay(
-                                  Circle()
-                                    .stroke(Color.white, lineWidth: 4)
-                                    .shadow(radius: 7)
-                              )
-                            .frame(width: 50, height: 50)
+                                    RoundedRectangle(cornerRadius:10)
+                                    .stroke(Color.white, lineWidth: 0)
+                                    .shadow(radius: 2)
+                                )
+                            .frame(width: 70, height: 70)
                       Text(res.2[0].song_name)
                         //Text(user.spotify_history.top_3_songs[0].song_name)
                             .multilineTextAlignment(.center)
@@ -108,13 +112,13 @@ struct Matching: View {
                                 //user.spotify_history.top_3_songs[1].album_image!
                         )
                                 .resizable()
-                                .clipShape(Circle())
+                                .cornerRadius(10)
                                 .overlay(
-                                  Circle()
-                                    .stroke(Color.white, lineWidth: 4)
-                                    .shadow(radius: 7)
-                              )
-                            .frame(width: 50, height: 50)
+                                    RoundedRectangle(cornerRadius:10)
+                                    .stroke(Color.white, lineWidth: 0)
+                                    .shadow(radius: 2)
+                                )
+                            .frame(width: 70, height: 70)
                       Text(res.2[1].song_name)
                         //Text(user.spotify_history.top_3_songs[1].song_name)
                             .multilineTextAlignment(.center)
@@ -128,13 +132,13 @@ struct Matching: View {
                                 //user.spotify_history.top_3_songs[2].album_image!
                         )
                                 .resizable()
-                                .clipShape(Circle())
+                                .cornerRadius(10)
                                 .overlay(
-                                  Circle()
-                                    .stroke(Color.white, lineWidth: 4)
-                                    .shadow(radius: 7)
-                              )
-                            .frame(width: 50, height: 50)
+                                    RoundedRectangle(cornerRadius:10)
+                                    .stroke(Color.white, lineWidth: 0)
+                                    .shadow(radius: 2)
+                                )
+                            .frame(width: 70, height: 70)
                       Text(res.2[2].song_name)
                         //Text(user.spotify_history.top_3_songs[2].song_name)
                             .multilineTextAlignment(.center)
@@ -142,31 +146,33 @@ struct Matching: View {
                         }
                     .frame(alignment: .center)
                 }
-                Spacer().frame(height:10)
+                Spacer().frame(width: .infinity, height:10)
                 }.background(Color.green)
                 .cornerRadius(15)
-                .frame( maxWidth: .infinity,maxHeight: .infinity,alignment: .center)
+            .frame(minWidth: 200, maxWidth: .infinity, minHeight:200, maxHeight:.infinity,alignment: .center)
                 
                 Spacer().frame(height:10)
                 // Display User Info
                 VStack{
                     Image(uiImage: potentialMatchUser.personal_info.profile_picture!)
-                            .scaledToFit()
+                            .resizable()
+                            .frame(width:200,height:200)
                             .clipShape(Circle())
                             .overlay(
                               Circle()
-                                .stroke(Color.white, lineWidth: 4)
-                                .shadow(radius: 10)
+                                .stroke(Color.white, lineWidth: 0)
+                                .shadow(radius: 5)
+                                .frame(width:40,height:40)
                           )
                     
-                    Spacer().frame(height: 50)
+                    Spacer().frame(height: 20)
                     HStack{
                         Text(potentialMatchUser.personal_info.f_name + " " + potentialMatchUser.personal_info.l_name).fontWeight(.bold)
                             .foregroundColor(.white)
                         Text(String(potentialMatchUser.personal_info.age)).fontWeight(.bold)
                             .foregroundColor(.white)
                     }
-                    Spacer().frame(height: 30)
+                    Spacer().frame(height: 20)
                     if let bio = potentialMatchUser.personal_info.bio {
                         Text(bio).foregroundColor(.white)
                     }

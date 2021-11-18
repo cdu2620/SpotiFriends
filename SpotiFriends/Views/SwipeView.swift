@@ -25,7 +25,7 @@ struct SwipeView: View {
 
     var body: some View {
         ZStack{
-            Color.black.opacity(0.05).edgesIgnoringSafeArea(.all)
+//            Color.black.opacity(0.05).edgesIgnoringSafeArea(.all)
             Button(action: {
                 for i in 0..<self.x.count{
                     self.x[i] = 0
@@ -56,6 +56,8 @@ struct SwipeView: View {
                                     .onEnded({(value) in
                                         if value.translation.width > 0{
                                             if value.translation.width > 100{
+                                                let  _ = print("we swiped right")
+//                                                matched(user1: currUser, user2: self.potentialMatches[i])
                                                 self.x[i] = 500
                                                 self.degree[i]=15
                                             }
@@ -66,6 +68,7 @@ struct SwipeView: View {
                                         }
                                         else{
                                             if value.translation.width < -100{
+                                                let  _ = print("we swiped left")
                                                 self.x[i] = -500
                                                 self.degree[i] = -15
                                             }
@@ -77,7 +80,8 @@ struct SwipeView: View {
                                     })
                         )
                 }
-            }.padding()
+                .navigationBarHidden(true)
+            }
             .animation(.default)
         }
     }

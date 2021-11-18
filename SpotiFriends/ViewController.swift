@@ -260,5 +260,119 @@ class ViewModel: ObservableObject {
             }})
         print("ok")
     } // end of getmatches
+  
+
+  
+  func matching(_ user1: User, _ user2: User) -> (Int, [Artist], [Song]) {
+    
+    
+    var songScore = 0.0
+    let user1_songs = user1.spotify_history.top_20_songs
+    let user2_songs = user2.spotify_history.top_20_songs
+    var commonSongRankings = [(Int,Int)]()
+    var commonSongsPriorities = [(Int,Song)]()
+    var commonSongs = [Song]()
+
+    for (i, u1_song) in user1_songs.enumerated() {
+//      print("u1 song")
+      print(u1_song.song_name)
+      for (j, u2_song) in user2_songs.enumerated() {
+//        print("u2 song")
+        print(u2_song.song_name)
+        if (u1_song.song_name == u2_song.song_name &&
+              u1_song.artist == u2_song.artist) {
+              //u1_song.id == u2_song.id) {
+          print("other user is")
+          print(user2.personal_info.f_name)
+          print("common")
+          print(u1_song.song_name)
+          commonSongRankings.append((i,j))
+          let absDiff = abs(i-j)
+          let avgRank: Int = (i+j)/2
+          let priority: Int = (absDiff + avgRank)/2
+          commonSongsPriorities.append((priority,u1_song))
+          break
+        }
+      }
+    }
+    
+    var num_total_songs: Double = Double(commonSongs.count) / 20.0
+    num_total_songs = min(1, num_total_songs*2.0)
+    
+    var bestScoreSongs = 0.0
+    var actualScoreSongs = 0.0
+    
+    for (i,(priority, _)) in commonSongsPriorities.enumerated() {
+      actualScoreSongs += Double(priority)
+      bestScoreSongs += Double(i)
+    }
+    
+    songScore = bestScoreSongs / actualScoreSongs
+    songScore = min(1.0, songScore*2.0)
+    
+//    commonSongsPriorities.sort(by: {
+//      return $0.0 > $1.0
+//    })
+    
+    commonSongs = commonSongsPriorities.map { (x : Int, a: Song) -> Song in
+      return a
+    }
+    
+    var artistScore = 0.0
+    let user1_artists = user1.spotify_history.top_20_artists
+    let user2_artists = user2.spotify_history.top_20_artists
+    var commonArtistRankings = [(Int,Int)]()
+    var commonArtistsPriorities = [(Int,Artist)]()
+    var commonArtists = [Artist]()
+    
+    for (i, u1_artist) in user1_artists.enumerated() {
+      for (j, u2_artist) in user2_artists.enumerated() {
+        if (//u1_artist.name == u2_artist.name &&
+              u1_artist.id == u2_artist.id) {
+          commonArtistRankings.append((i,j))
+          let absDiff = abs(i-j)
+          let avgRank: Int = (i+j)/2
+          let priority: Int = (absDiff + avgRank)/2
+          commonArtistsPriorities.append((priority,u1_artist))
+          break
+        }
+      }
+    }
+    
+    var num_total_artists: Double = Double(commonArtists.count) / 20.0
+    num_total_artists = min(1, num_total_artists*2.0)
+    
+    var bestScoreArtists = 0.0
+    var actualScoreArtists = 0.0
+    
+    for (i,(priority, _)) in commonArtistsPriorities.enumerated() {
+      actualScoreArtists += Double(priority)
+      bestScoreArtists += Double(i)
+    }
+    
+    artistScore = bestScoreArtists / actualScoreArtists
+    artistScore = min(1.0, artistScore*2.0)
+    
+//    commonArtistsPriorities.sort(by: {
+//      return $0.0 > $1.0
+//    })
+    
+    commonArtists = commonArtistsPriorities.map { (x : Int, a: Artist) -> Artist in
+      return a
+    }
+    
+
+    
+    
+    let totalScore = (songScore * 0.3 + artistScore * 0.7) * 100
+//    getMatches()
+    print(totalScore)
+    print(commonArtists[0].name)
+    print(commonArtists[1].name)
+    print(commonArtists[2].name)
+    print(commonArtists.count)
+    print(commonSongs)
+    return (Int(round(totalScore)), commonArtists, commonSongs)
+  } // end of matching
  }
 

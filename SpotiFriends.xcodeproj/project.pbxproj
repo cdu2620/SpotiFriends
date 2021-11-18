@@ -34,6 +34,9 @@
 		9E8658E02740A01C00ABA729 /* SpotifyiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E8658DF2740A01C00ABA729 /* SpotifyiOS.framework */; };
 		9E8658E22740A02400ABA729 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9E8658E12740A02400ABA729 /* GoogleService-Info.plist */; };
 		A044E10A27305A7E00DE0514 /* Matching.swift in Sources */ = {isa = PBXBuildFile; fileRef = A044E10927305A7E00DE0514 /* Matching.swift */; };
+		C0146549273F1B8B00F56D73 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C0146548273F1B8B00F56D73 /* GoogleService-Info.plist */; };
+		C014654B273F1B9B00F56D73 /* SpotifyiOS.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = C014654A273F1B9B00F56D73 /* SpotifyiOS.xcframework */; };
+		C014654D273F1BA900F56D73 /* SpotifyiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C014654C273F1BA900F56D73 /* SpotifyiOS.framework */; };
 		C456EA5F4481AFD52D56375F /* Pods_SpotiFriends.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF1568AED54D070229528602 /* Pods_SpotiFriends.framework */; };
 		EC41DA2DEC8457FAFC8848BA /* Pods_SpotiFriends_SpotiFriendsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5F0455A643ED8C4BE9D0CA5 /* Pods_SpotiFriends_SpotiFriendsUITests.framework */; };
 /* End PBXBuildFile section */
@@ -107,6 +110,9 @@
 		A044E10927305A7E00DE0514 /* Matching.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Matching.swift; sourceTree = "<group>"; };
 		A5875D76C8137DD0736B756A /* Pods-SpotiFriends.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpotiFriends.debug.xcconfig"; path = "Target Support Files/Pods-SpotiFriends/Pods-SpotiFriends.debug.xcconfig"; sourceTree = "<group>"; };
 		BE732E195FB50E52DAD1A9C2 /* Pods-SpotiFriends-SpotiFriendsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpotiFriends-SpotiFriendsUITests.debug.xcconfig"; path = "Target Support Files/Pods-SpotiFriends-SpotiFriendsUITests/Pods-SpotiFriends-SpotiFriendsUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		C0146548273F1B8B00F56D73 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C014654A273F1B9B00F56D73 /* SpotifyiOS.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = SpotifyiOS.xcframework; sourceTree = "<group>"; };
+		C014654C273F1BA900F56D73 /* SpotifyiOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpotifyiOS.framework; path = "SpotifyiOS.xcframework/ios-arm64_i386_x86_64-simulator/SpotifyiOS.framework"; sourceTree = SOURCE_ROOT; };
 		CF1568AED54D070229528602 /* Pods_SpotiFriends.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SpotiFriends.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5F0455A643ED8C4BE9D0CA5 /* Pods_SpotiFriends_SpotiFriendsUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SpotiFriends_SpotiFriendsUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6A0974DD62E2584C1D2AA35 /* Pods-SpotiFriends-SpotiFriendsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpotiFriends-SpotiFriendsUITests.release.xcconfig"; path = "Target Support Files/Pods-SpotiFriends-SpotiFriendsUITests/Pods-SpotiFriends-SpotiFriendsUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -697,6 +703,10 @@
 				DEVELOPMENT_ASSET_PATHS = "\"SpotiFriends/Preview Content\"";
 				DEVELOPMENT_TEAM = 4KH57C9HM5;
 				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SpotifyiOS.xcframework/ios-arm64_i386_x86_64-simulator",
+				);
 				INFOPLIST_FILE = SpotiFriends/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -721,6 +731,10 @@
 				DEVELOPMENT_ASSET_PATHS = "\"SpotiFriends/Preview Content\"";
 				DEVELOPMENT_TEAM = 4KH57C9HM5;
 				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SpotifyiOS.xcframework/ios-arm64_i386_x86_64-simulator",
+				);
 				INFOPLIST_FILE = SpotiFriends/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
 				LD_RUNPATH_SEARCH_PATHS = (

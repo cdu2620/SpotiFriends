@@ -7,40 +7,46 @@
 
 import SwiftUI
 
+
+
 struct EditProfile: View {
-    var body: some View {
+  @State var name: String = ""
+  @State var pronouns: String = ""
+  @State var bio: String = ""
+  
+      var body: some View {
       VStack {
-          HStack {
-            Text("Name:")
-              .fontWeight(.bold)
-              .padding(.leading)
-            TextField("full name", text: $name)
-              .padding(.trailing)
-          }.padding()
-          HStack {
-            Text("Pronouns:")
-              .fontWeight(.bold)
-              .padding(.leading)
-            TextField("pronouns", text: $name)
-              .padding(.trailing)
-          }.padding()
-          HStack {
-            Text("Bio:")
-              .fontWeight(.bold)
-              .padding(.leading)
-            TextField("bio", text: $name)
-              .padding(.trailing)
-          }.padding()
-      } // end of vstack
+        HStack {
+          Text("name:")
+            .fontWeight(.bold)
+            .padding(.leading)
+          TextField("full name", text: $name)
+            .padding(.trailing)
+        }.padding()
+        HStack {
+          Text("pronouns:")
+            .fontWeight(.bold)
+            .padding(.leading)
+          TextField("pronouns", text: $pronouns)
+            .keyboardType(.phonePad)
+            .padding(.trailing)
+        }.padding()
+        HStack {
+          Text("bio:")
+            .fontWeight(.bold)
+            .padding(.leading)
+          TextField("bio", text: $bio)
+            .keyboardType(.emailAddress)
+            .padding(.trailing)
+        }.padding()
+      }
       .navigationBarTitle("Edit Profile")
       .navigationBarItems(trailing:
-        Button(action: {}) {
-          Text("Save")
+        Button(action: {}) { // save here
+          Text("Done")
         }
       )
-        
-
-    } // end of body
+    }
 
 }
 

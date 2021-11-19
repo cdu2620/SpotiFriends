@@ -31,12 +31,6 @@ struct EditProfile: View {
             TextField("bio", text: $name)
               .padding(.trailing)
           }.padding()
-          Button(action: {
-            self.showImagePicker = true
-          }) {
-            Text(buttonText())
-          }.padding()
-          Spacer()
       } // end of vstack
       .navigationBarTitle("Edit Profile")
       .navigationBarItems(trailing:
@@ -47,10 +41,7 @@ struct EditProfile: View {
         
 
     } // end of body
-  
-    func buttonText() -> String {
-      return image == nil ? "Add Contact Picture" : "Change Contact Picture"
-    }
+
 }
 
 

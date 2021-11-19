@@ -12,9 +12,9 @@ struct ProfileDetail: View {
     var user: User
     
     var body: some View {
-        ScrollView{
+      ScrollView{
         VStack{
-        VStack{
+         ZStack{
             Image(uiImage: user.personal_info.profile_picture!)
                     .resizable()
                     .scaledToFit()
@@ -24,8 +24,17 @@ struct ProfileDetail: View {
                       Circle()
                         .stroke(Color.white, lineWidth: 0)
                         .shadow(radius: 5)
-                  )
+                    )
+            Button(action: {}) {
+                Image(systemName: "edit")
+                  .padding()
+                  .background(Color.green)
+                  .clipShape(Circle())
+                  .font(.largeTitle)
+                  .foregroundColor(.white)
             }
+            
+            } // end of ZStack
             
             Spacer().frame(height: 20)
             HStack{

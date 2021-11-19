@@ -6,20 +6,21 @@
 //
 import SwiftUI
 
-struct ButtonOverlay: View {
-  var body: some View {
-    ZStack {
-        NavigationLink(destination: EditProfile() ) {
-              Image(systemName: "pencil")
-                .padding()
-                .background(Color.green)
-                .clipShape(Circle())
-                .font(.largeTitle)
-                .foregroundColor(.white)
-        }
-    }
-  }
-}
+//struct ButtonOverlay: View {
+////    var user: User
+//  var body: some View {
+//    ZStack {
+//        NavigationLink(destination: EditProfile(currUser: testUser) ) {
+//              Image(systemName: "pencil")
+//                .padding()
+//                .background(Color.green)
+//                .clipShape(Circle())
+//                .font(.largeTitle)
+//                .foregroundColor(.white)
+//        }
+//    }
+//  }
+//}
 
 struct ProfileDetail: View {
     var potentialMatches: [User]
@@ -27,6 +28,16 @@ struct ProfileDetail: View {
     
     var body: some View {
       ScrollView{
+        ZStack {
+            NavigationLink(destination: EditProfile(currUser: user) ) {
+                  Image(systemName: "pencil")
+                    .padding()
+                    .background(Color.green)
+                    .clipShape(Circle())
+                    .font(.largeTitle)
+                    .foregroundColor(.white)
+            }
+        }
         VStack{
          VStack{
             Image(uiImage: user.personal_info.profile_picture!)
@@ -39,7 +50,7 @@ struct ProfileDetail: View {
                         .stroke(Color.white, lineWidth: 0)
                         .shadow(radius: 5)
                     )
-                  .overlay(ButtonOverlay(), alignment: .topTrailing)
+//                .overlay(ButtonOverlay(), alignment: .topTrailing)
             
             } // end of VStack
             

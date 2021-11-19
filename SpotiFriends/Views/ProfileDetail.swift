@@ -9,14 +9,14 @@ import SwiftUI
 struct ButtonOverlay: View {
   var body: some View {
     ZStack {
-      Button(action: {}) {
-          Image(systemName: "pencil")
-            .padding()
-            .background(Color.green)
-            .clipShape(Circle())
-            .font(.largeTitle)
-            .foregroundColor(.white)
-      }
+        NavigationLink(destination: EditProfile() ) {
+              Image(systemName: "pencil")
+                .padding()
+                .background(Color.green)
+                .clipShape(Circle())
+                .font(.largeTitle)
+                .foregroundColor(.white)
+        }
     }
   }
 }

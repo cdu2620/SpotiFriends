@@ -23,7 +23,6 @@ struct Matching: View {
                 Text("Top 3 Artists in Common").fontWeight(.bold)
                 HStack{
                     VStack{
-                        let  _ = print(currUser.matches.two_way_matches[0].id)
                         Image(uiImage: user.spotify_history.top_3_artists[0].artist_image)
                                 .resizable()
                                 .clipShape(Circle())

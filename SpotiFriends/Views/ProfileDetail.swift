@@ -29,6 +29,7 @@ struct ProfileDetail: View {
       ScrollView{
         VStack{
          VStack{
+            Spacer().frame(height: 10)
             Image(uiImage: user.personal_info.profile_picture!)
                     .resizable()
                     .scaledToFit()

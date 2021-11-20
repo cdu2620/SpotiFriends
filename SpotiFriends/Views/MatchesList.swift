@@ -21,7 +21,7 @@ struct MatchesList: View {
           } //.onDelete(perform: delete)
         })
         .navigationBarTitle("Matches")
-      }
+      } 
     }
 }
 

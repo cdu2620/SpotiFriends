@@ -25,10 +25,6 @@ struct ContentView: View {
                     var testUser = vm.users.filter{ $0.id == vm.username  }[0]
                     var otherUsers = vm.users.filter{ $0.id != vm.username  }
                     VStack{
-//                        HStack {
-//                            NavigationLink("View Profile", destination: ProfileDetail(potentialMatches: otherUsers, user: testUser))
-//                            NavigationLink("View Matches", destination: Matching(potentialMatches: otherUsers, index: 0,currUser:testUser))
-//                        }
                         NavBar(potentialMatches: otherUsers, index: 0, user: testUser)
                         
                     }
@@ -41,10 +37,6 @@ struct ContentView: View {
                             var testUser = vm.users.filter{ $0.id == vm.username  }[0]
                             var otherUsers = vm.users.filter{ $0.id != vm.username  }
                             VStack{
-//                                HStack {
-//                                    NavigationLink("View Profile", destination: ProfileDetail(potentialMatches: otherUsers, user: testUser))
-//                                    NavigationLink("View Matches", destination: Matching(potentialMatches: otherUsers, index: 0,currUser:testUser))
-//                                }
                                 NavBar(potentialMatches: otherUsers, index: 0, user: testUser)
                             }
                         }

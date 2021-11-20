@@ -8,13 +8,20 @@
 import SwiftUI
 
 struct MatchesList: View {
+    var currUser: User
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+      var matches = currUser.matches.two_way_matches
+      NavigationView {
+        (List {
+          ForEach(matches) { match in
+            NavigationLink(destination: OtherProfileDetail(user: match, matchScore: 50)) {
+              MatchRow(match: match, score: 50)
+            }
+          } //.onDelete(perform: delete)
+        })
+        .navigationBarTitle("Matches")
+      }
     }
 }
 
-struct MatchesList_Previews: PreviewProvider {
-    static var previews: some View {
-        MatchesList()
-    }
-}

@@ -40,6 +40,7 @@ class ViewModel: ObservableObject {
               print(error)
           })
 
+        
       let apiCallSongs = Spartan.getMyTopTracks(limit: 3, offset: 0, timeRange: .mediumTerm, success: { (pagingObject) in
         // Get the artists via pagingObject.items
         

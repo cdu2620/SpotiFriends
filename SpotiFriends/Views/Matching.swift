@@ -168,38 +168,43 @@ struct Matching: View {
             user2.matches.one_way_matches = user2.matches.one_way_matches.filter{ $0.id != user1.id  }
             user1.matches.two_way_matches.append(user2)
             user2.matches.two_way_matches.append(user1)
-            let match_path = "/users/" + user2.id + "/matches/two_way_match/"+String(user2.matches.two_way_matches.count-1) + "/other_user_id"
-            let userRef = Database.database().reference().child(match_path)
-            userRef.setValue(user1.id)
+            DispatchQueue.global(qos: .background).async{
+                let match_path = "/users/" + user2.id + "/matches/two_way_match/"+String(user2.matches.two_way_matches.count-1) + "/other_user_id"
+                let userRef = Database.database().reference().child(match_path)
+                userRef.setValue(user1.id)
 
-            let match_path2 = "/users/" + user1.id + "/matches/two_way_match/"+String(user1.matches.two_way_matches.count-1) + "/other_user_id"
-            let userRef2 = Database.database().reference().child(match_path2)
-            userRef2.setValue(user2.id)
-            // remove from one way match in db
-            let path_og = "/users/" + user2.id
-            let refToCopy = Database.database().reference().child(path_og)
-            refToCopy.observe(.value, with: {
-                (snapshot) in if let snapCast = snapshot.value as? [String:Any]{
-                    breakLabel:  if let matches = snapCast["matches"] as? [String: Any]
-                    {
-                        if let one_way = matches["one_way_match"] as? [Any] {
-                            var tmp = one_way
-                            tmp.remove(at: index)
-                            if (user2.matches.one_way_matches.count == tmp.count+1) {
-                            let path_match = "/users/" + user2.id + "/matches/one_way_match"
-                            let refToDo = Database.database().reference().child(path_match)
-                                refToDo.setValue(tmp) }
-                        }}
-                    
-                   }})
+                let match_path2 = "/users/" + user1.id + "/matches/two_way_match/"+String(user1.matches.two_way_matches.count-1) + "/other_user_id"
+                let userRef2 = Database.database().reference().child(match_path2)
+                userRef2.setValue(user2.id)
+                // remove from one way match in db
+                let path_og = "/users/" + user2.id
+                let refToCopy = Database.database().reference().child(path_og)
+                refToCopy.observe(.value, with: {
+                    (snapshot) in if let snapCast = snapshot.value as? [String:Any]{
+                        breakLabel:  if let matches = snapCast["matches"] as? [String: Any]
+                        {
+                            if let one_way = matches["one_way_match"] as? [Any] {
+                                var tmp = one_way
+                                if (user2.matches.one_way_matches.count == tmp.count) {
+                                tmp.remove(at: index)
+
+                                let path_match = "/users/" + user2.id + "/matches/one_way_match"
+                                let refToDo = Database.database().reference().child(path_match)
+                                    refToDo.setValue(tmp) }
+                            }}
+                        
+                       }})
+                
+            } // end of dispatch queue
         } // end of if you are already in user2's matches
         
         else {
             print("first time")
             user1.matches.one_way_matches.append(user2)
+            DispatchQueue.global(qos: .background).async{
             let match_path2 = "/users/" + user1.id + "/matches/one_way_match/"+String(user1.matches.two_way_matches.count-1) + "/other_user_id"
             let userRef2 = Database.database().reference().child(match_path2)
-            userRef2.setValue(user2.id)
+                userRef2.setValue(user2.id) }
         }
         increment()
     } // end of matched function

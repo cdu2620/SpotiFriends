@@ -32,7 +32,7 @@ struct NavBar: View {
                         Image(systemName: "plus")
                         Text("Match")
                     }
-                ProfileDetail(potentialMatches: potentialMatches, user: user)
+                ProfileDetail(user: user)
                     .tabItem {
                         Image(systemName: "person.fill")
                         Text("Profile")

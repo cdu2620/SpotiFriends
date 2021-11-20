@@ -11,6 +11,7 @@ import SwiftUI
 
 struct EditProfile: View {
     var currUser: User
+  @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
   @State var name: String = ""
   @State var pronouns: String = ""
   @State var bio: String = ""
@@ -43,7 +44,15 @@ struct EditProfile: View {
       }
       .navigationBarTitle("Edit Profile")
       .navigationBarItems(trailing:
-        Button(action: {saveProfile()}) { // save here
+//                            NavigationLink(destination:ProfileDetail(user: currUser)) {
+//                                                    Text("Done")
+//                                                }.simultaneousGesture(TapGesture().onEnded{
+//                                                    saveProfile()
+//                                            })
+        Button(action: {
+            saveProfile()
+            self.presentationMode.wrappedValue.dismiss()
+        }) { // save here
           Text("Done")
         }
       )

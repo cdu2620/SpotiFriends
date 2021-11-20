@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-
+import FirebaseDatabase
 
 
 struct EditProfile: View {
@@ -59,20 +59,34 @@ struct EditProfile: View {
     }
     
     func saveProfile() {
-        print(currUser.personal_info.f_name)
+        print(currUser.id)
         if (name != "") {
-        let f_name = name.split(separator:" ")[0]
-            let l_name = name.split(separator:" ")[1]
+            let f_name = name
             currUser.personal_info.f_name = String(f_name)
-            currUser.personal_info.l_name = String(l_name)
+            DispatchQueue.global(qos: .background).async {
+            let name_path = "/users/" + currUser.id + "/personal_info/f_name"
+            let userRef2 = Database.database().reference().child(name_path)
+                userRef2.setValue(name) }
         }
         if (pronouns != "") {
             let pros = pronouns
             currUser.personal_info.pronouns = pros
+            DispatchQueue.global(qos: .background).async {
+            let pro_path = "/users/" + currUser.id + "/personal_info/pronouns"
+            let userRef = Database.database().reference().child(pro_path)
+                userRef.setValue(pronouns) }
         }
         if (bio != "") {
         let new_bio = bio
-            currUser.personal_info.bio = new_bio }
+            currUser.personal_info.bio = new_bio
+            DispatchQueue.global(qos: .background).async {
+            let bio_path = "/users/" + currUser.id + "/personal_info/bio"
+            let userRef3 = Database.database().reference().child(bio_path)
+                userRef3.setValue(bio)
+                
+            }
+            
+        }
     }
 
 }

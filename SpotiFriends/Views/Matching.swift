@@ -6,10 +6,13 @@
 //
 
 import SwiftUI
+import FirebaseDatabase
 
 struct Matching: View {
     var potentialMatchUser: User
     var currUser: User
+    var potentialMatches:[User]
+    @State var index: Int
   @ObservedObject var vm = ViewModel()
     
     var body: some View {
@@ -200,6 +203,59 @@ struct Matching: View {
             }
             .background(Color.black)
         }
+    
+//    func increment()  {
+//        if self.index < potentialMatches.count-1  {
+//            self.index += 1
+//            } else {
+//                self.index = 0
+//            }
+//        }
+    
+//    // user1 is you, user2 is other user
+//    func matched(user1 : User, user2 : User) {
+//        if (user2.matches.one_way_matches.filter{ $0.id == user1.id  }.count == 1) {
+//            print("gonna have matched popup")
+//            let index = user2.matches.one_way_matches.firstIndex{ $0.id == user1.id } as! Int
+//            user2.matches.one_way_matches = user2.matches.one_way_matches.filter{ $0.id != user1.id  }
+//            user1.matches.two_way_matches.append(user2)
+//            user2.matches.two_way_matches.append(user1)
+//            DispatchQueue.global(qos: .background).async {
+//            let match_path = "/users/" + user2.id + "/matches/two_way_match/"+String(user2.matches.two_way_matches.count-1) + "/other_user_id"
+//            let userRef = Database.database().reference().child(match_path)
+//            userRef.setValue(user1.id)
+//
+//            let match_path2 = "/users/" + user1.id + "/matches/two_way_match/"+String(user1.matches.two_way_matches.count-1) + "/other_user_id"
+//            let userRef2 = Database.database().reference().child(match_path2)
+//            userRef2.setValue(user2.id)
+//            // remove from one way match in db
+//            let path_og = "/users/" + user2.id
+//            let refToCopy = Database.database().reference().child(path_og)
+//            refToCopy.observe(.value, with: {
+//                (snapshot) in if let snapCast = snapshot.value as? [String:Any]{
+//                    breakLabel:  if let matches = snapCast["matches"] as? [String: Any]
+//                    {
+//                        if let one_way = matches["one_way_match"] as? [Any] {
+//                            var tmp = one_way
+//                            tmp.remove(at: index)
+//                            if (user2.matches.one_way_matches.count == tmp.count+1) {
+//                            let path_match = "/users/" + user2.id + "/matches/one_way_match"
+//                            let refToDo = Database.database().reference().child(path_match)
+//                                refToDo.setValue(tmp) }
+//                        }}
+//
+//                   }})
+//            }} // end of if you are already in user2's matches
+//
+//        else {
+//            print("first time")
+//            user1.matches.one_way_matches.append(user2)
+//            DispatchQueue.global(qos: .background).async {
+//            let match_path2 = "/users/" + user1.id + "/matches/one_way_match/"+String(user1.matches.two_way_matches.count-1) + "/other_user_id"
+//            let userRef2 = Database.database().reference().child(match_path2)
+//                userRef2.setValue(user2.id) }
+//        }
+//    } // end of matched function
     }
     
     

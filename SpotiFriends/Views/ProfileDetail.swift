@@ -7,7 +7,7 @@
 import SwiftUI
 
 struct ButtonOverlay: View {
-  var user: User
+  @State var user: User
   var body: some View {
     ZStack {
         NavigationLink(destination: EditProfile(currUser: user) ) {
@@ -23,8 +23,8 @@ struct ButtonOverlay: View {
 }
 
 struct ProfileDetail: View {
-    var user: User
-    
+    @State var user: User
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     var body: some View {
       ScrollView{
         VStack{
@@ -40,6 +40,7 @@ struct ProfileDetail: View {
                         .shadow(radius: 5)
                     )
                 .overlay(ButtonOverlay(user: user), alignment: .topTrailing)
+            
             
             } // end of VStack
             

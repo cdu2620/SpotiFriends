@@ -10,7 +10,6 @@ import FirebaseDatabase
 
 struct SwipeView: View {
     @State private var offset: CGFloat = 0
-    @State private var index = 0
     
     var potentialMatches: [User]
     @State var x: [CGFloat] = [0,0,0,0,0,0,0,0,0]
@@ -38,7 +37,7 @@ struct SwipeView: View {
             }
             ZStack{
                 ForEach(0..<potentialMatches.count, id: \.self){ i in
-                    Matching(potentialMatchUser: potentialMatches[i], currUser: currUser)
+                    Matching(potentialMatchUser: potentialMatches[i], currUser: currUser, potentialMatches: potentialMatches, index:i)
                         .offset(x: self.x[i])
                         .rotationEffect(.init(degrees:self.degree[i]))
                         .gesture(DragGesture()
@@ -57,7 +56,7 @@ struct SwipeView: View {
                                         if value.translation.width > 0{
                                             if value.translation.width > 100{
                                                 let  _ = print("we swiped right")
-//                                                matched(user1: currUser, user2: self.potentialMatches[i])
+                                                matched(user1: currUser, user2: self.potentialMatches[i])
                                                 self.x[i] = 500
                                                 self.degree[i]=15
                                             }
@@ -93,6 +92,7 @@ struct SwipeView: View {
             user2.matches.one_way_matches = user2.matches.one_way_matches.filter{ $0.id != user1.id  }
             user1.matches.two_way_matches.append(user2)
             user2.matches.two_way_matches.append(user1)
+            DispatchQueue.global(qos: .background).async {
             let match_path = "/users/" + user2.id + "/matches/two_way_match/"+String(user2.matches.two_way_matches.count-1) + "/other_user_id"
             let userRef = Database.database().reference().child(match_path)
             userRef.setValue(user1.id)
@@ -117,14 +117,15 @@ struct SwipeView: View {
                         }}
                     
                    }})
-        } // end of if you are already in user2's matches
+            }} // end of if you are already in user2's matches
         
         else {
             print("first time")
             user1.matches.one_way_matches.append(user2)
+            DispatchQueue.global(qos: .background).async {
             let match_path2 = "/users/" + user1.id + "/matches/one_way_match/"+String(user1.matches.two_way_matches.count-1) + "/other_user_id"
             let userRef2 = Database.database().reference().child(match_path2)
             userRef2.setValue(user2.id)
-        }
+            }}
     } // end of matched function
 }

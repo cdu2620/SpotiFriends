@@ -9,9 +9,14 @@ import SwiftUI
 
 struct MatchesList: View {
     var currUser: User
+    @State var matches: [User]
+    
+    init(currUser:User){
+        self.currUser = currUser
+        _matches = .init(initialValue: currUser.matches.two_way_matches)
+    }
     
     var body: some View {
-      var matches = currUser.matches.two_way_matches
       NavigationView {
         (List {
           ForEach(matches) { match in

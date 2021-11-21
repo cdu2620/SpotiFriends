@@ -10,11 +10,12 @@ import FirebaseDatabase
 
 
 struct EditProfile: View {
-    var currUser: User
-  @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+  @State var currUser: User
+//  @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
   @State var name: String = ""
   @State var pronouns: String = ""
   @State var bio: String = ""
+  @State private var isSaved  = false
   
       var body: some View {
       VStack {
@@ -43,19 +44,16 @@ struct EditProfile: View {
         }.padding()
       }
       .navigationBarTitle("Edit Profile")
-      .navigationBarItems(trailing:
-//                            NavigationLink(destination:ProfileDetail(user: currUser)) {
-//                                                    Text("Done")
-//                                                }.simultaneousGesture(TapGesture().onEnded{
-//                                                    saveProfile()
-//                                            })
-        Button(action: {
+        Button("Done", action: {
             saveProfile()
-            self.presentationMode.wrappedValue.dismiss()
-        }) { // save here
-          Text("Done")
+            isSaved=true
+        })
+        .popover(isPresented: $isSaved){
+            Text("Your changes have been saved")
+                .padding()
         }
-      )
+        
+      
     }
     
     func saveProfile() {
@@ -66,7 +64,8 @@ struct EditProfile: View {
             DispatchQueue.global(qos: .background).async {
             let name_path = "/users/" + currUser.id + "/personal_info/f_name"
             let userRef2 = Database.database().reference().child(name_path)
-                userRef2.setValue(name) }
+                userRef2.setValue(name)
+            }
         }
         if (pronouns != "") {
             let pros = pronouns

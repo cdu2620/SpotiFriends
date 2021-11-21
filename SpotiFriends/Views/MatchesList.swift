@@ -64,10 +64,9 @@ struct MatchesList: View {
                 {
                     if let one_way = matches["two_way_match"] as? [Any] {
                         var tmp = one_way
+                        if (other_user.matches.two_way_matches.count+1 == tmp.count) {
                         tmp.remove(at: their_index)
-                        if (other_user.matches.two_way_matches.count == tmp.count) {
                         let path_match = "/users/" + other_user.id + "/matches/two_way_match"
-                        print("hi")
                         let refToDo = Database.database().reference().child(path_match)
                             refToDo.setValue(tmp) }
                     }}

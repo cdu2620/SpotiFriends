@@ -8,14 +8,14 @@
 import SwiftUI
 
 struct ModalView: View {
-   @Binding car isShowing: Bool
+   @Binding var isShowing: Bool
   
     var body: some View {
-      ZStack(alighment: .bottom) {
+      ZStack(alignment: .bottom) {
         if isShowing {
           Color.green
               .opacity(0.3)
-              .ignoreSafeArea()
+              .ignoresSafeArea()
               .onTapGesture {
                 isShowing = false
             }
@@ -28,8 +28,8 @@ struct ModalView: View {
               .transition(.move(edge: .bottom))
           }
         }
-      .frame(maxWidth: .infinity, maxHeight: .infinity, alighment: .bottom)
-      .ignoreSafeArea()
+      .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
+      .ignoresSafeArea()
       .animation(.easeInOut)
     }
     

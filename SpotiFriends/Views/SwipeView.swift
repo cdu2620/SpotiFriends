@@ -117,7 +117,10 @@ struct SwipeView: View {
                         }}
                     
                    }})
-            }} // end of if you are already in user2's matches
+            }
+            return true
+          
+        } // end of if you are already in user2's matches
         
         else {
             print("first time")

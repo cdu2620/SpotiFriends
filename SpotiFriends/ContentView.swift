@@ -23,7 +23,11 @@ struct ContentView: View {
             VStack {
                 if populatedData == true {
                     var testUser = vm.users.filter{ $0.id == vm.username  }[0]
-                    var otherUsers = vm.users.filter{ $0.id != vm.username  }
+                    var my_matches = testUser.matches.two_way_matches
+                    var notme = vm.users.filter{ $0.id != vm.username  }
+                    var otherUsers = notme.filter({ (user: User) -> Bool in
+                                                        return my_matches.contains(where: { (user1: User) -> Bool in
+                                                    return user.id != user1.id})})
                     VStack{
                         NavBar(potentialMatches: otherUsers, index: 0, user: testUser)
                         
@@ -35,7 +39,11 @@ struct ContentView: View {
                         DispatchQueue.main.asyncAfter(deadline: .now()+10) {
                             populatedData = true
                             var testUser = vm.users.filter{ $0.id == vm.username  }[0]
-                            var otherUsers = vm.users.filter{ $0.id != vm.username  }
+                            var my_matches = testUser.matches.two_way_matches
+                            var notme = vm.users.filter{ $0.id != vm.username  }
+                            var otherUsers = notme.filter({ (user: User) -> Bool in
+                                                                return my_matches.contains(where: { (user1: User) -> Bool in
+                                                            return user.id != user1.id})})
                             VStack{
                                 NavBar(potentialMatches: otherUsers, index: 0, user: testUser)
                             }

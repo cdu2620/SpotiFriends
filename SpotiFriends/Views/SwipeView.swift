@@ -12,10 +12,12 @@ struct SwipeView: View {
     @State private var offset: CGFloat = 0
     
     var potentialMatches: [User]
-    @State var x: [CGFloat] = [0,0,0,0,0,0,0,0,0]
-    @State var degree : [Double] = [0,0,0,0,0,0,0,0,0]
+    @State var x: [CGFloat] = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+    @State var degree : [Double] = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
     let spacing: CGFloat = 10
     var currUser: User
+    
+    @State private var showModal = false
     
     init(potentialMatches:[User], currUser:User){
         self.potentialMatches = potentialMatches
@@ -37,7 +39,7 @@ struct SwipeView: View {
             }
             ZStack{
                 ForEach(0..<potentialMatches.count, id: \.self){ i in
-                    Matching(potentialMatchUser: potentialMatches[i], currUser: currUser, potentialMatches: potentialMatches, index:i)
+                    Matching(potentialMatchUser: potentialMatches[i], currUser: currUser, potentialMatches: potentialMatches, index:i, showModal: $showModal)
                         .offset(x: self.x[i])
                         .rotationEffect(.init(degrees:self.degree[i]))
                         .gesture(DragGesture()
@@ -56,9 +58,16 @@ struct SwipeView: View {
                                         if value.translation.width > 0{
                                             if value.translation.width > 100{
                                                 let  _ = print("we swiped right")
-                                                matched(user1: currUser, user2: self.potentialMatches[i])
+                                                let isTwoWay = matched(user1: currUser, user2: self.potentialMatches[i])
+                                                let _ = print("Before setting showModal to true")
+                                                if isTwoWay{
+                                                    showModal = true
+                                                }
+                                                let _ = print(showModal)
                                                 self.x[i] = 500
                                                 self.degree[i]=15
+                                                let _ = print("before rendering modalView")
+                                                ModalView(isShowing: $showModal)
                                             }
                                             else{
                                                 self.x[i] = 0
@@ -85,7 +94,7 @@ struct SwipeView: View {
         }
     }
     // user1 is you, user2 is other user
-    func matched(user1 : User, user2 : User) {
+    func matched(user1 : User, user2 : User) -> Bool {
         if (user2.matches.one_way_matches.filter{ $0.id == user1.id  }.count == 1) {
             print("gonna have matched popup")
             let index = user2.matches.one_way_matches.firstIndex{ $0.id == user1.id } as! Int
@@ -118,7 +127,7 @@ struct SwipeView: View {
                     
                    }})
             }
-            return true
+            return false
           
         } // end of if you are already in user2's matches
         
@@ -129,6 +138,8 @@ struct SwipeView: View {
             let match_path2 = "/users/" + user1.id + "/matches/one_way_match/"+String(user1.matches.two_way_matches.count-1) + "/other_user_id"
             let userRef2 = Database.database().reference().child(match_path2)
             userRef2.setValue(user2.id)
-            }}
+            }
+            return true
+        }
     } // end of matched function
 }

@@ -19,7 +19,7 @@ struct ContentView: View {
 
     var body: some View {
         
-        NavigationView{
+//        NavigationView{
             VStack {
                 if populatedData == true {
                     var testUser = vm.users.filter{ $0.id == vm.username  }[0]
@@ -45,7 +45,7 @@ struct ContentView: View {
                         Text("Log In")
                     }
                 }
-            }
+//            }
                 
         }
     

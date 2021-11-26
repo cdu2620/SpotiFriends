@@ -14,6 +14,7 @@ struct Matching: View {
     var potentialMatches:[User]
     @State var index: Int
   @ObservedObject var vm = ViewModel()
+    @Binding var showModal: Bool
     
     var body: some View {
       // Get next user
@@ -180,6 +181,9 @@ struct Matching: View {
                         Text(bio).foregroundColor(.white)
                     }
                 }
+                
+                ModalView(isShowing: $showModal)
+            
                 // Trying with buttons
 //                HStack{
 //                    Button(action: {increment()}) {

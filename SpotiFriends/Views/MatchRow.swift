@@ -26,10 +26,13 @@ struct MatchRow: View {
             Text(match.personal_info.f_name + " " + match.personal_info.l_name)
             Text(String(score) + "% Match")
           }
-          Image(systemName: "message")
-          .padding()
-          .clipShape(Circle())
-          .foregroundColor(.white)
+            Spacer()
+            Button(action:{}){
+                Image(systemName: "message")
+            }
+//          .padding()
+//          .clipShape(Circle())
+//          .foregroundColor(.white)
         }
     }
 }

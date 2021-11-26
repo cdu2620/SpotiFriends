@@ -274,18 +274,10 @@ class ViewModel: ObservableObject {
     var commonSongs = [Song]()
 
     for (i, u1_song) in user1_songs.enumerated() {
-//      print("u1 song")
-      print(u1_song.song_name)
       for (j, u2_song) in user2_songs.enumerated() {
-//        print("u2 song")
-        print(u2_song.song_name)
         if (u1_song.song_name == u2_song.song_name &&
               u1_song.artist == u2_song.artist) {
               //u1_song.id == u2_song.id) {
-          print("other user is")
-          print(user2.personal_info.f_name)
-          print("common")
-          print(u1_song.song_name)
           commonSongRankings.append((i,j))
           let absDiff = abs(i-j)
           let avgRank: Int = (i+j)/2
@@ -366,12 +358,6 @@ class ViewModel: ObservableObject {
     
     let totalScore = (songScore * 0.3 + artistScore * 0.7) * 100
 //    getMatches()
-    print(totalScore)
-    print(commonArtists[0].name)
-    print(commonArtists[1].name)
-    print(commonArtists[2].name)
-    print(commonArtists.count)
-    print(commonSongs)
     return (Int(round(totalScore)), commonArtists, commonSongs)
   } // end of matching
  }

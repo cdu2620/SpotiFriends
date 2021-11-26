@@ -11,8 +11,10 @@ struct ModalView: View {
    @Binding var isShowing: Bool
   
     var body: some View {
+      let _ = print("IM IN MODALVIEW")
       ZStack(alignment: .bottom) {
         if isShowing {
+         let _ = print("I should be hereeeeeee")
           Color.green
               .opacity(0.3)
               .ignoresSafeArea()

@@ -19,7 +19,7 @@ struct ContentView: View {
 
     var body: some View {
         
-//        NavigationView{
+        NavigationView{
             VStack {
                 if populatedData == true {
                     var testUser = vm.users.filter{ $0.id == vm.username  }[0]
@@ -40,7 +40,7 @@ struct ContentView: View {
                                       Text("the app for meeting people with similar music tastes").frame(width: 240, height: 130, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/).multilineTextAlignment(.center).foregroundColor(.gray).font(.title3)
                     Button(action: {
                         vm.getMatches()
-                        DispatchQueue.main.asyncAfter(deadline: .now()+10) {
+                        DispatchQueue.main.asyncAfter(deadline: .now()+30) {
                             populatedData = true
                             var testUser = vm.users.filter{ $0.id == vm.username  }[0]
                             var my_matches = testUser.matches.two_way_matches
@@ -67,7 +67,7 @@ struct ContentView: View {
 //                            .stroke(Color.white, lineWidth: 2))
                   } //end of vstack
                 }
-//            }
+            }
                 
         }.background(Color.black)
     

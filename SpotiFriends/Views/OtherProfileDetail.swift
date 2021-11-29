@@ -24,7 +24,13 @@ struct OtherProfileDetail: View {
                                 .stroke(Color.white, lineWidth: 0)
                                 .shadow(radius: 5)
                           )
+                  // button inserted (bad styling)
+                  Button(action:{print("pressed"); openMessages()}){
+                        Image(systemName: "message")
                     }
+                  // end of button insert
+                    }
+
                     Spacer().frame(height: 20)
                     HStack{
                         Text(user.personal_info.f_name + " " + user.personal_info.l_name).fontWeight(.bold).foregroundColor(.white).font(.system(size: 30))
@@ -38,7 +44,7 @@ struct OtherProfileDetail: View {
                     Spacer().frame(height: 30)
                     Text(String(matchScore)+"% Match").foregroundColor(.white)
                     VStack{
-                        Text("Your Top 3 Artists:").fontWeight(.bold).foregroundColor(.white)
+                        Text("Their Top 3 Artists:").fontWeight(.bold).foregroundColor(.white)
                         HStack{
                             VStack{
                                 Image(uiImage: user.spotify_history.top_3_artists[0].artist_image)
@@ -90,7 +96,7 @@ struct OtherProfileDetail: View {
                     Spacer().frame(height: 30)
                 
                 VStack{
-                    Text("Your Top 3 Songs: ").fontWeight(.bold).foregroundColor(.white)
+                    Text("Their Top 3 Songs: ").fontWeight(.bold).foregroundColor(.white)
                     HStack{
                         VStack{
                             Image(uiImage: user.spotify_history.top_3_songs[0].album_image!)

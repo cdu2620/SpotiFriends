@@ -9,19 +9,21 @@ import SwiftUI
 import FirebaseDatabase
 
 struct MatchesList: View {
-    var currUser: User
-    @State var matches: [User]
-    
-    init(currUser:User){
-        self.currUser = currUser
-        _matches = .init(initialValue: currUser.matches.two_way_matches)
-    }
+    @Binding var currUser : User    
+//    init(currUser:Binding<User>){
+//        self.currUser = currUser
+////        _matches = State(initialValue: currUser.matches.two_way_matches)
+//    }
     
     var body: some View {
       NavigationView {
+        let _ = print("IN MATCH LIST")
+        let _ = print(currUser.matches.two_way_matches)
         (List {
-          ForEach(matches) { match in
+          ForEach(currUser.matches.two_way_matches) { match in
             NavigationLink(destination: OtherProfileDetail(user: match, matchScore: 50)) {
+                let _ = print("IN MATCH LIST")
+                let _ = print(currUser.matches.two_way_matches)
               MatchRow(match: match, score: 50)
             }
           }.onDelete(perform: delete)
@@ -35,11 +37,11 @@ struct MatchesList: View {
         for i in offsets {
             val = i
         }
-        var other_user = matches[val]
+        var other_user = currUser.matches.two_way_matches[val]
         let your_index = currUser.matches.two_way_matches.firstIndex{ $0.id == other_user.id } as! Int
         let their_index = other_user.matches.two_way_matches.firstIndex{ $0.id == currUser.id } as! Int
         other_user.matches.two_way_matches = other_user.matches.two_way_matches.filter{ $0.id != currUser.id  }
-        matches.remove(atOffsets: offsets)
+        currUser.matches.two_way_matches.remove(atOffsets: offsets)
         let path_og = "/users/" + currUser.id
         let refToCopy = Database.database().reference().child(path_og)
         refToCopy.observe(.value, with: {

@@ -10,18 +10,17 @@ import FirebaseDatabase
 
 struct SwipeView: View {
     @State private var offset: CGFloat = 0
-    
+    @Binding var currUser : User
     var potentialMatches: [User]
-    @State var x: [CGFloat] = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
-    @State var degree : [Double] = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+    @State var x: [CGFloat] = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+    @State var degree : [Double] = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
     let spacing: CGFloat = 10
-    var currUser: User
     
     @State private var showModal = false
     
-    init(potentialMatches:[User], currUser:User){
+    init(currUser: Binding<User>, potentialMatches:[User]){
         self.potentialMatches = potentialMatches
-        self.currUser = currUser
+        _currUser = currUser
     }
 
     var body: some View {
@@ -40,7 +39,7 @@ struct SwipeView: View {
             ZStack{
                 ForEach(0..<potentialMatches.count, id: \.self){ i in
                     Matching(potentialMatchUser: potentialMatches[i], currUser: currUser, potentialMatches: potentialMatches, index:i, showModal: $showModal)
-                        .offset(x: self.x[i])
+                        .offset(x: self.x[i % x.count])
                         .rotationEffect(.init(degrees:self.degree[i]))
                         .gesture(DragGesture()
                                     .onChanged({ (value)  in
@@ -58,10 +57,12 @@ struct SwipeView: View {
                                         if value.translation.width > 0{
                                             if value.translation.width > 100{
                                                 let  _ = print("we swiped right")
-                                                let isTwoWay =  true //this is only temp
-//                                                    matched(user1: currUser, user2: self.potentialMatches[i])
-                                                let _ = print("Before setting showModal to true")
+                                                let isTwoWay =  true // matched(user1: currUser, user2: self.potentialMatches[i])
                                                 if isTwoWay{
+                                                    currUser.matches.two_way_matches.append(self.potentialMatches[i])
+                                                    let _ = print("IN swipe view, checking struct")
+                                                    let _ = print(currUser.matches.two_way_matches)
+                                                    self.potentialMatches[i].matches.two_way_matches.append(currUser)
                                                     showModal.toggle()
                                                 }
                                                 let _ = print(showModal)
@@ -119,16 +120,18 @@ struct SwipeView: View {
                     {
                         if let one_way = matches["one_way_match"] as? [Any] {
                             var tmp = one_way
+                            print(tmp.count)
+                            print(user2.matches.one_way_matches.count)
+                            if (user2.matches.one_way_matches.count == tmp.count) {
                             tmp.remove(at: index)
-                            if (user2.matches.one_way_matches.count == tmp.count+1) {
                             let path_match = "/users/" + user2.id + "/matches/one_way_match"
                             let refToDo = Database.database().reference().child(path_match)
                                 refToDo.setValue(tmp) }
                         }}
-                    
+
                    }})
             }
-            return false
+            return true
           
         } // end of if you are already in user2's matches
         
@@ -140,7 +143,7 @@ struct SwipeView: View {
             let userRef2 = Database.database().reference().child(match_path2)
             userRef2.setValue(user2.id)
             }
-            return true
+            return false
         }
     } // end of matched function
 }

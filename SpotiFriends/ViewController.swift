@@ -238,6 +238,7 @@ class ViewModel: ObservableObject {
                                         if let match = one as? [String: Any] {
                                             let user = match["other_user_id"] as! String
                                             let find = self.users.filter{ $0.id == user }[0]
+                                            print(find)
                                             one_match.append(find)
                                         }
                                     }} // one way

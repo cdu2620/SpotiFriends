@@ -130,8 +130,6 @@ struct Matching: View {
                         }
                         
                     VStack{
-                        let _ = print(currUser.personal_info.f_name, potentialMatchUser.personal_info.f_name)
-                        let _ = print(res.2)
                         Image(uiImage: res.2[2].album_image!
                                 //user.spotify_history.top_3_songs[2].album_image!
                         )

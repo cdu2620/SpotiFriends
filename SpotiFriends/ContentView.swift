@@ -19,7 +19,7 @@ struct ContentView: View {
 
     var body: some View {
         
-//        NavigationView{
+        NavigationView{
             VStack {
                 if populatedData == true {
                     var testUser = vm.users.filter{ $0.id == vm.username  }[0]
@@ -44,6 +44,8 @@ struct ContentView: View {
                             var otherUsers = notme.filter({ (user: User) -> Bool in
                                                                 return my_matches.contains(where: { (user1: User) -> Bool in
                                                             return user.id != user1.id})})
+                            print("we are done")
+                            
                             VStack{
                                 NavBar(potentialMatches: otherUsers, index: 0, user: testUser)
                             }
@@ -53,7 +55,7 @@ struct ContentView: View {
                         Text("Log In")
                     }
                 }
-//            }
+            }
                 
         }
     

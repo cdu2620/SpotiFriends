@@ -23,10 +23,13 @@ struct ModalView: View {
             }
             VStack {
               Text("You Matched!")
+              Button("Dismiss") {
+                self.isShowing.toggle()
+              }
             } // end of vStack
-              .frame(height: 400)
+              .frame(height: 800)
               .frame(maxWidth: .infinity)
-              .background(Color.white)
+              .background(Color.green)
               .transition(.move(edge: .bottom))
           }
         }

@@ -58,10 +58,11 @@ struct SwipeView: View {
                                         if value.translation.width > 0{
                                             if value.translation.width > 100{
                                                 let  _ = print("we swiped right")
-                                                let isTwoWay = matched(user1: currUser, user2: self.potentialMatches[i])
+                                                let isTwoWay =  true //this is only temp
+//                                                    matched(user1: currUser, user2: self.potentialMatches[i])
                                                 let _ = print("Before setting showModal to true")
                                                 if isTwoWay{
-                                                    showModal = true
+                                                    showModal.toggle()
                                                 }
                                                 let _ = print(showModal)
                                                 self.x[i] = 500

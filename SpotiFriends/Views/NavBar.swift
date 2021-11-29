@@ -39,6 +39,7 @@ struct NavBar: View {
                     }
                 }
             .background(Color.black)
+            .environment(\.horizontalSizeClass, .compact)
 //            .navigationBarHidden(true)
         }
         

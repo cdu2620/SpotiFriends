@@ -28,6 +28,9 @@ class SpotiFriendsTests: XCTestCase {
         var top_20songs = [Song]()
         var top_3artists = [SpotiFriends.Artist]()
         var top_20artists = [SpotiFriends.Artist]()
+        var one_way_matches = [User]()
+        var two_way_matches = [User]()
+        let match1 = Match(one_way_matches: one_way_matches, two_way_matches: two_way_matches)
         let song1 = Song(id: "5", song_name: "Butter", artist: "BTS", album_image_url: "google.com")
         let song_converted = song1.toAnyObject() as? NSDictionary
         if let song_name = song_converted?["song_name"] as?  String {
@@ -172,25 +175,51 @@ class SpotiFriendsTests: XCTestCase {
         if let profile_picture_url = personConverted?["profile_picture_url"] as? String {
           XCTAssertEqual(profile_picture_url, "google.com")
         }
-        let one = User(personal_info:person, spotify_history: his)
+        let one = User(id: "cdu2620", matches: match1, personal_info:person, spotify_history: his)
         let oneConverted = one.toAnyObject() as? NSDictionary
+        if let user_id = oneConverted?["id"] as? String {
+          XCTAssertEqual(user_id, "cdu2620")
+        }
         if let personal_info = oneConverted?["personal_info"] as? UserInfo {
             XCTAssertEqual(personal_info.age, 21)
         }
         if let spotify_history = oneConverted?["spotify_history"] as? History {
             XCTAssertEqual(spotify_history.top_3_songs.count, 3)
         }
-//        let converted = one.toAnyObject() as? NSDictionary
+        one_way_matches.append(one)
+        let match2 = Match(one_way_matches: one_way_matches, two_way_matches: two_way_matches)
+        let match_converted = match2.toAnyObject() as? NSDictionary
+        if let one_way = match_converted?["one_way_matches"] as? [Song] {
+            XCTAssertEqual(one_way.count, 1)
+        }
+        let person2 = UserInfo(f_name:"Joyce",l_name: "Wu", age: 21, pronouns: "she/her", bio: "hello",profile_picture_url: "google.com")
+        let two = User(id: "joycewu", matches: match2, personal_info:person2, spotify_history: his)
+        let twoConverted = two.toAnyObject() as? NSDictionary
+        if let matches1 = twoConverted?["matches"] as? Match {
+            XCTAssertEqual(matches1.one_way_matches.count, 1)
+        }
+        two_way_matches.append(two)
+        let match3 = Match(one_way_matches: one_way_matches, two_way_matches: two_way_matches)
+        let match3_converted = match3.toAnyObject() as? NSDictionary
+        if let two_way = match3_converted?["two_way_matches"] as? [Song] {
+            XCTAssertEqual(two_way.count, 1)
+        }
+        let person3 = UserInfo(f_name:"Joanna",l_name: "Miao", age: 20, pronouns: "she/her", bio: "hello lol",profile_picture_url: "google.com")
+        let three = User(id: "joannamiao", matches: match3, personal_info:person3, spotify_history: his)
+        let threeConverted = three.toAnyObject() as? NSDictionary
+        if let matches2 = threeConverted?["matches"] as? Match {
+            XCTAssertEqual(matches2.two_way_matches.count, 1)
+        }
     }
     
 
     func testAPICalls() throws {
-        let namePath = "/users/user7/spotify_history/top_3_songs/1/song_name"
+        let namePath = "/users/cdu2620/spotify_history/top_3_songs/1/song_name"
         let nameRef = Database.database().reference().child(namePath)
         nameRef.observe(.value, with: { snapshot in
             if let snapCast = snapshot.value as? String
             {
-                XCTAssertEqual(snapCast, "Epiphany")
+                XCTAssertEqual(snapCast, "DNA")
 
             }
         })

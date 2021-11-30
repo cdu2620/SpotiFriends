@@ -13,13 +13,15 @@ struct ContentView: View {
 
     @ObservedObject var vm = ViewModel()
     @State var populatedData = false
-    
+//    @StateObject var testUser =  User()
         
  
 
     var body: some View {
         
         NavigationView{
+            let _ = print(" IM IN CONTENT VIEW")
+//            let _ = print(currUser.matches.two_way_matches)
             VStack {
                 if populatedData == true {
                     var testUser = vm.users.filter{ $0.id == vm.username  }[0]

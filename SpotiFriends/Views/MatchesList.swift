@@ -9,10 +9,10 @@ import SwiftUI
 import FirebaseDatabase
 
 struct MatchesList: View {
-    @Binding var currUser : User    
-//    init(currUser:Binding<User>){
-//        self.currUser = currUser
-////        _matches = State(initialValue: currUser.matches.two_way_matches)
+    @EnvironmentObject var currUser : User
+//    init(currUser:User){
+//        _currUser = State(initialValue: currUser)
+//        _matches = State(initialValue: currUser.matches.two_way_matches)
 //    }
     
     var body: some View {

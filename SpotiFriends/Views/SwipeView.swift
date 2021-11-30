@@ -10,7 +10,7 @@ import FirebaseDatabase
 
 struct SwipeView: View {
     @State private var offset: CGFloat = 0
-    @Binding var currUser : User
+    @EnvironmentObject var currUser : User
     var potentialMatches: [User]
     @State var x: [CGFloat] = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
     @State var degree : [Double] = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
@@ -18,9 +18,9 @@ struct SwipeView: View {
     
     @State private var showModal = false
     
-    init(currUser: Binding<User>, potentialMatches:[User]){
+    init(potentialMatches:[User]){
         self.potentialMatches = potentialMatches
-        _currUser = currUser
+//        self.currUser = currUser
     }
 
     var body: some View {
@@ -63,7 +63,10 @@ struct SwipeView: View {
                                                     let _ = print("IN swipe view, checking struct")
                                                     let _ = print(currUser.matches.two_way_matches)
                                                     self.potentialMatches[i].matches.two_way_matches.append(currUser)
+                                                    NavBar(potentialMatches: potentialMatches, index: 0, user: currUser)
+                                                    let _ = print("IM HERERERERERERERER")
                                                     showModal.toggle()
+                                                    
                                                 }
                                                 let _ = print(showModal)
                                                 self.x[i] = 500

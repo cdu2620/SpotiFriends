@@ -23,13 +23,13 @@ struct ContentView: View {
             VStack {
                 if populatedData == true {
                     var currUser = vm.users.filter{ $0.id == vm.username  }[0]
-                    var my_matches = currUser.matches.two_way_matches
+                    var my_matches = currUser.matches
                     var notme = vm.users.filter{ $0.id != vm.username  }
                     var otherUsers = notme.filter({ (user: User) -> Bool in
-                                                        return my_matches.contains(where: { (user1: User) -> Bool in
+                                                        return my_matches.two_way_matches.contains(where: { (user1: User) -> Bool in
                                                     return user.id != user1.id})})
                     VStack{
-                      NavBar(potentialMatches: otherUsers, index: 0, user: currUser, my_matches: my_matches)
+                        NavBar(potentialMatches: otherUsers, index: 0, currUser: currUser, my_matches: my_matches)
                         
                     }
                    
@@ -39,15 +39,15 @@ struct ContentView: View {
                         DispatchQueue.main.asyncAfter(deadline: .now()+10) {
                             populatedData = true
                             var currUser = vm.users.filter{ $0.id == vm.username  }[0]
-                            var my_matches = currUser.matches.two_way_matches
+                            var my_matches = currUser.matches
                             var notme = vm.users.filter{ $0.id != vm.username  }
                             var otherUsers = notme.filter({ (user: User) -> Bool in
-                                                                return my_matches.contains(where: { (user1: User) -> Bool in
+                                                                return my_matches.two_way_matches.contains(where: { (user1: User) -> Bool in
                                                             return user.id != user1.id})})
                             print("we are done")
                             
                             VStack{
-                              NavBar(potentialMatches: otherUsers, index: 0, user: currUser, my_matches: my_matches)
+                                NavBar(potentialMatches: otherUsers, index: 0, currUser: currUser, my_matches: my_matches)
                             }
                         }
                         

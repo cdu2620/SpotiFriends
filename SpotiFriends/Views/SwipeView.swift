@@ -10,8 +10,8 @@ import FirebaseDatabase
 
 struct SwipeView: View {
     @State private var offset: CGFloat = 0
-    @EnvironmentObject var currUser : User
-    @EnvironmentObject var my_matches: [User]
+    var currUser : User
+    @EnvironmentObject var my_matches: Match
     var potentialMatches: [User]
     @State var x: [CGFloat] = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
     @State var degree : [Double] = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
@@ -19,7 +19,8 @@ struct SwipeView: View {
     
     @State private var showModal = false
     
-    init(potentialMatches:[User]){
+    init(currUser:User, potentialMatches:[User]){
+        self.currUser = currUser
         self.potentialMatches = potentialMatches
     }
 
@@ -38,6 +39,7 @@ struct SwipeView: View {
             }
             ZStack{
                 ForEach(0..<potentialMatches.count, id: \.self){ i in
+                    
                     Matching(potentialMatchUser: potentialMatches[i], currUser: currUser, potentialMatches: potentialMatches, index:i, showModal: $showModal)
                         .offset(x: self.x[i % x.count])
                         .rotationEffect(.init(degrees:self.degree[i]))
@@ -55,6 +57,7 @@ struct SwipeView: View {
                                     })
                                     .onEnded({(value) in
                                         if value.translation.width > 0{
+                                            showModal = false
                                             if value.translation.width > 100{
                                                 let  _ = print("we swiped right")
                                                 let isTwoWay =  true // matched(user1: currUser, user2: self.potentialMatches[i])
@@ -63,17 +66,17 @@ struct SwipeView: View {
                                                     self.potentialMatches[i].matches.two_way_matches.append(currUser)
                                                   
                                                     // changed to my_matches - 11/30
-                                                    my_matches.append(self.potentialMatches[i])
+//                                                    my_matches.two_way_matches.append(self.potentialMatches[i])
                                                     let _ = print("IN SWIPE VIEW, CHECKING MY_MATCHES")
-                                                    let _ = print(my_matches)
+                                                    let _ = print(my_matches.two_way_matches)
                                                   
                                                     showModal.toggle()
                                                 }
                                                 let _ = print(showModal)
                                                 self.x[i] = 500
                                                 self.degree[i]=15
-                                                let _ = print("before rendering modalView")
-                                                ModalView(isShowing: $showModal)
+//                                                let _ = print("before rendering modalView")
+//                                                ModalView(isShowing: $showModal, matchedUser: self.potentialMatches[i])
                                             }
                                             else{
                                                 self.x[i] = 0
@@ -81,6 +84,7 @@ struct SwipeView: View {
                                             }
                                         }
                                         else{
+                                            showModal = false
                                             if value.translation.width < -100{
                                                 let  _ = print("we swiped left")
                                                 self.x[i] = -500
@@ -94,6 +98,7 @@ struct SwipeView: View {
                                     })
                         )
                 }
+                .environmentObject(my_matches)
                 .navigationBarHidden(true)
             }
             .animation(.default)

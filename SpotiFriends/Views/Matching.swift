@@ -178,9 +178,10 @@ struct Matching: View {
                     if let bio = potentialMatchUser.personal_info.bio {
                         Text(bio).foregroundColor(.white)
                     }
+                    ModalView( isShowing: $showModal, matchedUser:potentialMatchUser) 
                 }
                 
-                ModalView(isShowing: $showModal)
+//            ModalView( isShowing: $showModal, matchedUser:potentialMatchUser)
             
                 // Trying with buttons
 //                HStack{

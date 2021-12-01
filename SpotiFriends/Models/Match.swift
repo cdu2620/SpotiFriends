@@ -3,11 +3,11 @@ import Foundation
 import Firebase
 import FirebaseDatabase
 
-class Match: Identifiable {
+class Match: Identifiable, ObservableObject {
     let ref: DatabaseReference?
 //    let id: UUID.
-    var one_way_matches: [User]
-    var two_way_matches: [User]
+    @Published var one_way_matches: [User]
+    @Published var two_way_matches: [User]
 
     
     init(one_way_matches: [User], two_way_matches: [User]) {

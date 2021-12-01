@@ -9,10 +9,10 @@ import Foundation
 import Firebase
 import FirebaseDatabase
 
-class User: Identifiable {
+class User: Identifiable, ObservableObject {
     let ref: DatabaseReference?
     let id: String
-    var matches: Match
+    @Published var matches: Match
     let personal_info: UserInfo
     let spotify_history: History
     

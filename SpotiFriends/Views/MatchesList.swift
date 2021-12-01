@@ -18,11 +18,12 @@ struct MatchesList: View {
 //    }
     
     var body: some View {
+        // calculate match score here and pass into otherprofileDetail and matchRow
       NavigationView {
         (List {
             ForEach(my_matches.two_way_matches) { match in
             NavigationLink(destination: OtherProfileDetail(user: match, matchScore: 50)) {
-              MatchRow(match: match, score: 50)
+                MatchRow(match: match, score: 50)
             }
           }.onDelete(perform: delete)
         })

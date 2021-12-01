@@ -10,6 +10,7 @@ import FirebaseDatabase
 
 struct Matching: View {
     var potentialMatchUser: User
+//    var previousMatchUser : User
     var currUser: User
     var potentialMatches:[User]
     @State var index: Int
@@ -178,7 +179,11 @@ struct Matching: View {
                     if let bio = potentialMatchUser.personal_info.bio {
                         Text(bio).foregroundColor(.white)
                     }
-                    ModalView( isShowing: $showModal, matchedUser:potentialMatchUser) 
+//                    var matchesIndex = index
+//                    if index > 0{
+//                        matchesIndex = index-1
+//                    }
+                    ModalView( isShowing: $showModal, matchedUser:potentialMatches[index])
                 }
                 
 //            ModalView( isShowing: $showModal, matchedUser:potentialMatchUser)

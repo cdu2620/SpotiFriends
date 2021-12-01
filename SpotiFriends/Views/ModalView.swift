@@ -15,24 +15,26 @@ struct ModalView: View {
         let _ = print("inside modal view printing isShowing")
         let _ = print(isShowing)
         if isShowing {
+            Color.green
+//                          .opacity(0.3)
+                          .ignoresSafeArea()
+                          .onTapGesture {
+                            isShowing = false
+                          }
             VStack {
-                Text("You Matched with"+matchedUser.personal_info.f_name+matchedUser.personal_info.l_name)
+//                Text("You Matched with "+matchedUser.personal_info.f_name+" "+matchedUser.personal_info.l_name)
+                Text("You matched with the previous user!")
                     .foregroundColor(.white)
                     .zIndex(1)
                   Button("Dismiss") {
                     self.isShowing.toggle()
                   }
             } // end of vStack
-              .frame(height: 800)
-              .frame(maxWidth: .infinity)
-              .background(Color.green)
-              .transition(.move(edge: .bottom))
-//          Color.green
-//              .opacity(0.3)
-//              .ignoresSafeArea()
-//              .onTapGesture {
-//                isShowing = false
-//              }
+//              .frame(height: 800)
+//              .frame(maxWidth: .infinity)
+//              .background(Color.green)
+//              .transition(.move(edge: .bottom))
+//              .zIndex(2)
             let _ = print("about to enter v stack")
 //            VStack {
 //                Text("You Matched with"+matchedUser.personal_info.f_name+matchedUser.personal_info.l_name)

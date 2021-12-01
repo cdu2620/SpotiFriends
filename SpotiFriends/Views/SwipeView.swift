@@ -39,7 +39,6 @@ struct SwipeView: View {
             }
             ZStack{
                 ForEach(0..<potentialMatches.count, id: \.self){ i in
-                    
                     Matching(potentialMatchUser: potentialMatches[i], currUser: currUser, potentialMatches: potentialMatches, index:i, showModal: $showModal)
                         .offset(x: self.x[i % x.count])
                         .rotationEffect(.init(degrees:self.degree[i]))
@@ -62,11 +61,11 @@ struct SwipeView: View {
                                                 let  _ = print("we swiped right")
                                                 let isTwoWay =  true // matched(user1: currUser, user2: self.potentialMatches[i])
                                                 if isTwoWay{
-                                                    currUser.matches.two_way_matches.append(self.potentialMatches[i])
-                                                    self.potentialMatches[i].matches.two_way_matches.append(currUser)
-                                                  
+//                                                    currUser.matches.two_way_matches.append(self.potentialMatches[i])
+//                                                    self.potentialMatches[i].matches.two_way_matches.append(currUser)
+//
                                                     // changed to my_matches - 11/30
-//                                                    my_matches.two_way_matches.append(self.potentialMatches[i])
+                                                    my_matches.two_way_matches.append(self.potentialMatches[i])
                                                     let _ = print("IN SWIPE VIEW, CHECKING MY_MATCHES")
                                                     let _ = print(my_matches.two_way_matches)
                                                   

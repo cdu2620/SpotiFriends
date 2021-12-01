@@ -10,9 +10,6 @@
 		330476A327274C5C004A5764 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330476A227274C5C004A5764 /* ViewController.swift */; };
 		330476A827275133004A5764 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330476A727275133004A5764 /* UserInfo.swift */; };
 		3308645027321A510059F944 /* Artist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3308644F27321A510059F944 /* Artist.swift */; };
-		335D0BB32754672200498608 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 335D0BB22754672200498608 /* GoogleService-Info.plist */; };
-		335D0BC02754674700498608 /* SpotifyiOS.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 335D0BB82754673200498608 /* SpotifyiOS.xcframework */; };
-		335D0BC12754674700498608 /* SpotifyiOS.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 335D0BB82754673200498608 /* SpotifyiOS.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		33720997272F19840093523E /* ProfileDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33720996272F19840093523E /* ProfileDetail.swift */; };
 		3372099F272F1DAB0093523E /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3372099E272F1DAB0093523E /* History.swift */; };
 		337C3610272B429300B7B259 /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = 337C360F272B429300B7B259 /* Song.swift */; };
@@ -32,6 +29,9 @@
 		694B287727409AC4007511F9 /* OtherProfileDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694B287627409AC4007511F9 /* OtherProfileDetail.swift */; };
 		6950B4262746E30C0037DE7A /* EditProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6950B4252746E30C0037DE7A /* EditProfile.swift */; };
 		6971BA88274DF9CD006F9F13 /* ModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6971BA87274DF9CD006F9F13 /* ModalView.swift */; };
+		9E59920B2757144A004D8679 /* SpotifyiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E59920A2757144A004D8679 /* SpotifyiOS.framework */; };
+		9E59920D27571452004D8679 /* SpotifyiOS.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E59920C27571452004D8679 /* SpotifyiOS.xcframework */; };
+		9E59921127571460004D8679 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9E5992102757145F004D8679 /* GoogleService-Info.plist */; };
 		9E7EBE1A27419CE100340A95 /* SwipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E7EBE1927419CE100340A95 /* SwipeView.swift */; };
 		9E850DAE2731E2D000D99E66 /* NavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E850DAD2731E2D000D99E66 /* NavBar.swift */; };
 		9E850DB22731E2D500D99E66 /* MatchesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E850DB12731E2D500D99E66 /* MatchesList.swift */; };
@@ -64,7 +64,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				335D0BC12754674700498608 /* SpotifyiOS.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -75,9 +74,6 @@
 		330476A227274C5C004A5764 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		330476A727275133004A5764 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		3308644F27321A510059F944 /* Artist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artist.swift; sourceTree = "<group>"; };
-		335D0BB22754672200498608 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
-		335D0BB62754672C00498608 /* SpotifyiOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpotifyiOS.framework; path = "../../Downloads/ios-sdk-master/SpotifyiOS.framework"; sourceTree = "<group>"; };
-		335D0BB82754673200498608 /* SpotifyiOS.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SpotifyiOS.xcframework; path = "../Downloads/ios-sdk-master/SpotifyiOS.xcframework"; sourceTree = "<group>"; };
 		33720996272F19840093523E /* ProfileDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDetail.swift; sourceTree = "<group>"; };
 		3372099E272F1DAB0093523E /* History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
 		337C360F272B429300B7B259 /* Song.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
@@ -106,6 +102,9 @@
 		6950B4252746E30C0037DE7A /* EditProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfile.swift; sourceTree = "<group>"; };
 		6971BA87274DF9CD006F9F13 /* ModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalView.swift; sourceTree = "<group>"; };
 		82D630C9125D8FA194D9D67D /* Pods-SpotiFriends.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpotiFriends.release.xcconfig"; path = "Target Support Files/Pods-SpotiFriends/Pods-SpotiFriends.release.xcconfig"; sourceTree = "<group>"; };
+		9E59920A2757144A004D8679 /* SpotifyiOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpotifyiOS.framework; path = "../../../Downloads/ios-sdk-master/SpotifyiOS.framework"; sourceTree = "<group>"; };
+		9E59920C27571452004D8679 /* SpotifyiOS.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SpotifyiOS.xcframework; path = "../../Downloads/ios-sdk-master/SpotifyiOS.xcframework"; sourceTree = "<group>"; };
+		9E5992102757145F004D8679 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9E7EBE1927419CE100340A95 /* SwipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeView.swift; sourceTree = "<group>"; };
 		9E850DAD2731E2D000D99E66 /* NavBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavBar.swift; sourceTree = "<group>"; };
 		9E850DB12731E2D500D99E66 /* MatchesList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchesList.swift; sourceTree = "<group>"; };
@@ -124,7 +123,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				337C3624272C419300B7B259 /* AuthenticationServices.framework in Frameworks */,
-				335D0BC02754674700498608 /* SpotifyiOS.xcframework in Frameworks */,
+				9E59920B2757144A004D8679 /* SpotifyiOS.framework in Frameworks */,
+				9E59920D27571452004D8679 /* SpotifyiOS.xcframework in Frameworks */,
 				C456EA5F4481AFD52D56375F /* Pods_SpotiFriends.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -192,7 +192,7 @@
 			isa = PBXGroup;
 			children = (
 				339BB75427162D72003CA493 /* SpotiFriends-Bridging-Header.h */,
-				335D0BB82754673200498608 /* SpotifyiOS.xcframework */,
+				9E59920C27571452004D8679 /* SpotifyiOS.xcframework */,
 				339BB71327162A71003CA493 /* SpotiFriends */,
 				339BB72A27162A74003CA493 /* SpotiFriendsTests */,
 				339BB73527162A74003CA493 /* SpotiFriendsUITests */,
@@ -215,8 +215,8 @@
 		339BB71327162A71003CA493 /* SpotiFriends */ = {
 			isa = PBXGroup;
 			children = (
-				335D0BB22754672200498608 /* GoogleService-Info.plist */,
-				335D0BB62754672C00498608 /* SpotifyiOS.framework */,
+				9E5992102757145F004D8679 /* GoogleService-Info.plist */,
+				9E59920A2757144A004D8679 /* SpotifyiOS.framework */,
 				33720995272F191C0093523E /* Views */,
 				330476A627275125004A5764 /* Models */,
 				339BB71427162A71003CA493 /* AppDelegate.swift */,
@@ -380,7 +380,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				339BB72127162A73003CA493 /* LaunchScreen.storyboard in Resources */,
-				335D0BB32754672200498608 /* GoogleService-Info.plist in Resources */,
+				9E59921127571460004D8679 /* GoogleService-Info.plist in Resources */,
 				339BB71E27162A73003CA493 /* Preview Assets.xcassets in Resources */,
 				339BB71B27162A73003CA493 /* Assets.xcassets in Resources */,
 			);

@@ -70,10 +70,11 @@ struct MatchesList: View {
         }
         var other_user = my_matches.two_way_matches[val]
         let your_index = my_matches.two_way_matches.firstIndex{ $0.id == other_user.id } as! Int
-        let their_index = other_user.matches.two_way_matches.firstIndex{ $0.id == currUser.id } as! Int
-        other_user.matches.two_way_matches = other_user.matches.two_way_matches.filter{ $0.id != currUser.id  }
+        let their_index = other_user.matches.two_way_matches.firstIndex{ $0.id == tempUser.id } as! Int
+        other_user.matches.two_way_matches = other_user.matches.two_way_matches.filter{ $0.id != tempUser.id  }
+        tempUser.matches.two_way_matches.remove(atOffsets: offsets)
         my_matches.two_way_matches.remove(atOffsets: offsets)
-        let path_og = "/users/" + currUser.id
+        let path_og = "/users/" + tempUser.id
         let refToCopy = Database.database().reference().child(path_og)
         refToCopy.observe(.value, with: {
             (snapshot) in if let snapCast = snapshot.value as? [String:Any]{
@@ -82,8 +83,10 @@ struct MatchesList: View {
                     if let one_way = matches["two_way_match"] as? [Any] {
                         var tmp = one_way
                         tmp.remove(at: your_index)
-                        if (currUser.matches.two_way_matches.count == tmp.count+1) {
-                        let path_match = "/users/" + currUser.id + "/matches/two_way_match"
+                        print(tmp.count)
+                        print(tempUser.matches.two_way_matches.count)
+                        if (tempUser.matches.two_way_matches.count == tmp.count) {
+                        let path_match = "/users/" + tempUser.id + "/matches/two_way_match"
                         let refToDo = Database.database().reference().child(path_match)
                             refToDo.setValue(tmp) }
                     }}
@@ -101,7 +104,9 @@ struct MatchesList: View {
                         tmp.remove(at: their_index)
                         let path_match = "/users/" + other_user.id + "/matches/two_way_match"
                         let refToDo = Database.database().reference().child(path_match)
-                            refToDo.setValue(tmp) }
+                            refToDo.setValue(tmp)
+                        print(my_matches.two_way_matches)
+                        }
                     }}
                 
                }})

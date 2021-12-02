@@ -8,32 +8,39 @@
 import SwiftUI
 
 struct NavBar: View {
-    var potentialMatches: [User]
+    @State var potentialMatches: [User]
     var index: Int
-    var user: User
+    var currUser: User
+    var my_matches: Match
+    
+//    init(potentialMatches:[User], index: Int, user: User) {
+//        UITabBar.appearance().backgroundColor = .clear
+//        _potentialMatches = State(initialValue: potentialMatches)
+//        self.index = index
+//        _user = State(initialValue: user)
+//    }
+  
     var body: some View {
-//        NavigationView{
             TabView{
-                MatchesList()
+                MatchesList(tempUser: currUser)
                     .tabItem {
                         Image(systemName: "list.bullet.indent")
                         Text("Matches")
                     }
-                Matching(potentialMatches: potentialMatches, index: 0, currUser:user)
+                SwipeView(currUser: currUser, potentialMatches: potentialMatches)
                     .tabItem {
                         Image(systemName: "plus")
                         Text("Match")
                     }
-                ProfileDetail(potentialMatches: potentialMatches, user: user)
+                ProfileDetail(currUser:currUser)
                     .tabItem {
                         Image(systemName: "person.fill")
                         Text("Profile")
                     }
-                }
-//            .navigationBarHidden(true)
+            }
+            .background(Color.black)
+            .environmentObject(my_matches)
         }
-        
-//    }
-}
+    }
 
 

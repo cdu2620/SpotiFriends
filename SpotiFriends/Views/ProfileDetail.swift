@@ -6,84 +6,108 @@
 //
 import SwiftUI
 
+struct ButtonOverlay: View {
+  @State var currUser: User
+//    var isSaved: Bool
+  var body: some View {
+    ZStack {
+        NavigationLink(destination: EditProfile(currUser: currUser) ) {
+              Image(systemName: "pencil")
+                .padding()
+                .background(Color.green)
+                .clipShape(Circle())
+                .font(.largeTitle)
+                .foregroundColor(.white)
+        }
+    }
+  }
+}
 
 struct ProfileDetail: View {
-    var potentialMatches: [User]
-    var user: User
-    
+    @State var currUser: User
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     var body: some View {
-        ScrollView{
+//        NavigationView {
+      ScrollView{
         VStack{
-            Image(uiImage: user.personal_info.profile_picture!)
+         VStack{
+            Image(uiImage: currUser.personal_info.profile_picture!)
+                    .resizable()
                     .scaledToFit()
+                    .frame(width: 300, height:300)
                     .clipShape(Circle())
                     .overlay(
                       Circle()
-                        .stroke(Color.white, lineWidth: 4)
+                        .stroke(Color.white, lineWidth: 0)
                         .shadow(radius: 5)
-                  )
-            }
+                    )
+                .overlay(ButtonOverlay(currUser: currUser), alignment: .topTrailing)
             
-            Spacer().frame(height: 50)
-            HStack{
-                Text(user.personal_info.f_name + " " + user.personal_info.l_name).fontWeight(.bold)
-                Text(String(user.personal_info.age)).fontWeight(.bold)
-            }
+            
+            } // end of VStack
+            
             Spacer().frame(height: 20)
-            if let bio = user.personal_info.bio {
-                Text(bio)
+            HStack{
+                Text(currUser.personal_info.f_name + " " + currUser.personal_info.l_name).fontWeight(.bold).foregroundColor(.white).font(.system(size: 30))
+                Spacer().frame(width: 40)
+                Text(String(currUser.personal_info.age)).fontWeight(.bold).foregroundColor(.white).font(.system(size: 30))
+            }
+            Spacer().frame(height: 10)
+            if let bio = currUser.personal_info.bio {
+                Text(bio).foregroundColor(.white)
             }
             Spacer().frame(height: 30)
+            VStack {
             VStack{
                 HStack{
-                    Text("Your Top 3 Artists: ").fontWeight(.bold)
-                    Button(action: {}) {
-                      Text("Edit")
-                    }
+                    Text("Your Top 3 Artists: ").fontWeight(.bold).foregroundColor(.white)
                 }
             
                 HStack{
                     VStack{
-                        Image(uiImage: user.spotify_history.top_3_artists[0].artist_image)
+                        Image(uiImage: currUser.spotify_history.top_3_artists[0].artist_image)
                                 .resizable()
-                                .clipShape(Circle())
+                            .cornerRadius(10)
                                 .overlay(
-                                  Circle()
-                                    .stroke(Color.white, lineWidth: 4)
+                                    RoundedRectangle(cornerRadius:10)
+                                    .stroke(Color.white, lineWidth: 0)
                                     .shadow(radius: 2)
                                 )
-                                .frame(width: 50, height: 50)
-                        Text(user.spotify_history.top_3_artists[0].name)
-                            .multilineTextAlignment(.center)
+                                .frame(width: 80, height: 80)
+                        Text(currUser.spotify_history.top_3_artists[0].name)
+                            .multilineTextAlignment(.center).foregroundColor(.white).fixedSize(horizontal: false, vertical: true)
                         }
+                    Spacer().frame(width:UIScreen.main.bounds.size.width/10)
                         
                     VStack{
-                        Image(uiImage: user.spotify_history.top_3_artists[1].artist_image)
-                                .resizable()
-                                .clipShape(Circle())
-                                .overlay(
-                                  Circle()
-                                    .stroke(Color.white, lineWidth: 4)
-                                    .shadow(radius: 7)
-                                )
-                                .frame(width: 50, height: 50)
-                        Text(user.spotify_history.top_3_artists[1].name)
-                            .multilineTextAlignment(.center)
+                        Image(uiImage: currUser.spotify_history.top_3_artists[1].artist_image)
+                            .resizable()
+                            .cornerRadius(10)
+                            .overlay(
+                                RoundedRectangle(cornerRadius:10)
+                                .stroke(Color.white, lineWidth: 0)
+                                .shadow(radius: 2)
+                            )
+                            .frame(width: 80, height: 80)
+                        Text(currUser.spotify_history.top_3_artists[1].name)
+                            .multilineTextAlignment(.center).foregroundColor(.white).fixedSize(horizontal: false, vertical: true)
                         }
+                    Spacer().frame(width:UIScreen.main.bounds.size.width/10)
                         
                     VStack{
-                        Image(uiImage: user.spotify_history.top_3_artists[2].artist_image)
-                                .resizable()
-                                .clipShape(Circle())
-                                .overlay(
-                                  Circle()
-                                    .stroke(Color.white, lineWidth: 4)
-                                    .shadow(radius: 7)
-                              )
-                                .frame(width: 50, height: 50)
-                        Text(user.spotify_history.top_3_artists[2].name)
-                            .multilineTextAlignment(.center)
+                        Image(uiImage: currUser.spotify_history.top_3_artists[2].artist_image)
+                            .resizable()
+                            .cornerRadius(10)
+                            .overlay(
+                                RoundedRectangle(cornerRadius:10)
+                                .stroke(Color.white, lineWidth: 0)
+                                .shadow(radius: 2)
+                            )
+                            .frame(width: 80, height: 80)
+                        Text(currUser.spotify_history.top_3_artists[2].name)
+                            .multilineTextAlignment(.center).foregroundColor(.white).fixedSize(horizontal: false, vertical: true)
                         }
+                    Spacer().frame(width:UIScreen.main.bounds.size.width/10)
                     }
                 .frame(alignment: .center)
                 
@@ -93,68 +117,64 @@ struct ProfileDetail: View {
         
         VStack{
             HStack{
-                Text("Your Top 3 Songs: ").fontWeight(.bold)
-//                Button(action: {}) {
-//                  Text("Edit")
-//                }
+                Text("Your Top 3 Songs: ").fontWeight(.bold).foregroundColor(.white)
             }
         
             HStack{
                 VStack{
-                    Image(uiImage: user.spotify_history.top_3_songs[0].album_image!)
-                            .resizable()
-                            .clipShape(Circle())
-                            .overlay(
-                              Circle()
-                                .stroke(Color.white, lineWidth: 4)
-                                .shadow(radius: 5)
-                          )
-                            .frame(width: 50, height: 50)
-                    Text(user.spotify_history.top_3_songs[0].song_name)
-                        .multilineTextAlignment(.center)
+                    Image(uiImage: currUser.spotify_history.top_3_songs[0].album_image!)
+                        .resizable()
+                        .cornerRadius(10)
+                        .overlay(
+                            RoundedRectangle(cornerRadius:10)
+                            .stroke(Color.white, lineWidth: 0)
+                            .shadow(radius: 2)
+                        )
+                        .frame(width: 80, height: 80)
+                    Text(currUser.spotify_history.top_3_songs[0].song_name)
+                        .multilineTextAlignment(.center).foregroundColor(.white).fixedSize(horizontal: false, vertical: true)
                     }
-                    
+                Spacer().frame(width:UIScreen.main.bounds.size.width/10)
                 VStack{
-                    Image(uiImage: user.spotify_history.top_3_songs[1].album_image!)
-                            .resizable()
-                            .clipShape(Circle())
-                            .overlay(
-                              Circle()
-                                .stroke(Color.white, lineWidth: 4)
-                                .shadow(radius: 5)
-                          )
-                            .frame(width: 50, height: 50)
-                    Text(user.spotify_history.top_3_songs[1].song_name)
-                        .multilineTextAlignment(.center)
+                    Image(uiImage: currUser.spotify_history.top_3_songs[1].album_image!)
+                        .resizable()
+                        .cornerRadius(10)
+                        .overlay(
+                            RoundedRectangle(cornerRadius:10)
+                            .stroke(Color.white, lineWidth: 0)
+                            .shadow(radius: 2)
+                        )
+                        .frame(width: 80, height: 80)
+                    Text(currUser.spotify_history.top_3_songs[1].song_name)
+                        .multilineTextAlignment(.center).foregroundColor(.white).fixedSize(horizontal: false, vertical: true)
                     }
-                    
+                Spacer().frame(width:UIScreen.main.bounds.size.width/10)
                 VStack{
-                    Image(uiImage: user.spotify_history.top_3_songs[2].album_image!)
-                            .resizable()
-                            .clipShape(Circle())
-                            .overlay(
-                              Circle()
-                                .stroke(Color.white, lineWidth: 4)
-                                .shadow(radius: 5)
-                          )
-                            .frame(width: 50, height: 50)
-                    Text(user.spotify_history.top_3_songs[2].song_name)
-                        .multilineTextAlignment(.center)
+                    Image(uiImage: currUser.spotify_history.top_3_songs[2].album_image!)
+                        .resizable()
+                        .cornerRadius(10)
+                        .overlay(
+                            RoundedRectangle(cornerRadius:10)
+                            .stroke(Color.white, lineWidth: 0)
+                            .shadow(radius: 2)
+                        )
+                        .frame(width: 80, height: 80)
+                    Text(currUser.spotify_history.top_3_songs[2].song_name)
+                        .multilineTextAlignment(.center).foregroundColor(.white).fixedSize(horizontal: false, vertical: true)
                     }
+                Spacer().frame(width:UIScreen.main.bounds.size.width/10)
                 }
             .frame(alignment: .center)
         }
         }
-           
-            
-//NavBar(potentialMatches: potentialMatches, index: 0, user: user)
-
+            .background(Color.gray)
+            .cornerRadius(15)
+        .frame(minWidth: 200, maxWidth: .infinity, minHeight:200, maxHeight:.infinity,alignment: .center)
+        }
+        
+//        .background(Color.black)
+        }
 //        }
-//    }
-//}
-//
-//struct ProfileDetails_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ProfileDetails()
+        
     }
 }

@@ -16,20 +16,36 @@ class ViewModel: ObservableObject {
     @Published var list = [UserInfo]()
     @Published var users = [User]()
     let ref = Database.database().reference()
-  
-
+    var username = ""
   
     
     func getData() {
       var top_3sg_api = [Song]()
       var top_3art_api = [Artist]()
+        
+        let getMe = Spartan.getMe(success: { (user) in
+              // Do something with the user object
+            self.username = user.id as! String
+            let path2 = "/users/" + self.username + "/uid"
+//            let path2 = String(format:"/users/%s/uid",username as! String)
+            print(path2)
+          let userRef = Database.database().reference().child(path2)
+//          let path = "/users/cdu2620/personal_info/profile_pic"
+            let path = "/users/" + self.username + "/personal_info/profile_pic"
+          let pfpRef = Database.database().reference().child(path)
+          let pfp = user.images![0].url!
+              pfpRef.setValue(pfp)
+            userRef.setValue(self.username)
+          }, failure: { (error) in
+              print(error)
+          })
 
       let apiCallSongs = Spartan.getMyTopTracks(limit: 3, offset: 0, timeRange: .mediumTerm, success: { (pagingObject) in
         // Get the artists via pagingObject.items
         
         var i = 0
         for obj in pagingObject.items {
-          let path = "/users/user2/spotify_history/top_3_songs/"+String(i)
+            let path = "/users/" + self.username + "/spotify_history/top_3_songs/"+String(i)
         
           let namePath = path+"/song_name"
           let nameRef = Database.database().reference().child(namePath)
@@ -60,15 +76,6 @@ class ViewModel: ObservableObject {
           print(error)
       })
         
-      let getMe = Spartan.getMe(success: { (user) in
-            // Do something with the user object
-            let path = "/users/user2/personal_info/profile_pic"
-            let pfpRef = Database.database().reference().child(path)
-            let pfp = user.images![0].url!
-            pfpRef.setValue(pfp)
-        }, failure: { (error) in
-            print(error)
-        })
         
       
       let apiCallArtists = Spartan.getMyTopArtists(limit: 3, offset: 0, timeRange: .mediumTerm, success: { (pagingObject) in
@@ -76,7 +83,7 @@ class ViewModel: ObservableObject {
         
         var i = 0
         for obj in pagingObject.items {
-          let path = "/users/user2/spotify_history/top_3_artists/"+String(i)
+            let path = "/users/" + self.username + "/spotify_history/top_3_artists/"+String(i)
         
           let namePath = path+"/name"
           let nameRef = Database.database().reference().child(namePath)
@@ -184,7 +191,9 @@ class ViewModel: ObservableObject {
                                 
                             }
                     let his = History(top_3_songs: top_3sg, top_3_artists: top_3art, top_20_songs: top_20sg, top_20_artists: top_20art)
-
+                    
+                    let temp_match = Match(one_way_matches: [User](), two_way_matches: [User]())
+                    let uid = val["uid"] as! String
                             if let vals = val["personal_info"] as? [String: Any]
                             {
                                 let f_name = vals["f_name"] as! String
@@ -194,21 +203,163 @@ class ViewModel: ObservableObject {
                                 let bio = vals["bio"] as! String
                                 let profile_pic = vals["profile_pic"] as! String
                                 let person = UserInfo(f_name:f_name,l_name: l_name, age: age, pronouns: pronouns, bio: bio,profile_picture_url: profile_pic)
-                                let one = User(personal_info:person, spotify_history: his)
+                                let one = User(id: uid, matches: temp_match, personal_info:person, spotify_history: his)
                                 self.list.append(person)
                                 self.users.append(one)
                             }
  
                             
                         }// end of individual user
-//                for user in self.users {
-//                    print(user.personal_info.profile_picture_url!)
-//                }
                 print("dummy")
             }})
             
           
     }
     
-    }}
+    } // end of getData
+    
+    func getMatches() {
+        getData()
+        let liveRef = self.ref.child("users")
+        liveRef.observe(.value, with: {
+            (snapshot) in if let snapCast = snapshot.value as? [String:AnyObject]{
+                for snap in snapCast
+                            {
+                    var one_match = [User]()
+                    var two_match = [User]()
+                    let val = snap.value as! [String: Any]
+                    let uid = val["uid"] as! String
+                    let og_user = self.users.filter{ $0.id == uid }[0]
+                            if let matches = val["matches"] as? [String: Any]
+                            {
+ 
+                                if let one_way = matches["one_way_match"] as? [Any] {
+                                    for one in one_way {
+                                        if let match = one as? [String: Any] {
+                                            let user = match["other_user_id"] as! String
+                                            let find = self.users.filter{ $0.id == user }[0]
+//                                            print(find)
+                                            one_match.append(find)
+                                        }
+                                    }} // one way
+                                
+                                if let two_way = matches["two_way_match"] as? [Any] {
+                                    for two in two_way {
+                                        if let match = two as? [String: Any] {
+                                            let user = match["other_user_id"] as! String
+                                            let find = self.users.filter{ $0.id == user }[0]
+                                            two_match.append(find)
+                                        }
+                                    }} // two way
+                                
+                                let users_matches = Match(one_way_matches: one_match, two_way_matches: two_match)
+                                og_user.matches = users_matches
+                            }
+                    
+                } // end of individual user
+                
+            }})
+        print("ok")
+    } // end of getmatches
+  
+
+  
+  func matching(_ user1: User, _ user2: User) -> (Int, [Artist], [Song]) {
+    
+    
+    var songScore = 0.0
+    let user1_songs = user1.spotify_history.top_20_songs
+    let user2_songs = user2.spotify_history.top_20_songs
+    var commonSongRankings = [(Int,Int)]()
+    var commonSongsPriorities = [(Int,Song)]()
+    var commonSongs = [Song]()
+
+    for (i, u1_song) in user1_songs.enumerated() {
+      for (j, u2_song) in user2_songs.enumerated() {
+        if (u1_song.song_name == u2_song.song_name &&
+              u1_song.artist == u2_song.artist) {
+              //u1_song.id == u2_song.id) {
+          commonSongRankings.append((i,j))
+          let absDiff = abs(i-j)
+          let avgRank: Int = (i+j)/2
+          let priority: Int = (absDiff + avgRank)/2
+          commonSongsPriorities.append((priority,u1_song))
+          break
+        }
+      }
+    }
+    
+    var num_total_songs: Double = Double(commonSongs.count) / 20.0
+    num_total_songs = min(1, num_total_songs*2.0)
+    
+    var bestScoreSongs = 0.0
+    var actualScoreSongs = 0.0
+    
+    for (i,(priority, _)) in commonSongsPriorities.enumerated() {
+      actualScoreSongs += Double(priority)
+      bestScoreSongs += Double(i)
+    }
+    
+    songScore = bestScoreSongs / actualScoreSongs
+    songScore = min(1.0, songScore*2.0)
+    
+//    commonSongsPriorities.sort(by: {
+//      return $0.0 > $1.0
+//    })
+    
+    commonSongs = commonSongsPriorities.map { (x : Int, a: Song) -> Song in
+      return a
+    }
+    
+    var artistScore = 0.0
+    let user1_artists = user1.spotify_history.top_20_artists
+    let user2_artists = user2.spotify_history.top_20_artists
+    var commonArtistRankings = [(Int,Int)]()
+    var commonArtistsPriorities = [(Int,Artist)]()
+    var commonArtists = [Artist]()
+    
+    for (i, u1_artist) in user1_artists.enumerated() {
+      for (j, u2_artist) in user2_artists.enumerated() {
+        if (//u1_artist.name == u2_artist.name &&
+              u1_artist.id == u2_artist.id) {
+          commonArtistRankings.append((i,j))
+          let absDiff = abs(i-j)
+          let avgRank: Int = (i+j)/2
+          let priority: Int = (absDiff + avgRank)/2
+          commonArtistsPriorities.append((priority,u1_artist))
+          break
+        }
+      }
+    }
+    
+    var num_total_artists: Double = Double(commonArtists.count) / 20.0
+    num_total_artists = min(1, num_total_artists*2.0)
+    
+    var bestScoreArtists = 0.0
+    var actualScoreArtists = 0.0
+    
+    for (i,(priority, _)) in commonArtistsPriorities.enumerated() {
+      actualScoreArtists += Double(priority)
+      bestScoreArtists += Double(i)
+    }
+    
+    artistScore = bestScoreArtists / actualScoreArtists
+    artistScore = min(1.0, artistScore*2.0)
+    
+//    commonArtistsPriorities.sort(by: {
+//      return $0.0 > $1.0
+//    })
+    
+    commonArtists = commonArtistsPriorities.map { (x : Int, a: Artist) -> Artist in
+      return a
+    }
+    
+
+    
+    
+    let totalScore = (songScore * 0.3 + artistScore * 0.7) * 100
+//    getMatches()
+    return (Int(round(totalScore)), commonArtists, commonSongs)
+  } // end of matching
+ }
 

@@ -7,26 +7,26 @@
 
 import SwiftUI
 
-func openMessages() {
-//  let phoneNumber = "bronkie2000@gmail.com"
-//  let text = "Some message"
-  
-  if UIApplication.shared.canOpenURL(URL(string:"sms:")!) {
-    print("opening")
-       UIApplication.shared.open(URL(string:"sms:1234567890")!, options: [:], completionHandler: nil)
-    print("just opened")
-  } else {
-    print("cant open url")
-  }
-
-//  guard let messageURL = NSURL(string: "email:\(phoneNumber)&body=\(text)")
-//  else { print("smth went wrong with the url"); return }
-//  if UIApplication.shared.canOpenURL(messageURL as URL) {
-//    print("will open")
-//    UIApplication.shared.openURL(messageURL as URL)
+//func openMessages() {
+////  let phoneNumber = "bronkie2000@gmail.com"
+////  let text = "Some message"
+//  
+//  if UIApplication.shared.canOpenURL(URL(string:"sms:")!) {
+//    print("opening")
+//       UIApplication.shared.open(URL(string:"sms:1234567890")!, options: [:], completionHandler: nil)
+//    print("just opened")
+//  } else {
+//    print("cant open url")
 //  }
-//  print("not allowed to open")
-}
+//
+////  guard let messageURL = NSURL(string: "email:\(phoneNumber)&body=\(text)")
+////  else { print("smth went wrong with the url"); return }
+////  if UIApplication.shared.canOpenURL(messageURL as URL) {
+////    print("will open")
+////    UIApplication.shared.openURL(messageURL as URL)
+////  }
+////  print("not allowed to open")
+//}
 
 struct MatchRow: View {
   var match: User
@@ -48,9 +48,9 @@ struct MatchRow: View {
             Text(String(score) + "% Match")
           }
             Spacer()
-            Button(action:{openMessages()}){
-                Image(systemName: "message")
-            }
+//            Button(action:{print("im clicked"); openMessages()}){
+//                Image(systemName: "message")
+//            }
 //          .padding()
 //          .clipShape(Circle())
 //          .foregroundColor(.white)

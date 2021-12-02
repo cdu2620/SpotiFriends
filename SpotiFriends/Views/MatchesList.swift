@@ -8,6 +8,27 @@
 import SwiftUI
 import FirebaseDatabase
 
+func openMessages() {
+//  let phoneNumber = "bronkie2000@gmail.com"
+//  let text = "Some message"
+  
+  if UIApplication.shared.canOpenURL(URL(string:"sms:")!) {
+    print("opening")
+       UIApplication.shared.open(URL(string:"sms:1234567890")!, options: [:], completionHandler: nil)
+    print("just opened")
+  } else {
+    print("cant open url")
+  }
+
+//  guard let messageURL = NSURL(string: "email:\(phoneNumber)&body=\(text)")
+//  else { print("smth went wrong with the url"); return }
+//  if UIApplication.shared.canOpenURL(messageURL as URL) {
+//    print("will open")
+//    UIApplication.shared.openURL(messageURL as URL)
+//  }
+//  print("not allowed to open")
+}
+
 struct MatchesList: View {
     @ObservedObject var vm = ViewModel()
     @EnvironmentObject var currUser : User
@@ -25,9 +46,16 @@ struct MatchesList: View {
         Text("Matches").foregroundColor(.white).font(.system(size: 30, weight: .heavy))//.multilineTextAlignment(.center)
         (List {
             ForEach(my_matches.two_way_matches) { match in
+                HStack{
                 NavigationLink(destination: OtherProfileDetail(user: match, matchScore: vm.matching(tempUser,match).0)) {
-                MatchRow(match: match, score: vm.matching(tempUser,match).0)
+                    
+                        MatchRow(match: match, score: vm.matching(tempUser,match).0)
+                    
             }
+                Button(action:{print("im clicked"); openMessages()}){
+                    Image(systemName: "message")
+                }
+                }
           }.onDelete(perform: delete)
         })
         }

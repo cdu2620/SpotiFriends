@@ -15,7 +15,11 @@ struct EditProfile: View {
   @State var name: String = ""
   @State var pronouns: String = ""
   @State var bio: String = ""
-  @State private var isSaved  = false
+  @State var isSaved : Bool = false
+    
+//    init() {
+//        _isSaved = .constant(false)
+//    }
   
       var body: some View {
       VStack {
@@ -46,11 +50,17 @@ struct EditProfile: View {
       .navigationBarTitle("Edit Profile")
         Button("Done", action: {
             saveProfile()
-            isSaved=true
+            self.isSaved=true
+            let _ = print("In edit profile")
+            let _ = print(isSaved)
+            
         })
         .popover(isPresented: $isSaved){
             Text("Your changes have been saved")
                 .padding()
+//            Button("Dismiss") {
+//                self.presentationMode.wrappedValue.dismiss()
+//            }
         }
         
       
@@ -58,6 +68,7 @@ struct EditProfile: View {
     
     func saveProfile() {
         print(currUser.id)
+        
         if (name != "") {
             let f_name = name
             currUser.personal_info.f_name = String(f_name)
@@ -86,6 +97,7 @@ struct EditProfile: View {
             }
             
         }
+//        ProfileSaved(isShowing: $isSaved)
     }
 
 }

@@ -40,17 +40,17 @@ struct SwipeView: View {
             ZStack{
                 ForEach(0..<potentialMatches.count, id: \.self){ i in
                     Matching(potentialMatchUser: potentialMatches[i], currUser: currUser, potentialMatches: potentialMatches, index:i, showModal: $showModal)
-                        .offset(x: self.x[i % x.count])
-                        .rotationEffect(.init(degrees:self.degree[i]))
+                        .offset(x: self.x[i%x.count])
+                        .rotationEffect(.init(degrees:self.degree[i%degree.count]))
                         .gesture(DragGesture()
                                     .onChanged({ (value)  in
                                         if  value.translation.width > 0{
-                                            self.x[i] = value.translation.width
-                                            self.degree[i] = 8
+                                            self.x[i%x.count] = value.translation.width
+                                            self.degree[i%degree.count] = 8
                                         }
                                         else{
-                                            self.x[i] = value.translation.width
-                                            self.degree[i] = -8
+                                            self.x[i%x.count] = value.translation.width
+                                            self.degree[i%degree.count] = -8
                                         }
                                         
                                     })
@@ -78,20 +78,20 @@ struct SwipeView: View {
 //                                                ModalView(isShowing: $showModal, matchedUser: self.potentialMatches[i])
                                             }
                                             else{
-                                                self.x[i] = 0
-                                                self.degree[i]=0
+                                                self.x[i%x.count] = 0
+                                                self.degree[i%degree.count]=0
                                             }
                                         }
                                         else{
                                             showModal = false
                                             if value.translation.width < -100{
                                                 let  _ = print("we swiped left")
-                                                self.x[i] = -500
-                                                self.degree[i] = -15
+                                                self.x[i%x.count] = -500
+                                                self.degree[i%degree.count] = -15
                                             }
                                             else{
-                                                self.x[i] = 0
-                                                self.degree[i]=0
+                                                self.x[i%x.count] = 0
+                                                self.degree[i%degree.count]=0
                                             }
                                         }
                                     })
@@ -105,6 +105,7 @@ struct SwipeView: View {
     }
     // user1 is you, user2 is other user
     func matched(user1 : User, user2 : User) -> Bool {
+        print(user2.matches.one_way_matches)
         if (user2.matches.one_way_matches.filter{ $0.id == user1.id  }.count == 1) {
             print("gonna have matched popup")
             let index = user2.matches.one_way_matches.firstIndex{ $0.id == user1.id } as! Int

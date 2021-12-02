@@ -26,6 +26,7 @@ struct ProfileDetail: View {
     @State var currUser: User
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     var body: some View {
+        NavigationView {
       ScrollView{
         VStack{
          VStack{
@@ -55,6 +56,7 @@ struct ProfileDetail: View {
                 Text(bio).foregroundColor(.white)
             }
             Spacer().frame(height: 30)
+            VStack {
             VStack{
                 HStack{
                     Text("Your Top 3 Artists: ").fontWeight(.bold).foregroundColor(.white)
@@ -164,7 +166,14 @@ struct ProfileDetail: View {
             .frame(alignment: .center)
         }
         }
-        .background(Color.black)
+            .background(Color.gray)
+            .cornerRadius(15)
+        .frame(minWidth: 200, maxWidth: .infinity, minHeight:200, maxHeight:.infinity,alignment: .center)
         }
+        
+//        .background(Color.black)
+        }
+        }
+        
     }
 }

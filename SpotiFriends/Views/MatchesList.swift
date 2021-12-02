@@ -20,7 +20,9 @@ struct MatchesList: View {
 //    }
     
     var body: some View {
-      NavigationView {
+//      NavigationView {b
+        VStack {
+        Text("Matches").foregroundColor(.white).font(.system(size: 30, weight: .heavy))//.multilineTextAlignment(.center)
         (List {
             ForEach(my_matches.two_way_matches) { match in
                 NavigationLink(destination: OtherProfileDetail(user: match, matchScore: vm.matching(tempUser,match).0)) {
@@ -28,8 +30,9 @@ struct MatchesList: View {
             }
           }.onDelete(perform: delete)
         })
-        .navigationBarTitle("Matches")
-      }
+        }
+//        .navigationBarTitle("Matches").foregroundColor(.white)
+//      }
     }
     
     func delete(at offsets: IndexSet) {

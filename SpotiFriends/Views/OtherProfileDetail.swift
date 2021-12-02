@@ -12,6 +12,7 @@ struct OtherProfileDetail: View {
     var matchScore: Int
     var body: some View {
         ScrollView{
+            ZStack{
             VStack{
                 VStack{
                     Image(uiImage: user.personal_info.profile_picture!)
@@ -25,6 +26,10 @@ struct OtherProfileDetail: View {
                                 .shadow(radius: 5)
                           )
                     }
+//                    Spacer().frame(height: 20)
+//                    Button(action:{ openMessages()}){
+//                            Image(systemName: "message")
+//                    }
                     Spacer().frame(height: 20)
                     HStack{
                         Text(user.personal_info.f_name + " " + user.personal_info.l_name).fontWeight(.bold).foregroundColor(.white).font(.system(size: 30))
@@ -36,9 +41,11 @@ struct OtherProfileDetail: View {
                         Text(bio).foregroundColor(.white)
                     }
                     Spacer().frame(height: 30)
-                    Text(String(matchScore)+"% Match").foregroundColor(.white)
+                    Text(String(matchScore)+"% Match").foregroundColor(.white).font(.system(size: 25))
+                    Spacer().frame(height: 30)
+                    VStack {
                     VStack{
-                        Text("Your Top 3 Artists:").fontWeight(.bold).foregroundColor(.white)
+                        Text("Their Top 3 Artists:").fontWeight(.bold).foregroundColor(.white)
                         HStack{
                             VStack{
                                 Image(uiImage: user.spotify_history.top_3_artists[0].artist_image)
@@ -90,7 +97,7 @@ struct OtherProfileDetail: View {
                     Spacer().frame(height: 30)
                 
                 VStack{
-                    Text("Your Top 3 Songs: ").fontWeight(.bold).foregroundColor(.white)
+                    Text("Their Top 3 Songs: ").fontWeight(.bold).foregroundColor(.white)
                     HStack{
                         VStack{
                             Image(uiImage: user.spotify_history.top_3_songs[0].album_image!)
@@ -137,7 +144,32 @@ struct OtherProfileDetail: View {
                         }
                     .frame(alignment: .center)
                 }
-              }.background(Color.black)
+              }
+                    .background(Color.gray)
+                    .cornerRadius(15)
+                .frame(minWidth: 200, maxWidth: .infinity, minHeight:200, maxHeight:.infinity,alignment: .center)
+            }
+            
+            }
+            VStack{
+                Spacer().frame(height: 20)
+                Group{
+                Button(action:{ openMessages()}){
+                    Text("Message").font(.system(size: 25))
+                        .padding()
+                        
+                }
+                }
+                
+                .overlay(RoundedRectangle(cornerRadius: 10))
+
+                .padding()
+                .foregroundColor(.white)
+                .background(Color.green)
+                
+            }
+           
+//            .background(Color.black)
             }
           }
     }

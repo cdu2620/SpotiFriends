@@ -9,7 +9,9 @@ import SwiftUI
 import FirebaseDatabase
 
 struct MatchesList: View {
+    @ObservedObject var vm = ViewModel()
     @EnvironmentObject var currUser : User
+    var tempUser: User
     @EnvironmentObject var my_matches: Match
   
 //    init(currUser:Binding<User>){
@@ -21,8 +23,8 @@ struct MatchesList: View {
       NavigationView {
         (List {
             ForEach(my_matches.two_way_matches) { match in
-            NavigationLink(destination: OtherProfileDetail(user: match, matchScore: vm.matching(currUser,match)[0])) {
-                MatchRow(match: match, score: vm.matching(currUser,match)[0])
+                NavigationLink(destination: OtherProfileDetail(user: match, matchScore: vm.matching(tempUser,match).0)) {
+                MatchRow(match: match, score: vm.matching(tempUser,match).0)
             }
           }.onDelete(perform: delete)
         })

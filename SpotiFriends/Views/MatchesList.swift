@@ -52,9 +52,9 @@ struct MatchesList: View {
                         MatchRow(match: match, score: vm.matching(tempUser,match).0)
                     
             }
-                Button(action:{print("im clicked"); openMessages()}){
-                    Image(systemName: "message")
-                }
+//                Button(action:{print("im clicked"); openMessages()}){
+//                    Image(systemName: "message")
+//                }
                 }
           }.onDelete(perform: delete)
         })

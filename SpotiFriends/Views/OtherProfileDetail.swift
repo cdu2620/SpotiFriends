@@ -157,16 +157,13 @@ struct OtherProfileDetail: View {
                     Text("Message")
                         .font(.system(size: 25))
                         .fontWeight(.bold)
-                        .padding()
-                        .foregroundColor(.white)
-                        .background(Color.green)
-                        .overlay(RoundedRectangle(cornerRadius: 10))
+                
                 })
-                .buttonStyle(PlainButtonStyle())
-//                .background(Color.green)
-//                .overlay(RoundedRectangle(cornerRadius: 10))
+                .padding(12)
+                .background(Color.green)
+                .foregroundColor(.white)
+                .cornerRadius(10)
 
-//                .background(Color.green)
                 
             }
            

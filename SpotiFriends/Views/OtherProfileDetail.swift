@@ -153,7 +153,7 @@ struct OtherProfileDetail: View {
             }
             VStack{
                 Spacer().frame(height: 20)
-                Button(action:{ openMessages()}){
+                Button(action:{openMessages()}, label: {
                     Text("Message")
                         .font(.system(size: 25))
                         .fontWeight(.bold)
@@ -161,7 +161,10 @@ struct OtherProfileDetail: View {
                         .foregroundColor(.white)
                         .background(Color.green)
                         .overlay(RoundedRectangle(cornerRadius: 10))
-                }
+                })
+                .buttonStyle(PlainButtonStyle())
+//                .background(Color.green)
+//                .overlay(RoundedRectangle(cornerRadius: 10))
 
 //                .background(Color.green)
                 

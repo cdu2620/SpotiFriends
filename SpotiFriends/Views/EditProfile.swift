@@ -55,13 +55,18 @@ struct EditProfile: View {
             let _ = print(isSaved)
             
         })
-        .popover(isPresented: $isSaved){
-            Text("Your changes have been saved")
-                .padding()
-//            Button("Dismiss") {
-//                self.presentationMode.wrappedValue.dismiss()
-//            }
+        .alert(isPresented: $isSaved) {
+            Alert(title: Text("Your changes have been saved!"), dismissButton: .default(Text("Got it!")))
+            
         }
+        
+//        .popover(isPresented: $isSaved){
+//            Text("Your changes have been saved")
+//                .padding()
+////            Button("Dismiss") {
+////                self.presentationMode.wrappedValue.dismiss()
+////            }
+//        }
         
       
     }

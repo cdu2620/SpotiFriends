@@ -148,7 +148,7 @@ struct SwipeView: View {
             print("first time")
             user1.matches.one_way_matches.append(user2)
             DispatchQueue.global(qos: .background).async {
-            let match_path2 = "/users/" + user1.id + "/matches/one_way_match/"+String(user1.matches.one_way_matches.count-1) + "/other_user_id"
+            let match_path2 = "/users/" + user1.id + "/matches/one_way_match/"+String(user1.matches.two_way_matches.count-1) + "/other_user_id"
             let userRef2 = Database.database().reference().child(match_path2)
             userRef2.setValue(user2.id)
             }

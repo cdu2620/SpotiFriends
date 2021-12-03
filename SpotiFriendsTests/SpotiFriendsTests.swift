@@ -167,18 +167,16 @@ class SpotiFriendsTests: XCTestCase {
     XCTAssertEqual(two.matches.one_way_matches.count, 0)
     
     // A unmatches B
-    // TODO: environment object???
     
-//    var indices = IndexSet()
-//    indices.insert(0)
-//    let ml = MatchesList(tempUser: one)//.environmentObject(one) as! MatchesList
-//      ml.delete(at: indices)
-//    XCTAssertEqual(one.matches.one_way_matches.count, 0)
-//    XCTAssertEqual(two.matches.one_way_matches.count, 0)
-//    XCTAssertEqual(one.matches.two_way_matches.count, 0) // FAIL
-//    print(one.matches.two_way_matches[0].personal_info.f_name)
-//
-//    XCTAssertEqual(two.matches.two_way_matches.count, 0)
+    let my_matches = Match(one_way_matches: [], two_way_matches: [two])
+    
+    var indices = IndexSet()
+    indices.insert(0)
+    delete(at: indices, my_matches: my_matches, tempUser: one)
+    XCTAssertEqual(one.matches.one_way_matches.count, 0)
+    XCTAssertEqual(two.matches.one_way_matches.count, 0)
+    XCTAssertEqual(one.matches.two_way_matches.count, 0)
+    XCTAssertEqual(two.matches.two_way_matches.count, 0)
     
     
     // clean up firebase dummy users

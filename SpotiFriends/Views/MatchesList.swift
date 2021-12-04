@@ -73,7 +73,7 @@ struct MatchesList: View {
         let their_index = other_user.matches.two_way_matches.firstIndex{ $0.id == tempUser.id } as! Int
         other_user.matches.two_way_matches = other_user.matches.two_way_matches.filter{ $0.id != tempUser.id  }
         tempUser.matches.two_way_matches.remove(atOffsets: offsets)
-        my_matches.two_way_matches.remove(atOffsets: offsets)
+//        my_matches.two_way_matches.remove(atOffsets: offsets)
         let path_og = "/users/" + tempUser.id
         let refToCopy = Database.database().reference().child(path_og)
         refToCopy.observe(.value, with: {
@@ -82,10 +82,10 @@ struct MatchesList: View {
                 {
                     if let one_way = matches["two_way_match"] as? [Any] {
                         var tmp = one_way
-                        tmp.remove(at: your_index)
                         print(tmp.count)
                         print(tempUser.matches.two_way_matches.count)
-                        if (tempUser.matches.two_way_matches.count == tmp.count) {
+                        if (tempUser.matches.two_way_matches.count+1 == tmp.count) {
+                            tmp.remove(at: your_index)
                         let path_match = "/users/" + tempUser.id + "/matches/two_way_match"
                         let refToDo = Database.database().reference().child(path_match)
                             refToDo.setValue(tmp) }
